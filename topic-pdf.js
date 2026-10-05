@@ -137,7 +137,19 @@
         (Array.isArray(t.sources) && t.sources.length
           ? '<div class="pdf-foot pdf-avoid"><b>แหล่งอ้างอิง:</b> ' + t.sources.map(function(k) {
               return esc({ DLT: 'คู่มือการตรวจสภาพรถ กรมการขนส่งทางบก (ม.ค. 2566)', FMCSA: 'FMCSA 49 CFR 396 Appendix A',
-                EXCEL: 'บทสนทนามาตรฐาน 117 รายการ ชัยรัชการ' }[k] || k);
+                EXCEL: 'บทสนทนามาตรฐาน 117 รายการ ชัยรัชการ',
+                CUMMINS: 'คู่มือ Operation & Maintenance เครื่องยนต์ Cummins',
+                USMW: 'Technical Bulletin การรั่วของปั๊มน้ำ US Motor Works',
+                GARRETT: 'คู่มือช่างเทอร์โบ Garrett Motion',
+                PETERBILT: 'คู่มือบำรุงรักษารถบรรทุก Peterbilt (Conventional Models)',
+                HINO_SB: 'Service Bulletin HINO SB-19-013 (เครื่องยนต์ J05E)',
+                SPICER: 'แนวทางการหล่อลื่นข้อต่อ Spicer (Dana)',
+                FREIGHTLINER: 'คู่มือบำรุงรักษารถบรรทุก Freightliner (Heavy-Duty Trucks)',
+                REDDOT: 'คู่มือบริการระบบปรับอากาศรถบรรทุก Red Dot',
+                MONROE: 'เกณฑ์ตรวจโช้คอัพ Monroe (Tenneco)',
+                HENDRICKSON: 'คู่มือช่วงล่างถุงลมและเพลายก Hendrickson',
+                DELCOREMY: 'คู่มือวิเคราะห์ระบบชาร์จไฟ Delco Remy',
+              }[k] || k);
             }).join(' · ') + '</div>'
           : '') +
         '<div class="pdf-foot pdf-avoid">' +
