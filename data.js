@@ -38,7 +38,8 @@ window.trainingData = {
   114: 'https://www.canva.com/design/DAHVz3HZP_4/EepPO6cmWWpJxGBSDFMiFw/watch?utm_content=DAHVz3HZP_4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h49546b97fe',  // ความสะอาดจุดที่มีการซ่อม
   23: 'https://www.canva.com/design/DAHV0ATGO-Q/UOHZn976E4fgXHEe40_4Xw/watch?utm_content=DAHV0ATGO-Q&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc805e77966',  // เช็กน้ำยาฟรีปั้มและใบพัดระบายความร้อน
   45: 'https://www.canva.com/design/DAHV0XzRKaI/XKbnbOAeOtSO2vu2h3D2AQ/watch?utm_content=DAHV0XzRKaI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf25dfe002a',  // ระดับน้ำมันพาวเวอร์พวงมาลัย
-  117: 'https://www.canva.com/design/DAHV0TDA0HI/ZIg8PJTA2Dl4NsrwXpkMog/watch?utm_content=DAHV0TDA0HI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8c854374a0'  // ตรวจรอยรั่วปั๊มพวงมาลัย
+  117: 'https://www.canva.com/design/DAHV0TDA0HI/ZIg8PJTA2Dl4NsrwXpkMog/watch?utm_content=DAHV0TDA0HI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8c854374a0',  // ตรวจรอยรั่วปั๊มพวงมาลัย
+  34: 'https://www.canva.com/design/DAHXGc6g58M/3N9KUB45PFXyZpFZ_Lgc1w/watch?utm_content=DAHXGc6g58M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3053d8b202'  // ระบบโซล่า
 },
   topicMedia: {
   1: {
@@ -2582,7 +2583,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 34, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ระบบโซล่า", severity: "medium",
+    id: 34, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ระบบโซล่า", severity: "medium",
     category: "ตรวจการรั่วซึมของเครื่องยนต์และระบบหล่อเย็น",
     sources: ["DLT", "FMCSA", "EXCEL"],
     quickObservations: [
