@@ -98,8 +98,14 @@
         '<div class="pdf-item-head"><span class="pdf-num">' + (i + 1) + '</span><span>' + iss.issue + '</span></div>' +
         '<div class="pdf-body">' + pts +
           '<div class="pdf-grid">' +
-            '<div class="pdf-box"><div class="pdf-label">วิธีการแก้ไข</div><p>' + (iss.solution || '-') + '</p></div>' +
-            '<div class="pdf-box impact"><div class="pdf-label">ผลกระทบหากไม่แก้ไข</div><p>' + (iss.fix || '-') + '</p></div>' +
+            '<div class="pdf-box"><div class="pdf-label">1. แนะนำตัว (ถ่ายทะเบียนรถ)</div>' +
+              '<p>สวัสดีครับ ผมช่างจาก HINO ชัยรัชการ ได้ตรวจเช็กรถ หมายเลขทะเบียน ________ ครับ โดยเช็ก 117 รายการ</p></div>' +
+            '<div class="pdf-box"><div class="pdf-label">2. ปัญหาที่พบ (ค่อยๆ ถ่ายไปยังบริเวณที่พบปัญหา)</div>' +
+              '<p>ปัญหาที่พบนะครับ ได้แก่ ' + esc(iss.issue) + ' ครับ</p></div>' +
+          '</div>' +
+          '<div class="pdf-grid">' +
+            '<div class="pdf-box"><div class="pdf-label">3. วิธีการแก้ไข (ถ่ายบริเวณที่พบปัญหา)</div><p>' + (iss.solution || '-') + '</p></div>' +
+            '<div class="pdf-box impact"><div class="pdf-label">4. ผลกระทบหากไม่แก้ไข (ถ่ายบริเวณที่พบปัญหา)</div><p>' + (iss.fix || '-') + '</p></div>' +
           '</div>' +
           scriptHtml(iss.script) +
         '</div>' +

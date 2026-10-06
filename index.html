@@ -1111,6 +1111,26 @@
     line-height: 1.4;
   }
   .sales-resolution-block.impact .sales-resolution-label { color: #444440; }
+  /* Narration steps 1-2 come from the company's standard clip script. */
+  .sales-resolution-block.narration { border-left-color: #6B6B64; }
+  .sales-resolution-block.narration .sales-resolution-label { color: #444440; }
+  .sales-resolution-label { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .narration-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    border-radius: 50%;
+    background: var(--accent-red);
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .narration-cam { color: var(--text3); font-size: 12px; font-weight: 600; }
+  .narration-cam::before { content: "("; }
+  .narration-cam::after { content: ")"; }
   .sales-resolution-text {
     margin: 0;
     color: #3D3D39;
@@ -1391,7 +1411,7 @@
 
   <script src="data.js?v=20261005-3"></script>
   <script src="dialogue.js?v=20260918-2"></script>
-  <script src="topic-pdf.js?v=20261005-1" defer></script>
+  <script src="topic-pdf.js?v=20261006-1" defer></script>
 <script>
 // ข้อมูลหลักอยู่ใน data.js เพื่อให้เพิ่มหัวข้อจำนวนมากได้ง่ายขึ้น
 const trainingData = window.trainingData || {};
@@ -2040,12 +2060,20 @@ function renderIssueDetail(t, iss, idx) {
       <div class="sales-content-heading">ประเด็นคุยกับลูกค้า</div>
       ${renderTalkingPoints(iss)}
       <div class="sales-resolution-grid">
+        <section class="sales-resolution-block narration">
+          <div class="sales-resolution-label"><span class="narration-num">1</span>แนะนำตัว<span class="narration-cam">ถ่ายทะเบียนรถ</span></div>
+          <p class="sales-resolution-text">สวัสดีครับ ผมช่างจาก HINO ชัยรัชการ ได้ตรวจเช็กรถ หมายเลขทะเบียน <span class="script-blank">______</span> ครับ โดยเช็ก 117 รายการ</p>
+        </section>
+        <section class="sales-resolution-block narration">
+          <div class="sales-resolution-label"><span class="narration-num">2</span>ปัญหาที่พบ<span class="narration-cam">ค่อยๆ ถ่ายไปยังบริเวณที่พบปัญหา</span></div>
+          <p class="sales-resolution-text">ปัญหาที่พบนะครับ ได้แก่ ${iss.issue} ครับ</p>
+        </section>
         <section class="sales-resolution-block">
-          <div class="sales-resolution-label">วิธีการแก้ไข</div>
+          <div class="sales-resolution-label"><span class="narration-num">3</span>วิธีการแก้ไข<span class="narration-cam">ถ่ายบริเวณที่พบปัญหา</span></div>
           <p class="sales-resolution-text">${iss.solution}</p>
         </section>
         <section class="sales-resolution-block impact">
-          <div class="sales-resolution-label">ผลกระทบหากไม่แก้ไข</div>
+          <div class="sales-resolution-label"><span class="narration-num">4</span>ผลกระทบหากไม่แก้ไข<span class="narration-cam">ถ่ายบริเวณที่พบปัญหา</span></div>
           <p class="sales-resolution-text">${iss.fix}</p>
         </section>
       </div>
