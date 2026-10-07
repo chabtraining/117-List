@@ -1057,6 +1057,18 @@
     background: #F7F7F5;
   }
   .quick-sales-detail-panel { padding: 18px !important; }
+  .narration-section-body { padding: 16px 18px 4px; }
+  .narration-issue-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    color: var(--accent-red-dark);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.4;
+  }
+  .narration-section-body .sales-resolution-grid { margin-bottom: 16px; }
   .sales-content-heading {
     margin-bottom: 8px;
     color: var(--accent-red-dark);
@@ -2059,25 +2071,6 @@ function renderIssueDetail(t, iss, idx) {
     return `
       <div class="sales-content-heading">ประเด็นคุยกับลูกค้า</div>
       ${renderTalkingPoints(iss)}
-      <div class="sales-content-heading">บทสนทนามาตรฐาน</div>
-      <div class="sales-resolution-grid">
-        <section class="sales-resolution-block narration">
-          <div class="sales-resolution-label"><span class="narration-num">1</span>แนะนำตัว<span class="narration-cam">ถ่ายทะเบียนรถ</span></div>
-          <p class="sales-resolution-text">สวัสดีครับ ผมช่างจาก HINO ชัยรัชการ ได้ตรวจเช็กรถ หมายเลขทะเบียน <span class="script-blank">______</span> ครับ โดยเช็ก 117 รายการ</p>
-        </section>
-        <section class="sales-resolution-block narration">
-          <div class="sales-resolution-label"><span class="narration-num">2</span>ปัญหาที่พบ<span class="narration-cam">ค่อยๆ ถ่ายไปยังบริเวณที่พบปัญหา</span></div>
-          <p class="sales-resolution-text">ปัญหาที่พบนะครับ ได้แก่ ${iss.issue} ครับ</p>
-        </section>
-        <section class="sales-resolution-block">
-          <div class="sales-resolution-label"><span class="narration-num">3</span>วิธีการแก้ไข<span class="narration-cam">ถ่ายบริเวณที่พบปัญหา</span></div>
-          <p class="sales-resolution-text">${iss.solution}</p>
-        </section>
-        <section class="sales-resolution-block impact">
-          <div class="sales-resolution-label"><span class="narration-num">4</span>ผลกระทบหากไม่แก้ไข<span class="narration-cam">ถ่ายบริเวณที่พบปัญหา</span></div>
-          <p class="sales-resolution-text">${iss.fix}</p>
-        </section>
-      </div>
       ${renderDialogueScript(iss.script)}
     `;
   }
@@ -2118,6 +2111,47 @@ function renderIssueRows(t) {
       </div>
     </div>
   `).join('');
+}
+
+// The company's four narration steps. They now lead the topic page as their own section.
+function renderNarrationGrid(iss) {
+  return `
+    <div class="sales-resolution-grid">
+      <section class="sales-resolution-block narration">
+        <div class="sales-resolution-label"><span class="narration-num">1</span>แนะนำตัว<span class="narration-cam">ถ่ายทะเบียนรถ</span></div>
+        <p class="sales-resolution-text">สวัสดีครับ ผมช่างจาก HINO ชัยรัชการ ได้ตรวจเช็กรถ หมายเลขทะเบียน <span class="script-blank">______</span> ครับ โดยเช็ก 117 รายการ</p>
+      </section>
+      <section class="sales-resolution-block narration">
+        <div class="sales-resolution-label"><span class="narration-num">2</span>ปัญหาที่พบ<span class="narration-cam">ค่อยๆ ถ่ายไปยังบริเวณที่พบปัญหา</span></div>
+        <p class="sales-resolution-text">ปัญหาที่พบนะครับ ได้แก่ ${iss.issue} ครับ</p>
+      </section>
+      <section class="sales-resolution-block">
+        <div class="sales-resolution-label"><span class="narration-num">3</span>วิธีการแก้ไข<span class="narration-cam">ถ่ายบริเวณที่พบปัญหา</span></div>
+        <p class="sales-resolution-text">${iss.solution}</p>
+      </section>
+      <section class="sales-resolution-block impact">
+        <div class="sales-resolution-label"><span class="narration-num">4</span>ผลกระทบหากไม่แก้ไข<span class="narration-cam">ถ่ายบริเวณที่พบปัญหา</span></div>
+        <p class="sales-resolution-text">${iss.fix}</p>
+      </section>
+    </div>
+  `;
+}
+
+function renderNarrationSection(t) {
+  const list = Array.isArray(t.issuesList) ? t.issuesList : [];
+  if (!list.length) return '';
+  const many = list.length > 1;
+  return `
+    <div class="info-box detail-section-box" style="margin-bottom:12px;padding:0;overflow:hidden;border-radius:14px">
+      <div class="info-box-label detail-section-label">บทสนทนามาตรฐาน</div>
+      <div class="narration-section-body">
+        ${list.map((iss, i) => `
+          ${many ? `<div class="narration-issue-head"><span class="sales-issue-number">${i+1}</span>${iss.issue}</div>` : ''}
+          ${renderNarrationGrid(iss)}
+        `).join('')}
+      </div>
+    </div>
+  `;
 }
 
 function renderIssuesSection(t) {
@@ -2170,7 +2204,7 @@ function showDetail(id) {
   // SA-facing advice leads the page, the technician points sit right under it, then the video.
   // SA-only topics (text from the master Excel) have no technician footage yet.
   const hasTechPoints = [t.quickObservations, t.observationPoints].some(a => Array.isArray(a) && a.length > 0);
-  const detailSections = `${renderIssuesSection(t)}${hasTechPoints ? renderInspectionSection(t) : renderPendingTechNote()}${t.saOnly ? '' : videoSection}`;
+  const detailSections = `${renderNarrationSection(t)}${renderIssuesSection(t)}${hasTechPoints ? renderInspectionSection(t) : renderPendingTechNote()}${t.saOnly ? '' : videoSection}`;
 
   document.getElementById('detail-content').innerHTML = `
     <div class="detail-hero">
