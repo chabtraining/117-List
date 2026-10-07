@@ -42,7 +42,8 @@ window.trainingData = {
   34: 'https://www.canva.com/design/DAHXGc6g58M/3N9KUB45PFXyZpFZ_Lgc1w/watch?utm_content=DAHXGc6g58M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3053d8b202',  // ระบบโซล่า
   56: 'https://www.canva.com/design/DAHXSfxR5W8/52WhwTAruowYiZ0kJt1RlA/watch?utm_content=DAHXSfxR5W8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc6ad2c42a9',  // ใบยางปัดน้ำฝน
   59: 'https://www.canva.com/design/DAHXSvq0hFk/0QxBJMmmbsS5Z-AzlDc4Sw/watch?utm_content=DAHXSvq0hFk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7dd74f46c8',  // ตรวจเช็กการรั่วซึมของกระจกบังลมหน้า
-  27: 'https://www.canva.com/design/DAHXSufCgZs/xz0O8aWZsXR22VXQeq21eg/watch?utm_content=DAHXSufCgZs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1bcd367d03'  // ตรวจเช็กสภาพอินเตอร์คูลเลอร์ และท่อยาง
+  27: 'https://www.canva.com/design/DAHXSufCgZs/xz0O8aWZsXR22VXQeq21eg/watch?utm_content=DAHXSufCgZs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1bcd367d03',  // ตรวจเช็กสภาพอินเตอร์คูลเลอร์ และท่อยาง
+  38: 'https://www.canva.com/design/DAHXShbjgYo/MIF_97YP663iWHBp1dpw3Q/watch?utm_content=DAHXShbjgYo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h34d9ef1bc6'  // ระดับน้ำมันเบรก (ต่ำ-สูง)
 },
   topicMedia: {
   1: {
@@ -2875,24 +2876,33 @@ window.trainingData = {
     ]
   },
   {
-    id: 38, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ระดับน้ำมันเบรก (ต่ำ-สูง)", severity: "critical",
+    id: 38, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ระดับน้ำมันเบรก (ต่ำ-สูง)", severity: "critical",
     category: "ระบบเบรคและระบบคลัทช์",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจระดับน้ำมันเบรก",
-        text: "ดูระดับน้ำมันในกระปุกต้องอยู่ระหว่างขีด MIN–MAX ถ้าต่ำกว่า MIN ต้องหาสาเหตุว่ามาจากผ้าเบรกสึกหรือมีจุดรั่ว ถ้าสูงเกิน MAX ให้ดูดออกให้อยู่ในระดับ"
+        text: "ดูระดับน้ำมันในกระปุกต้องอยู่ระหว่างขีด MIN–MAX ถ้าต่ำกว่า MIN ต้องหาสาเหตุว่ามาจากผ้าเบรกสึกหรือมีจุดรั่ว ถ้าสูงเกิน MAX ให้ดูดออกให้อยู่ในระดับ",
+        images: [
+          { src: "topic38-level.jpg", caption: "เปิดฝากระปุกดูระดับน้ำมันเบรก ต้องอยู่ระหว่างขีด MIN–MAX" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
         title: "ตรวจสภาพน้ำมันเบรก",
-        text: "ดูสีน้ำมันเบรก ถ้าดำขุ่นหรือมีตะกอน แสดงว่าเสื่อมสภาพและมีความชื้นสะสม ควรเปลี่ยนถ่ายตามระยะที่คู่มือกำหนด"
+        text: "ดูสีน้ำมันเบรก ถ้าดำขุ่นหรือมีตะกอน แสดงว่าเสื่อมสภาพและมีความชื้นสะสม ควรเปลี่ยนถ่ายตามระยะที่คู่มือกำหนด",
+        images: [
+          { src: "topic38-fluid-colour.jpg", caption: "ดูสีน้ำมันเบรก ถ้าดำขุ่นหรือมีตะกอนแสดงว่าเสื่อมสภาพ" }
+        ]
       },
       {
         label: "จุดตรวจที่ 3",
         title: "ตรวจฝาปิดและรอยรั่วรอบกระปุก",
-        text: "ตรวจฝาปิดและซีลฝากระปุก กระปุกต้องไม่ร้าว และไม่มีคราบน้ำมันที่แม่ปั๊มเบรกหรือท่อทางเบรก ตามเกณฑ์ที่ระบบห้ามล้อต้องไม่ชำรุด"
+        text: "ตรวจฝาปิดและซีลฝากระปุก กระปุกต้องไม่ร้าว และไม่มีคราบน้ำมันที่แม่ปั๊มเบรกหรือท่อทางเบรก ตามเกณฑ์ที่ระบบห้ามล้อต้องไม่ชำรุด",
+        images: [
+          { src: "topic38-cap.jpg", caption: "ตรวจฝาปิดกระปุกและคราบน้ำมันรอบกระปุกกับท่อทางเบรก" }
+        ]
       }
     ],
     issuesList: [
