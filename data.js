@@ -40,7 +40,8 @@ window.trainingData = {
   45: 'https://www.canva.com/design/DAHV0XzRKaI/XKbnbOAeOtSO2vu2h3D2AQ/watch?utm_content=DAHV0XzRKaI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf25dfe002a',  // ระดับน้ำมันพาวเวอร์พวงมาลัย
   117: 'https://www.canva.com/design/DAHV0TDA0HI/ZIg8PJTA2Dl4NsrwXpkMog/watch?utm_content=DAHV0TDA0HI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8c854374a0',  // ตรวจรอยรั่วปั๊มพวงมาลัย
   34: 'https://www.canva.com/design/DAHXGc6g58M/3N9KUB45PFXyZpFZ_Lgc1w/watch?utm_content=DAHXGc6g58M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3053d8b202',  // ระบบโซล่า
-  56: 'https://www.canva.com/design/DAHXSfxR5W8/52WhwTAruowYiZ0kJt1RlA/watch?utm_content=DAHXSfxR5W8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc6ad2c42a9'  // ใบยางปัดน้ำฝน
+  56: 'https://www.canva.com/design/DAHXSfxR5W8/52WhwTAruowYiZ0kJt1RlA/watch?utm_content=DAHXSfxR5W8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc6ad2c42a9',  // ใบยางปัดน้ำฝน
+  59: 'https://www.canva.com/design/DAHXSvq0hFk/0QxBJMmmbsS5Z-AzlDc4Sw/watch?utm_content=DAHXSvq0hFk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7dd74f46c8'  // ตรวจเช็กการรั่วซึมของกระจกบังลมหน้า
 },
   topicMedia: {
   1: {
@@ -4147,14 +4148,18 @@ window.trainingData = {
     ]
   },
   {
-    id: 59, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กการรั่วซึมของกระจกบังลมหน้า", severity: "high",
+    id: 59, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กการรั่วซึมของกระจกบังลมหน้า", severity: "high",
     category: "ระบบหัวเก๋งและ BODY PART",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจยางขอบกระจกและซิลิโคน",
-        text: "ดูยางขอบกระจกบังลมหน้าไม่แข็ง ไม่แตก ไม่หลุดร่อน และซิลิโคนรอบกระจก (ถ้ามี) ไม่ลอก"
+        text: "ดูยางขอบกระจกบังลมหน้าไม่แข็ง ไม่แตก ไม่หลุดร่อน และซิลิโคนรอบกระจก (ถ้ามี) ไม่ลอก",
+        images: [
+          { src: "topic59-seal-1.jpg", caption: "ไล่ดูยางขอบกระจกด้านบน ต้องไม่แข็ง ไม่แตก ไม่หลุดร่อน" },
+          { src: "topic59-seal-2.jpg", caption: "ตรวจแนวยางขอบกระจกตลอดแนว" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
@@ -4164,7 +4169,10 @@ window.trainingData = {
       {
         label: "จุดตรวจที่ 3",
         title: "ตรวจรอยร้าวบนกระจก",
-        text: "ดูรอยร้าวหรือรอยกะเทาะจากหินบนกระจกบังลมหน้า โดยเฉพาะในระยะมองของคนขับ เกณฑ์กรมการขนส่งทางบก: กระจกกันลมหน้าต้องเป็นกระจกนิรภัยหลายชั้น ไม่ชำรุดแตกร้าวจนมีผลต่อทัศนวิสัย และหากติดฟิล์ม แสงต้องผ่านได้ไม่น้อยกว่า 70%"
+        text: "ดูรอยร้าวหรือรอยกะเทาะจากหินบนกระจกบังลมหน้า โดยเฉพาะในระยะมองของคนขับ เกณฑ์กรมการขนส่งทางบก: กระจกกันลมหน้าต้องเป็นกระจกนิรภัยหลายชั้น ไม่ชำรุดแตกร้าวจนมีผลต่อทัศนวิสัย และหากติดฟิล์ม แสงต้องผ่านได้ไม่น้อยกว่า 70%",
+        images: [
+          { src: "topic59-glass.jpg", caption: "ดูผิวกระจกบังลมหน้าหารอยร้าวหรือรอยกะเทาะ" }
+        ]
       }
     ],
     issuesList: [
