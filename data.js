@@ -51,7 +51,8 @@ window.trainingData = {
   115: 'https://www.canva.com/design/DAHXS1WW-kQ/fiC0l1c9V0nFLH70RGHFDQ/watch?utm_content=DAHXS1WW-kQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h220cb1f683',
   61: 'https://www.canva.com/design/DAHXUAXjec4/-sTCsbhgCu5omEP4Ud5hAQ/watch?utm_content=DAHXUAXjec4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hda975b9899',  // กระจกมองข้าง
   66: 'https://www.canva.com/design/DAHXUE4wr0k/0xQufi40G5umuza34yrOCA/watch?utm_content=DAHXUE4wr0k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf651cd7bb7',  // ลูกยางกันกระแทกแหนบ
-  67: 'https://www.canva.com/design/DAHXUPTrTTw/oN3Sc9EcQERdWSVvaPsLGQ/watch?utm_content=DAHXUPTrTTw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6eb44067e0'  // น็อตล้อ
+  67: 'https://www.canva.com/design/DAHXUPTrTTw/oN3Sc9EcQERdWSVvaPsLGQ/watch?utm_content=DAHXUPTrTTw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6eb44067e0',  // น็อตล้อ
+  103: 'https://www.canva.com/design/DAHXUQCmsSg/pO36s_Er4WGPRMwhY8HAlw/watch?utm_content=DAHXUQCmsSg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf6985f3fef'  // จานลาก
 },
   topicMedia: {
   1: {
@@ -6697,7 +6698,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 103, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กสภาพของจานลาก", severity: "critical",
+    id: 103, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กสภาพของจานลาก", severity: "critical",
     category: "จานลากหางพ่วง",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
@@ -6709,12 +6710,18 @@ window.trainingData = {
       {
         label: "จุดตรวจที่ 2",
         title: "ตรวจจารบีหน้าจานลาก",
-        text: "ดูจารบีบนหน้าจานลากต้องมีทั่วหน้าจาน ไม่แห้ง ไม่เป็นก้อนแข็ง และไม่ปนทรายหรือฝุ่นหนา"
+        text: "ดูจารบีบนหน้าจานลากต้องมีทั่วหน้าจาน ไม่แห้ง ไม่เป็นก้อนแข็ง และไม่ปนทรายหรือฝุ่นหนา",
+        images: [
+          { src: "topic103-plate-grease.jpg", caption: "จารบีที่หน้าจานลาก" }
+        ]
       },
       {
         label: "จุดตรวจที่ 3",
         title: "ตรวจแกนและบู๊ชการเอียงตัวของจานลาก",
-        text: "ตรวจแกนและบู๊ชที่ให้จานลากเอียงตัว ต้องไม่หลวมคลอนเกินกำหนด และไม่มีเสียงกระแทกขณะออกตัวหรือเบรก"
+        text: "ตรวจแกนและบู๊ชที่ให้จานลากเอียงตัว ต้องไม่หลวมคลอนเกินกำหนด และไม่มีเสียงกระแทกขณะออกตัวหรือเบรก",
+        images: [
+          { src: "topic103-bracket.jpg", caption: "ขายึดใต้จานลาก" }
+        ]
       }
     ],
     issuesList: [
