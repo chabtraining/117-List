@@ -1411,7 +1411,7 @@
 
   <script src="data.js?v=20261007-23"></script>
   <script src="dialogue.js?v=20260918-2"></script>
-  <script src="topic-pdf.js?v=20261006-1" defer></script>
+  <script src="topic-pdf.js?v=20261007-1" defer></script>
 <script>
 // ข้อมูลหลักอยู่ใน data.js เพื่อให้เพิ่มหัวข้อจำนวนมากได้ง่ายขึ้น
 const trainingData = window.trainingData || {};
@@ -2059,6 +2059,7 @@ function renderIssueDetail(t, iss, idx) {
     return `
       <div class="sales-content-heading">ประเด็นคุยกับลูกค้า</div>
       ${renderTalkingPoints(iss)}
+      <div class="sales-content-heading">บทสนทนามาตรฐาน</div>
       <div class="sales-resolution-grid">
         <section class="sales-resolution-block narration">
           <div class="sales-resolution-label"><span class="narration-num">1</span>แนะนำตัว<span class="narration-cam">ถ่ายทะเบียนรถ</span></div>

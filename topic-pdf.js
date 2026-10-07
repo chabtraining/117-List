@@ -97,6 +97,7 @@
       return '<div class="pdf-item pdf-avoid">' +
         '<div class="pdf-item-head"><span class="pdf-num">' + (i + 1) + '</span><span>' + iss.issue + '</span></div>' +
         '<div class="pdf-body">' + pts +
+          '<div class="pdf-label">บทสนทนามาตรฐาน</div>' +
           '<div class="pdf-grid">' +
             '<div class="pdf-box"><div class="pdf-label">1. แนะนำตัว (ถ่ายทะเบียนรถ)</div>' +
               '<p>สวัสดีครับ ผมช่างจาก HINO ชัยรัชการ ได้ตรวจเช็กรถ หมายเลขทะเบียน ________ ครับ โดยเช็ก 117 รายการ</p></div>' +
