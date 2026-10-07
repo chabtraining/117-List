@@ -1060,6 +1060,11 @@
   .narration-sub { margin-top: 16px; padding-top: 14px; border-top: 1px dashed #D9D9D4; }
   .narration-sub:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
   .narration-sub .sales-resolution-grid { margin-bottom: 0; }
+  .narration-toggle { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; border: 1px solid #E5E5E0; border-radius: 8px; background: #FAFAF8; color: var(--accent-red-dark); font-size: 13px; font-weight: 800; cursor: pointer; list-style: none; }
+  .narration-toggle::-webkit-details-marker { display: none; }
+  .narration-chevron { color: var(--accent-red); font-size: 18px; font-weight: 700; transition: transform 0.2s ease; }
+  .narration-sub[open] .narration-chevron { transform: rotate(90deg); }
+  .narration-sub[open] > .narration-toggle { margin-bottom: 10px; }
   .sales-content-heading {
     margin-bottom: 8px;
     color: var(--accent-red-dark);
@@ -1547,11 +1552,11 @@ function renderStepMedia(t, stepIndex) {
 }
 
 // The company's four narration steps for one finding, shown under the matching point's photos.
-function renderNarrationGrid(iss) {
+function renderNarrationGrid(iss, plain) {
   if (!iss) return '';
   return `
-    <div class="narration-sub">
-      <div class="sales-content-heading">บทสนทนามาตรฐาน</div>
+    <${plain ? 'div' : 'details'} class="narration-sub">
+      ${plain ? '<div class="sales-content-heading">บทสนทนามาตรฐาน</div>' : '<summary class="narration-toggle"><span>บทสนทนามาตรฐาน</span><span class="narration-chevron" aria-hidden="true">›</span></summary>'}
       <div class="sales-resolution-grid">
         <section class="sales-resolution-block narration">
           <div class="sales-resolution-label"><span class="narration-num">1</span>แนะนำตัว<span class="narration-cam">ถ่ายทะเบียนรถ</span></div>
@@ -1570,7 +1575,7 @@ function renderNarrationGrid(iss) {
           <p class="sales-resolution-text">${iss.fix}</p>
         </section>
       </div>
-    </div>
+    </${plain ? 'div' : 'details'}>
   `;
 }
 
@@ -1584,7 +1589,7 @@ function renderExtraNarration(t, pointCount) {
         <h3 class="observation-title">${iss.issue}</h3>
         <span class="observation-chevron" aria-hidden="true">›</span>
       </summary>
-      <div class="observation-body">${renderNarrationGrid(iss)}</div>
+      <div class="observation-body">${renderNarrationGrid(iss, true)}</div>
     </details>
   `).join('');
 }
