@@ -47,7 +47,8 @@ window.trainingData = {
   44: 'https://www.canva.com/design/DAHXSvrK16U/wap9p-p-sr-g-Q7r0cEZ3w/watch?utm_content=DAHXSvrK16U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb1856306e3',  // ตรวจเช็คน้ำในระบบหม้อลมเบรก
   52: 'https://www.canva.com/design/DAHXSiFNN-Q/VaZVB5LunZ4_X_mRKBZ5NQ/watch?utm_content=DAHXSiFNN-Q&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4229d4dc72',  // ยางรองหัวเก๋ง
   53: 'https://www.canva.com/design/DAHXS1WW-kQ/fiC0l1c9V0nFLH70RGHFDQ/watch?utm_content=DAHXS1WW-kQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h220cb1f683',  // ชุดกลไกล็อคหัวเก๋ง
-  60: 'https://www.canva.com/design/DAHXSyAJQms/syE-n4FluixEpvYINFKEWA/watch?utm_content=DAHXSyAJQms&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h511d4176b3'  // กระจกมองข้าง
+  60: 'https://www.canva.com/design/DAHXSyAJQms/syE-n4FluixEpvYINFKEWA/watch?utm_content=DAHXSyAJQms&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h511d4176b3',
+  61: 'https://www.canva.com/design/DAHXUAXjec4/-sTCsbhgCu5omEP4Ud5hAQ/watch?utm_content=DAHXUAXjec4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hda975b9899'  // กระจกมองข้าง
 },
   topicMedia: {
   1: {
