@@ -39,7 +39,8 @@ window.trainingData = {
   23: 'https://www.canva.com/design/DAHV0ATGO-Q/UOHZn976E4fgXHEe40_4Xw/watch?utm_content=DAHV0ATGO-Q&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc805e77966',  // เช็กน้ำยาฟรีปั้มและใบพัดระบายความร้อน
   45: 'https://www.canva.com/design/DAHV0XzRKaI/XKbnbOAeOtSO2vu2h3D2AQ/watch?utm_content=DAHV0XzRKaI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf25dfe002a',  // ระดับน้ำมันพาวเวอร์พวงมาลัย
   117: 'https://www.canva.com/design/DAHV0TDA0HI/ZIg8PJTA2Dl4NsrwXpkMog/watch?utm_content=DAHV0TDA0HI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8c854374a0',  // ตรวจรอยรั่วปั๊มพวงมาลัย
-  34: 'https://www.canva.com/design/DAHXGc6g58M/3N9KUB45PFXyZpFZ_Lgc1w/watch?utm_content=DAHXGc6g58M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3053d8b202'  // ระบบโซล่า
+  34: 'https://www.canva.com/design/DAHXGc6g58M/3N9KUB45PFXyZpFZ_Lgc1w/watch?utm_content=DAHXGc6g58M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3053d8b202',  // ระบบโซล่า
+  56: 'https://www.canva.com/design/DAHXSfxR5W8/52WhwTAruowYiZ0kJt1RlA/watch?utm_content=DAHXSfxR5W8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc6ad2c42a9'  // ใบยางปัดน้ำฝน
 },
   topicMedia: {
   1: {
@@ -3957,14 +3958,18 @@ window.trainingData = {
     ]
   },
   {
-    id: 56, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ใบยางปัดน้ำฝน", severity: "medium",
+    id: 56, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ใบยางปัดน้ำฝน", severity: "medium",
     category: "ระบบหัวเก๋งและ BODY PART",
     sources: ["DLT", "FMCSA", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจสภาพใบยางปัดน้ำฝน",
-        text: "ดูใบยางปัดน้ำฝนไม่แข็ง ไม่แตก ไม่ขาด และขอบยางยังคม เกณฑ์กรมการขนส่งทางบก: ต้องมีใบปัดน้ำฝนที่ปัดได้เนื้อที่กว้างพอให้ผู้ขับมองเห็นการจราจรด้านหน้าชัดเจน และอยู่ในสภาพไม่ชำรุด"
+        text: "ดูใบยางปัดน้ำฝนไม่แข็ง ไม่แตก ไม่ขาด และขอบยางยังคม เกณฑ์กรมการขนส่งทางบก: ต้องมีใบปัดน้ำฝนที่ปัดได้เนื้อที่กว้างพอให้ผู้ขับมองเห็นการจราจรด้านหน้าชัดเจน และอยู่ในสภาพไม่ชำรุด",
+        images: [
+          { src: "topic56-blade-edge.jpg", caption: "ดูขอบใบยางว่าคม ไม่แข็ง ไม่แตก ไม่ขาด" },
+          { src: "topic56-blade-lift.jpg", caption: "ยกก้านปัดขึ้นดูใบยางและจุดยึดกับก้าน" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
