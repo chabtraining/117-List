@@ -45,7 +45,8 @@ window.trainingData = {
   27: 'https://www.canva.com/design/DAHXSufCgZs/xz0O8aWZsXR22VXQeq21eg/watch?utm_content=DAHXSufCgZs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1bcd367d03',  // ตรวจเช็กสภาพอินเตอร์คูลเลอร์ และท่อยาง
   38: 'https://www.canva.com/design/DAHXShbjgYo/MIF_97YP663iWHBp1dpw3Q/watch?utm_content=DAHXShbjgYo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h34d9ef1bc6',  // ระดับน้ำมันเบรก (ต่ำ-สูง)
   44: 'https://www.canva.com/design/DAHXSvrK16U/wap9p-p-sr-g-Q7r0cEZ3w/watch?utm_content=DAHXSvrK16U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb1856306e3',  // ตรวจเช็คน้ำในระบบหม้อลมเบรก
-  52: 'https://www.canva.com/design/DAHXSiFNN-Q/VaZVB5LunZ4_X_mRKBZ5NQ/watch?utm_content=DAHXSiFNN-Q&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4229d4dc72'  // ยางรองหัวเก๋ง
+  52: 'https://www.canva.com/design/DAHXSiFNN-Q/VaZVB5LunZ4_X_mRKBZ5NQ/watch?utm_content=DAHXSiFNN-Q&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4229d4dc72',  // ยางรองหัวเก๋ง
+  53: 'https://www.canva.com/design/DAHXS1WW-kQ/fiC0l1c9V0nFLH70RGHFDQ/watch?utm_content=DAHXS1WW-kQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h220cb1f683'  // ชุดกลไกล็อคหัวเก๋ง
 },
   topicMedia: {
   1: {
@@ -3808,19 +3809,25 @@ window.trainingData = {
     ]
   },
   {
-    id: 53, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ชุดกลไกล็อคหัวเก๋ง", severity: "medium",
+    id: 53, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ชุดกลไกล็อคหัวเก๋ง", severity: "medium",
     category: "ระบบหัวเก๋งและ BODY PART",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจการล็อกของกลไกหัวเก๋ง",
-        text: "ยกหัวเก๋งขึ้นแล้ววางลง ตัวล็อกต้องล็อกเข้าสนิททั้ง 2 ข้าง และคันโยกกลับตำแหน่งล็อก เกณฑ์กรมการขนส่งทางบก: หัวเก๋งแบบยกกระดกได้ ต้องตรวจโดยยกขึ้น–ลง และกลไกการล็อกและปลดล็อกต้องมีสภาพดี มั่นคงแข็งแรง"
+        text: "ยกหัวเก๋งขึ้นแล้ววางลง ตัวล็อกต้องล็อกเข้าสนิททั้ง 2 ข้าง และคันโยกกลับตำแหน่งล็อก เกณฑ์กรมการขนส่งทางบก: หัวเก๋งแบบยกกระดกได้ ต้องตรวจโดยยกขึ้น–ลง และกลไกการล็อกและปลดล็อกต้องมีสภาพดี มั่นคงแข็งแรง",
+        images: [
+          { src: "topic53-latch.jpg", caption: "ชุดกลไกล็อคหัวเก๋ง ตรวจว่าล็อกเข้าสนิทและคันโยกอยู่ตำแหน่งล็อก" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
         title: "ตรวจความสึกหรอและจารบี",
-        text: "ดูกลไกล็อก สลัก และสปริงไม่สึกหลวม มีจารบีหล่อลื่นเพียงพอ และคันปลดล็อกทำงานลื่น"
+        text: "ดูกลไกล็อก สลัก และสปริงไม่สึกหลวม มีจารบีหล่อลื่นเพียงพอ และคันปลดล็อกทำงานลื่น",
+        images: [
+          { src: "topic53-hook-spring.jpg", caption: "ดูตะขอล็อก สลัก และสปริง ว่าสึกหลวมหรือขาดจารบีหรือไม่" }
+        ]
       },
       {
         label: "จุดตรวจที่ 3",
