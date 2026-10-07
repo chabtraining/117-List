@@ -1,6 +1,6 @@
 // Offline support: always try the network first so updates show immediately,
 // and fall back to the last cached copy when the workshop has no signal.
-const CACHE = 'charb-training-v1';
+const CACHE = 'charb-training-v2';
 const CORE = ['./', 'index.html', 'print.html', 'video-player.css', 'chairatchakarn-group-logo.png'];
 
 self.addEventListener('install', event => {
@@ -18,8 +18,13 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const req = event.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) return;
+  // The page and its scripts must never come from the browser's own HTTP cache,
+  // or an edit can stay invisible for up to ten minutes after it is published.
+  const url = new URL(req.url);
+  const fresh = req.mode === 'navigate' || /\.(html|js)$/.test(url.pathname);
+  const hit = fresh ? fetch(new Request(req.url, { cache: 'reload', credentials: 'same-origin' })) : fetch(req);
   event.respondWith(
-    fetch(req)
+    hit
       .then(res => {
         if (res.ok) {
           const copy = res.clone();
