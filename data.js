@@ -3295,7 +3295,7 @@ window.trainingData = {
         title: "ตรวจตัวระบายลม",
         text: "ดูตัวระบายลมที่ก้นหม้อลมแต่ละลูก ถ้าก้านดึงชำรุดหรือหัก ให้เปลี่ยน",
         images: [
-          { src: "topic44-drain-valve.jpg", caption: "ตัวระบายลมที่ก้นหม้อลม" }
+          { src: "topic44-drain-valve.jpg", caption: "ตัวระบายลมที่หม้อลมหัก" }
         ]
       },
       {
