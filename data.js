@@ -49,7 +49,8 @@ window.trainingData = {
   53: 'https://www.canva.com/design/DAHXS1WW-kQ/fiC0l1c9V0nFLH70RGHFDQ/watch?utm_content=DAHXS1WW-kQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h220cb1f683',  // ชุดกลไกล็อคหัวเก๋ง
   60: 'https://www.canva.com/design/DAHXSyAJQms/syE-n4FluixEpvYINFKEWA/watch?utm_content=DAHXSyAJQms&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h511d4176b3',
   115: 'https://www.canva.com/design/DAHXS1WW-kQ/fiC0l1c9V0nFLH70RGHFDQ/watch?utm_content=DAHXS1WW-kQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h220cb1f683',
-  61: 'https://www.canva.com/design/DAHXUAXjec4/-sTCsbhgCu5omEP4Ud5hAQ/watch?utm_content=DAHXUAXjec4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hda975b9899'  // กระจกมองข้าง
+  61: 'https://www.canva.com/design/DAHXUAXjec4/-sTCsbhgCu5omEP4Ud5hAQ/watch?utm_content=DAHXUAXjec4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hda975b9899',  // กระจกมองข้าง
+  66: 'https://www.canva.com/design/DAHXUE4wr0k/0xQufi40G5umuza34yrOCA/watch?utm_content=DAHXUE4wr0k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf651cd7bb7'  // ลูกยางกันกระแทกแหนบ
 },
   topicMedia: {
   1: {
@@ -4608,14 +4609,18 @@ window.trainingData = {
     ]
   },
   {
-    id: 66, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจสอบลูกยางกันกระแทกแหนบ", severity: "critical",
+    id: 66, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจสอบลูกยางกันกระแทกแหนบ", severity: "critical",
     category: "ระบบรองรับน้ำหนัก",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจสภาพลูกยางกันกระแทกแหนบ",
-        text: "ดูลูกยางกันกระแทกแหนบทุกตัว ต้องไม่แตก ไม่ฉีก ไม่หาย และยึดแน่น ตามเกณฑ์ที่สปริงและเครื่องผ่อนคลายความสั่นสะเทือนต้องมีสภาพเหมาะสม ไม่หักไม่แตกร้าว"
+        text: "ดูลูกยางกันกระแทกแหนบทุกตัว ต้องไม่แตก ไม่ฉีก ไม่หาย และยึดแน่น ตามเกณฑ์ที่สปริงและเครื่องผ่อนคลายความสั่นสะเทือนต้องมีสภาพเหมาะสม ไม่หักไม่แตกร้าว",
+        images: [
+          { src: "topic66-bumpstop.jpg", caption: "ตำแหน่งลูกยางกันกระแทกแหนบ" },
+          { src: "topic66-bumpstop-crack.jpg", caption: "ลูกยางกันกระแทกแหนบแตก" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
