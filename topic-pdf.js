@@ -66,7 +66,7 @@
     };
     return '<div class="pdf-script">' +
       '<div class="pdf-label" style="margin-top:0">บทสนทนามาตรฐาน' +
-        (d.urgency ? ' · ' + Dialogue.URGENCY[d.urgency].label : '') + '</div>' +
+        '</div>' +
       '<div class="pdf-script-head sa">SA คุยกับลูกค้า (ใช้คลิปของช่าง)</div>' +
       d.main.map(function(t) { return line('SA', t); }).join('') +
       (d.replies.length

@@ -1419,7 +1419,7 @@
 
   <script src="data.js?v=20261007-24"></script>
   <script src="dialogue.js?v=20260918-2"></script>
-  <script src="topic-pdf.js?v=20261007-1" defer></script>
+  <script src="topic-pdf.js?v=20261007-2" defer></script>
 <script>
 // ข้อมูลหลักอยู่ใน data.js เพื่อให้เพิ่มหัวข้อจำนวนมากได้ง่ายขึ้น
 const trainingData = window.trainingData || {};
@@ -2073,10 +2073,9 @@ function renderDialogueScript(s) {
   const v = Dialogue.getVoice();
   const line = text =>
     `<div class="script-line"><span class="script-who">SA</span><p data-say="${escapeHtml(text)}">${Dialogue.toHtml(text, v)}</p></div>`;
-  const badge = u => `<span class="urgency ${u}">${Dialogue.URGENCY[u].label}</span>`;
   return `
     <details class="script-box">
-      <summary class="script-summary">บทสนทนามาตรฐาน${d.urgency ? badge(d.urgency) : ''}<span class="script-chevron" aria-hidden="true">›</span></summary>
+      <summary class="script-summary">บทสนทนามาตรฐาน<span class="script-chevron" aria-hidden="true">›</span></summary>
       <section class="script-step">
         <div class="script-step-head">
           <span class="script-step-no">1</span><span class="script-step-name">SA คุยกับลูกค้า (ใช้คลิปของช่าง)</span>
@@ -2096,7 +2095,6 @@ function renderDialogueScript(s) {
             ${line(r[1])}
           </details>`).join('')}
       </section>` : ''}
-      ${d.urgency ? `<div class="script-legend">ระดับความเร่งด่วน: ${badge('now')}${badge('soon')}${badge('later')}</div>` : ''}
     </details>
   `;
 }
