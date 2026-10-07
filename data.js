@@ -41,7 +41,8 @@ window.trainingData = {
   117: 'https://www.canva.com/design/DAHV0TDA0HI/ZIg8PJTA2Dl4NsrwXpkMog/watch?utm_content=DAHV0TDA0HI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8c854374a0',  // ตรวจรอยรั่วปั๊มพวงมาลัย
   34: 'https://www.canva.com/design/DAHXGc6g58M/3N9KUB45PFXyZpFZ_Lgc1w/watch?utm_content=DAHXGc6g58M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3053d8b202',  // ระบบโซล่า
   56: 'https://www.canva.com/design/DAHXSfxR5W8/52WhwTAruowYiZ0kJt1RlA/watch?utm_content=DAHXSfxR5W8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc6ad2c42a9',  // ใบยางปัดน้ำฝน
-  59: 'https://www.canva.com/design/DAHXSvq0hFk/0QxBJMmmbsS5Z-AzlDc4Sw/watch?utm_content=DAHXSvq0hFk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7dd74f46c8'  // ตรวจเช็กการรั่วซึมของกระจกบังลมหน้า
+  59: 'https://www.canva.com/design/DAHXSvq0hFk/0QxBJMmmbsS5Z-AzlDc4Sw/watch?utm_content=DAHXSvq0hFk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7dd74f46c8',  // ตรวจเช็กการรั่วซึมของกระจกบังลมหน้า
+  27: 'https://www.canva.com/design/DAHXSufCgZs/xz0O8aWZsXR22VXQeq21eg/watch?utm_content=DAHXSufCgZs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1bcd367d03'  // ตรวจเช็กสภาพอินเตอร์คูลเลอร์ และท่อยาง
 },
   topicMedia: {
   1: {
@@ -2109,24 +2110,33 @@ window.trainingData = {
     ]
   },
   {
-    id: 27, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กสภาพอินเตอร์คูลเลอร์ และท่อยาง", severity: "medium",
+    id: 27, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กสภาพอินเตอร์คูลเลอร์ และท่อยาง", severity: "medium",
     category: "ตรวจการรั่วซึมของเครื่องยนต์และระบบหล่อเย็น",
     sources: ["PETERBILT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจท่อยางอินเตอร์คูลเลอร์",
-        text: "ดูท่อยางไม่แตก ไม่บวม ไม่ฉีก และเข็มขัดรัดแน่นทุกจุด ลองบีบท่อดูรอยแตกลายงาด้านใน เพราะท่อรับแรงดันอากาศจากเทอร์โบตลอดเวลา<br><b>เกณฑ์อ้างอิง:</b> คู่มือบำรุงรักษารถบรรทุกของ Peterbilt กำหนดให้ขันแคลมป์อินเตอร์คูลเลอร์และท่อไอดีซ้ำตามรอบบำรุงรักษา (ตัวอย่างค่าแรงบิดในคู่มือนั้น แคลมป์ท่อไอดีอัดอากาศแบบ Flex Seal อยู่ที่ 11.3–14.2 นิวตันเมตร) <b>(ค่าตัวเลขนี้เป็นของยี่ห้ออื่น ใช้เป็นแนวทางเท่านั้น ค่าจริงให้ยึดตามคู่มือ HINO ของรุ่นที่ทำ)</b>"
+        text: "ดูท่อยางไม่แตก ไม่บวม ไม่ฉีก และเข็มขัดรัดแน่นทุกจุด ลองบีบท่อดูรอยแตกลายงาด้านใน เพราะท่อรับแรงดันอากาศจากเทอร์โบตลอดเวลา<br><b>เกณฑ์อ้างอิง:</b> คู่มือบำรุงรักษารถบรรทุกของ Peterbilt กำหนดให้ขันแคลมป์อินเตอร์คูลเลอร์และท่อไอดีซ้ำตามรอบบำรุงรักษา (ตัวอย่างค่าแรงบิดในคู่มือนั้น แคลมป์ท่อไอดีอัดอากาศแบบ Flex Seal อยู่ที่ 11.3–14.2 นิวตันเมตร) <b>(ค่าตัวเลขนี้เป็นของยี่ห้ออื่น ใช้เป็นแนวทางเท่านั้น ค่าจริงให้ยึดตามคู่มือ HINO ของรุ่นที่ทำ)</b>",
+        images: [
+          { src: "topic27-hose-clamp-1.jpg", caption: "ตรวจท่อยางและเข็มขัดรัดที่ข้อต่อ ต้องแน่น ไม่มีรอยแตกหรือบวม" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
         title: "ตรวจรอยรั่วที่ตัวอินเตอร์คูลเลอร์",
-        text: "ดูคราบน้ำมันตามรอยต่อและแผงอินเตอร์คูลเลอร์ ซึ่งมักเป็นจุดที่มีรอยรั่ว และตรวจแผงไม่แตกหรือบุบ"
+        text: "ดูคราบน้ำมันตามรอยต่อและแผงอินเตอร์คูลเลอร์ ซึ่งมักเป็นจุดที่มีรอยรั่ว และตรวจแผงไม่แตกหรือบุบ",
+        images: [
+          { src: "topic27-hose-clamp-2.jpg", caption: "ตรวจรอยต่อระหว่างท่อกับตัวอินเตอร์คูลเลอร์ หาคราบน้ำมันและรอยรั่ว" }
+        ]
       },
       {
         label: "จุดตรวจที่ 3",
         title: "ตรวจความสะอาดภายในและภายนอก",
-        text: "ดูคราบน้ำมันสะสมในท่อและแผงอินเตอร์คูลเลอร์ และฝุ่นอุดตันด้านหน้าแผง"
+        text: "ดูคราบน้ำมันสะสมในท่อและแผงอินเตอร์คูลเลอร์ และฝุ่นอุดตันด้านหน้าแผง",
+        images: [
+          { src: "topic27-core.jpg", caption: "ดูด้านหน้าแผงอินเตอร์คูลเลอร์ว่ามีฝุ่นหรือคราบน้ำมันอุดตันหรือไม่" }
+        ]
       }
     ],
     issuesList: [
