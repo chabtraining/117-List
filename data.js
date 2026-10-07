@@ -44,7 +44,8 @@ window.trainingData = {
   59: 'https://www.canva.com/design/DAHXSvq0hFk/0QxBJMmmbsS5Z-AzlDc4Sw/watch?utm_content=DAHXSvq0hFk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7dd74f46c8',  // ตรวจเช็กการรั่วซึมของกระจกบังลมหน้า
   27: 'https://www.canva.com/design/DAHXSufCgZs/xz0O8aWZsXR22VXQeq21eg/watch?utm_content=DAHXSufCgZs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1bcd367d03',  // ตรวจเช็กสภาพอินเตอร์คูลเลอร์ และท่อยาง
   38: 'https://www.canva.com/design/DAHXShbjgYo/MIF_97YP663iWHBp1dpw3Q/watch?utm_content=DAHXShbjgYo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h34d9ef1bc6',  // ระดับน้ำมันเบรก (ต่ำ-สูง)
-  44: 'https://www.canva.com/design/DAHXSvrK16U/wap9p-p-sr-g-Q7r0cEZ3w/watch?utm_content=DAHXSvrK16U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb1856306e3'  // ตรวจเช็คน้ำในระบบหม้อลมเบรก
+  44: 'https://www.canva.com/design/DAHXSvrK16U/wap9p-p-sr-g-Q7r0cEZ3w/watch?utm_content=DAHXSvrK16U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb1856306e3',  // ตรวจเช็คน้ำในระบบหม้อลมเบรก
+  52: 'https://www.canva.com/design/DAHXSiFNN-Q/VaZVB5LunZ4_X_mRKBZ5NQ/watch?utm_content=DAHXSiFNN-Q&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4229d4dc72'  // ยางรองหัวเก๋ง
 },
   topicMedia: {
   1: {
@@ -3752,19 +3753,25 @@ window.trainingData = {
     ]
   },
   {
-    id: 52, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ยางรองหัวเก๋ง", severity: "medium",
+    id: 52, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ยางรองหัวเก๋ง", severity: "medium",
     category: "ระบบหัวเก๋งและ BODY PART",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจสภาพยางรองหัวเก๋ง",
-        text: "ยกหรือส่องดูยางรองหัวเก๋งทุกจุด ต้องไม่แตก ไม่ฉีก ไม่ยุบ และไม่แยกจากเหล็กยึด ตามเกณฑ์กรมการขนส่งทางบกที่ห้องผู้ขับรถต้องมั่นคงแข็งแรง"
+        text: "ยกหรือส่องดูยางรองหัวเก๋งทุกจุด ต้องไม่แตก ไม่ฉีก ไม่ยุบ และไม่แยกจากเหล็กยึด ตามเกณฑ์กรมการขนส่งทางบกที่ห้องผู้ขับรถต้องมั่นคงแข็งแรง",
+        images: [
+          { src: "topic52-mount-rubber.jpg", caption: "ดูเนื้อยางรองหัวเก๋ง ต้องไม่แตก ไม่ฉีก ไม่ยุบ และไม่แยกจากเหล็กยึด" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
         title: "ตรวจน็อตยึดยางรอง",
-        text: "ตรวจน็อตยึดยางรองหัวเก๋งครบทุกตัวและแน่นตามค่ามาตรฐาน ไม่มีรอยสนิมไหลเป็นทางที่บอกว่าน็อตคลาย"
+        text: "ตรวจน็อตยึดยางรองหัวเก๋งครบทุกตัวและแน่นตามค่ามาตรฐาน ไม่มีรอยสนิมไหลเป็นทางที่บอกว่าน็อตคลาย",
+        images: [
+          { src: "topic52-mount-nut.jpg", caption: "ตรวจน็อตยึดยางรองว่าครบและแน่น ไม่มีสนิมไหลที่บอกว่าน็อตคลาย" }
+        ]
       }
     ],
     issuesList: [
