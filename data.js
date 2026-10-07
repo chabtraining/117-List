@@ -3287,7 +3287,7 @@ window.trainingData = {
         title: "ตรวจรอยรั่วที่หม้อลม",
         text: "ไล่ดูหม้อลมทีละลูก หารอยรั่วที่ข้อต่อ ถ้ามีรอยรั่วให้เสนอเปลี่ยน",
         images: [
-          { src: "topic44-leak-check.jpg", caption: "ตรวจรอยรั่วที่ข้อต่อของหม้อลม" }
+          { src: "topic44-leak-check.jpg", caption: "ตรวจสอบรอยรั่วที่หม้อลม" }
         ]
       },
       {
