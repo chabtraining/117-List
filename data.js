@@ -43,7 +43,8 @@ window.trainingData = {
   56: 'https://www.canva.com/design/DAHXSfxR5W8/52WhwTAruowYiZ0kJt1RlA/watch?utm_content=DAHXSfxR5W8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc6ad2c42a9',  // ใบยางปัดน้ำฝน
   59: 'https://www.canva.com/design/DAHXSvq0hFk/0QxBJMmmbsS5Z-AzlDc4Sw/watch?utm_content=DAHXSvq0hFk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7dd74f46c8',  // ตรวจเช็กการรั่วซึมของกระจกบังลมหน้า
   27: 'https://www.canva.com/design/DAHXSufCgZs/xz0O8aWZsXR22VXQeq21eg/watch?utm_content=DAHXSufCgZs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1bcd367d03',  // ตรวจเช็กสภาพอินเตอร์คูลเลอร์ และท่อยาง
-  38: 'https://www.canva.com/design/DAHXShbjgYo/MIF_97YP663iWHBp1dpw3Q/watch?utm_content=DAHXShbjgYo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h34d9ef1bc6'  // ระดับน้ำมันเบรก (ต่ำ-สูง)
+  38: 'https://www.canva.com/design/DAHXShbjgYo/MIF_97YP663iWHBp1dpw3Q/watch?utm_content=DAHXShbjgYo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h34d9ef1bc6',  // ระดับน้ำมันเบรก (ต่ำ-สูง)
+  44: 'https://www.canva.com/design/DAHXSvrK16U/wap9p-p-sr-g-Q7r0cEZ3w/watch?utm_content=DAHXSvrK16U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb1856306e3'  // ตรวจเช็คน้ำในระบบหม้อลมเบรก
 },
   topicMedia: {
   1: {
@@ -3274,14 +3275,17 @@ window.trainingData = {
     ]
   },
   {
-    id: 44, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็คน้ำในระบบหม้อลมเบรก (ดึงตัวระบายที่หม้อลมเบรก)", severity: "critical",
+    id: 44, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็คน้ำในระบบหม้อลมเบรก (ดึงตัวระบายที่หม้อลมเบรก)", severity: "critical",
     category: "ระบบเบรคและระบบคลัทช์",
     sources: ["DLT", "FMCSA", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ระบายน้ำทุกหม้อลมเบรก",
-        text: "ติดเครื่องให้ลมเต็มระบบ แล้วดึงหรือเปิดวาล์วระบายที่หม้อลมทุกใบ ปล่อยจนเหลือแต่ลมออกมา และดูเกจหรือไฟเตือนแรงดันลมต้องทำงานปกติ ตามเกณฑ์กรมการขนส่งทางบก"
+        text: "ติดเครื่องให้ลมเต็มระบบ แล้วดึงหรือเปิดวาล์วระบายที่หม้อลมทุกใบ ปล่อยจนเหลือแต่ลมออกมา และดูเกจหรือไฟเตือนแรงดันลมต้องทำงานปกติ ตามเกณฑ์กรมการขนส่งทางบก",
+        images: [
+          { src: "topic44-drain-open.jpg", caption: "วาล์วระบายที่ก้นหม้อลม ดึงหรือเปิดเพื่อระบายน้ำ" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
@@ -3291,7 +3295,10 @@ window.trainingData = {
       {
         label: "จุดตรวจที่ 3",
         title: "ตรวจวาล์วระบายปิดสนิท",
-        text: "หลังระบายน้ำเสร็จ วาล์วระบายต้องปิดสนิท ไม่มีเสียงลมรั่ว และดับเครื่องแล้วแรงดันลมบนเกจต้องไม่ลดลงเร็วผิดปกติ"
+        text: "หลังระบายน้ำเสร็จ วาล์วระบายต้องปิดสนิท ไม่มีเสียงลมรั่ว และดับเครื่องแล้วแรงดันลมบนเกจต้องไม่ลดลงเร็วผิดปกติ",
+        images: [
+          { src: "topic44-drain-valve.jpg", caption: "หลังระบายเสร็จ วาล์วต้องปิดสนิท ไม่มีลมรั่ว" }
+        ]
       }
     ],
     issuesList: [
