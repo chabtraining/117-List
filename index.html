@@ -1057,18 +1057,19 @@
     background: #F7F7F5;
   }
   .quick-sales-detail-panel { padding: 18px !important; }
-  .narration-block { padding: 14px 0 4px; border-bottom: 1px solid #E0E0DB; }
-  .narration-issue-head {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 10px;
+  .narration-group-label {
+    padding: 12px 18px 8px;
+    border-top: 1px solid #E7E7E3;
+    background: #FFFFFF;
     color: var(--accent-red-dark);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 800;
     line-height: 1.4;
   }
-  .narration-block .sales-resolution-grid { margin-bottom: 16px; }
+  .narration-group-label:first-child { border-top: 0; }
+  .narration-group-label + .observation-item { border-top: 1px solid #E7E7E3; }
+  .narration-body { padding: 15px 18px 18px; }
+  .narration-body .sales-resolution-grid { margin-bottom: 0; }
   .sales-content-heading {
     margin-bottom: 8px;
     color: var(--accent-red-dark);
@@ -1558,12 +1559,17 @@ function renderStepMedia(t, stepIndex) {
 function renderNarrationBlock(t) {
   const list = Array.isArray(t.issuesList) ? t.issuesList : [];
   if (!list.length) return '';
-  const many = list.length > 1;
+  // One drop-down per finding, closed until the technician picks the one being filmed.
   return `
-    <div class="narration-block">
-      <div class="sales-content-heading">บทสนทนามาตรฐาน</div>
-      ${list.map((iss, i) => `
-        ${many ? `<div class="narration-issue-head"><span class="sales-issue-number">${i+1}</span>${iss.issue}</div>` : ''}
+    <div class="narration-group-label">บทสนทนามาตรฐาน</div>
+    ${list.map((iss, i) => `
+      <details class="observation-item narration-item">
+        <summary class="observation-summary">
+          <span class="observation-num">${i + 1}</span>
+          <h3 class="observation-title">${iss.issue}</h3>
+          <span class="observation-chevron" aria-hidden="true">›</span>
+        </summary>
+        <div class="observation-body narration-body">
         <div class="sales-resolution-grid">
           <section class="sales-resolution-block narration">
             <div class="sales-resolution-label"><span class="narration-num">1</span>แนะนำตัว<span class="narration-cam">ถ่ายทะเบียนรถ</span></div>
@@ -1582,8 +1588,10 @@ function renderNarrationBlock(t) {
             <p class="sales-resolution-text">${iss.fix}</p>
           </section>
         </div>
-      `).join('')}
-    </div>
+        </div>
+      </details>
+    `).join('')}
+    <div class="narration-group-label">จุดตรวจ</div>
   `;
 }
 
