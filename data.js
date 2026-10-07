@@ -46,7 +46,8 @@ window.trainingData = {
   38: 'https://www.canva.com/design/DAHXShbjgYo/MIF_97YP663iWHBp1dpw3Q/watch?utm_content=DAHXShbjgYo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h34d9ef1bc6',  // ระดับน้ำมันเบรก (ต่ำ-สูง)
   44: 'https://www.canva.com/design/DAHXSvrK16U/wap9p-p-sr-g-Q7r0cEZ3w/watch?utm_content=DAHXSvrK16U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb1856306e3',  // ตรวจเช็คน้ำในระบบหม้อลมเบรก
   52: 'https://www.canva.com/design/DAHXSiFNN-Q/VaZVB5LunZ4_X_mRKBZ5NQ/watch?utm_content=DAHXSiFNN-Q&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4229d4dc72',  // ยางรองหัวเก๋ง
-  53: 'https://www.canva.com/design/DAHXS1WW-kQ/fiC0l1c9V0nFLH70RGHFDQ/watch?utm_content=DAHXS1WW-kQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h220cb1f683'  // ชุดกลไกล็อคหัวเก๋ง
+  53: 'https://www.canva.com/design/DAHXS1WW-kQ/fiC0l1c9V0nFLH70RGHFDQ/watch?utm_content=DAHXS1WW-kQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h220cb1f683',  // ชุดกลไกล็อคหัวเก๋ง
+  60: 'https://www.canva.com/design/DAHXSyAJQms/syE-n4FluixEpvYINFKEWA/watch?utm_content=DAHXSyAJQms&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h511d4176b3'  // กระจกมองข้าง
 },
   topicMedia: {
   1: {
@@ -4264,19 +4265,25 @@ window.trainingData = {
     ]
   },
   {
-    id: 60, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "กระจกมองข้าง", severity: "medium",
+    id: 60, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "กระจกมองข้าง", severity: "medium",
     category: "ระบบหัวเก๋งและ BODY PART",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจสภาพเลนส์กระจกมองข้าง",
-        text: "ดูกระจกมองข้างไม่แตก ไม่ร้าว เงาไม่มัว และมองเห็นการจราจรด้านข้างและด้านหลังได้ชัด เกณฑ์กรมการขนส่งทางบก: กระจกเงาสำหรับมองหลังต้องมีสภาพดี ครบถ้วน ไม่แตกร้าวหรือชำรุด"
+        text: "ดูกระจกมองข้างไม่แตก ไม่ร้าว เงาไม่มัว และมองเห็นการจราจรด้านข้างและด้านหลังได้ชัด เกณฑ์กรมการขนส่งทางบก: กระจกเงาสำหรับมองหลังต้องมีสภาพดี ครบถ้วน ไม่แตกร้าวหรือชำรุด",
+        images: [
+          { src: "topic60-mirror-face.jpg", caption: "ดูหน้ากระจกว่าไม่แตก ไม่ร้าว เงาไม่มัว" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
         title: "ตรวจขายึดและการปรับ",
-        text: "โยกขากระจกต้องแน่น ไม่สั่นขณะรถวิ่ง และปรับมุมได้ (แบบไฟฟ้าหรือแบบมือ) ให้คนขับมองเห็นด้านข้างได้ครบ"
+        text: "โยกขากระจกต้องแน่น ไม่สั่นขณะรถวิ่ง และปรับมุมได้ (แบบไฟฟ้าหรือแบบมือ) ให้คนขับมองเห็นด้านข้างได้ครบ",
+        images: [
+          { src: "topic60-mirror-arm.jpg", caption: "โยกขากระจกดูความแน่น และลองปรับมุมกระจก" }
+        ]
       }
     ],
     issuesList: [
