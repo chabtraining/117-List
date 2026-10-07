@@ -50,7 +50,8 @@ window.trainingData = {
   60: 'https://www.canva.com/design/DAHXSyAJQms/syE-n4FluixEpvYINFKEWA/watch?utm_content=DAHXSyAJQms&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h511d4176b3',
   115: 'https://www.canva.com/design/DAHXS1WW-kQ/fiC0l1c9V0nFLH70RGHFDQ/watch?utm_content=DAHXS1WW-kQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h220cb1f683',
   61: 'https://www.canva.com/design/DAHXUAXjec4/-sTCsbhgCu5omEP4Ud5hAQ/watch?utm_content=DAHXUAXjec4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hda975b9899',  // กระจกมองข้าง
-  66: 'https://www.canva.com/design/DAHXUE4wr0k/0xQufi40G5umuza34yrOCA/watch?utm_content=DAHXUE4wr0k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf651cd7bb7'  // ลูกยางกันกระแทกแหนบ
+  66: 'https://www.canva.com/design/DAHXUE4wr0k/0xQufi40G5umuza34yrOCA/watch?utm_content=DAHXUE4wr0k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf651cd7bb7',  // ลูกยางกันกระแทกแหนบ
+  67: 'https://www.canva.com/design/DAHXUPTrTTw/oN3Sc9EcQERdWSVvaPsLGQ/watch?utm_content=DAHXUPTrTTw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6eb44067e0'  // น็อตล้อ
 },
   topicMedia: {
   1: {
@@ -4662,14 +4663,18 @@ window.trainingData = {
     ]
   },
   {
-    id: 67, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กน็อตล้อ และการคลายตัวของน็อตล้อ", severity: "medium",
+    id: 67, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กน็อตล้อ และการคลายตัวของน็อตล้อ", severity: "medium",
     category: "ระบบรองรับน้ำหนัก",
     sources: ["DLT", "FMCSA", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจน็อตล้อครบและแน่น",
-        text: "เดินดูทุกล้อ น็อตล้อต้องครบ ไม่หัก ไม่หลวม และขันด้วยประแจวัดแรงบิดตามค่ามาตรฐานของรถ เกณฑ์กรมการขนส่งทางบก: น็อตล้อต้องไม่หลุดหลวมหรือสูญหาย และกงล้อไม่มีรอยแตกร้าว บิดเบี้ยว หรือคดงอ"
+        text: "เดินดูทุกล้อ น็อตล้อต้องครบ ไม่หัก ไม่หลวม และขันด้วยประแจวัดแรงบิดตามค่ามาตรฐานของรถ เกณฑ์กรมการขนส่งทางบก: น็อตล้อต้องไม่หลุดหลวมหรือสูญหาย และกงล้อไม่มีรอยแตกร้าว บิดเบี้ยว หรือคดงอ",
+        images: [
+          { src: "topic67-nut-check.jpg", caption: "ไล่ดูน็อตล้อทีละตัว" },
+          { src: "topic67-nut-tap.jpg", caption: "ใช้ค้อนเคาะที่น็อตล้อ" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
