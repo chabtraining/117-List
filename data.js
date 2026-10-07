@@ -3303,7 +3303,7 @@ window.trainingData = {
         title: "ทดสอบระบายลม",
         text: "ทดสอบระบายลม หากมีน้ำออกมา หรือน้ำมีสีสนิม ให้ทำการแก้ไข",
         images: [
-          { src: "topic44-drain-water.jpg", caption: "น้ำที่ระบายออกมามีสนิมปน" }
+          { src: "topic44-drain-water.jpg", caption: "ลมที่ระบายออกมา มีน้ำและสนิมออกมา" }
         ]
       }
     ],
