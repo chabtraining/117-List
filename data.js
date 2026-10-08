@@ -52,7 +52,8 @@ window.trainingData = {
   61: 'https://www.canva.com/design/DAHXUAXjec4/-sTCsbhgCu5omEP4Ud5hAQ/watch?utm_content=DAHXUAXjec4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hda975b9899',  // กระจกมองข้าง
   66: 'https://www.canva.com/design/DAHXUE4wr0k/0xQufi40G5umuza34yrOCA/watch?utm_content=DAHXUE4wr0k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf651cd7bb7',  // ลูกยางกันกระแทกแหนบ
   67: 'https://www.canva.com/design/DAHXUPTrTTw/oN3Sc9EcQERdWSVvaPsLGQ/watch?utm_content=DAHXUPTrTTw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6eb44067e0',  // น็อตล้อ
-  103: 'https://www.canva.com/design/DAHXUQCmsSg/pO36s_Er4WGPRMwhY8HAlw/watch?utm_content=DAHXUQCmsSg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf6985f3fef'  // จานลาก
+  103: 'https://www.canva.com/design/DAHXUQCmsSg/pO36s_Er4WGPRMwhY8HAlw/watch?utm_content=DAHXUQCmsSg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf6985f3fef',  // จานลาก
+  21: 'https://www.canva.com/design/DAHXUTss8wM/A73-BCn-op2SeY_DKbO_CQ/watch?utm_content=DAHXUTss8wM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2d205b88ca'  // แผงรังผึ้งหม้อน้ำ
 },
   topicMedia: {
   1: {
@@ -1766,19 +1767,26 @@ window.trainingData = {
     ]
   },
   {
-    id: 21, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "แผงรังผึ้งหม้อน้ำ (สกปรกให้เป่าทำความสะอาด)", severity: "medium",
+    id: 21, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "แผงรังผึ้งหม้อน้ำ (สกปรกให้เป่าทำความสะอาด)", severity: "medium",
     category: "ตรวจการรั่วซึมของเครื่องยนต์และระบบหล่อเย็น",
     sources: ["CUMMINS", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจความสะอาดแผงรังผึ้ง",
-        text: "ส่องไฟดูแผงรังผึ้งหม้อน้ำ (และแผงอินเตอร์คูลเลอร์หรือแผงแอร์ที่วางซ้อนกัน) ว่ามีฝุ่น ใบไม้ แมลง หรือคราบน้ำมันอุดตันหรือไม่ ถ้าส่องไฟผ่านแผงแล้วแสงลอดได้น้อย แสดงว่าอุดตันมาก<br><b>เกณฑ์อ้างอิง:</b> คู่มือ Operation & Maintenance ของ Cummins กำหนดให้ตรวจแผงรังผึ้งทุกสัปดาห์ และเป่าแมลง ฝุ่น ดิน ใบไม้ ที่ติดอยู่หน้าแผงหรือค้างระหว่างแผงกับครีบออกให้หมด เพราะสิ่งสกปรกที่แผงทำให้ระบายความร้อนได้น้อยลง"
+        text: "ส่องไฟดูแผงรังผึ้งหม้อน้ำ (และแผงอินเตอร์คูลเลอร์หรือแผงแอร์ที่วางซ้อนกัน) ว่ามีฝุ่น ใบไม้ แมลง หรือคราบน้ำมันอุดตันหรือไม่ ถ้าส่องไฟผ่านแผงแล้วแสงลอดได้น้อย แสดงว่าอุดตันมาก<br><b>เกณฑ์อ้างอิง:</b> คู่มือ Operation & Maintenance ของ Cummins กำหนดให้ตรวจแผงรังผึ้งทุกสัปดาห์ และเป่าแมลง ฝุ่น ดิน ใบไม้ ที่ติดอยู่หน้าแผงหรือค้างระหว่างแผงกับครีบออกให้หมด เพราะสิ่งสกปรกที่แผงทำให้ระบายความร้อนได้น้อยลง",
+        images: [
+          { src: "topic21-core.jpg", caption: "ตรวจดูความสะอาดแผงรังผึ้งหม้อน้ำ" },
+          { src: "topic21-core-dirt.jpg", caption: "คราบสกปรกที่แผงรังผึ้ง" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
         title: "ตรวจครีบระบายความร้อน",
-        text: "ดูครีบรังผึ้งพับล้มหรือบุบเป็นแผ่นใหญ่หรือไม่ ครีบที่ล้มจะปิดทางลม ทำให้พื้นที่ระบายความร้อนหายไป"
+        text: "ดูครีบรังผึ้งพับล้มหรือบุบเป็นแผ่นใหญ่หรือไม่ ครีบที่ล้มจะปิดทางลม ทำให้พื้นที่ระบายความร้อนหายไป",
+        images: [
+          { src: "topic21-fins.jpg", caption: "ครีบระบายความร้อนของแผงรังผึ้ง" }
+        ]
       }
     ],
     issuesList: [
