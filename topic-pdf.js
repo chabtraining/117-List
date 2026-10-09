@@ -9,7 +9,7 @@
     .pdf-doc * { box-sizing: border-box; }
     .pdf-head { display: flex; align-items: center; gap: 14px; padding-bottom: 12px; border-bottom: 3px solid #C8102E; }
     .pdf-head img { width: 120px; height: auto; }
-    .pdf-head-org { font-size: 11px; color: #585854; line-height: 1.4; }
+    .pdf-head-org { font-size: 11px; color: #111110; line-height: 1.4; }
     .pdf-head-org b { display: block; color: #980C22; font-size: 12px; }
     .pdf-title { margin: 16px 0 6px; font-size: 22px; font-weight: 800; line-height: 1.35; }
     .pdf-cat { display: inline-block; padding: 2px 10px; border: 1px solid #E7C5CB; border-radius: 999px;
@@ -19,7 +19,7 @@
       color: #FFFFFF; font-size: 15px; font-weight: 800; background: #B20E29; }
     .pdf-bar.tech { background: #3C3C38; }
     .pdf-bar-mark { padding: 1px 8px; border-radius: 4px; background: #FFFFFF; color: #980C22; font-size: 12px; }
-    .pdf-bar.tech .pdf-bar-mark { color: #3C3C38; }
+    .pdf-bar.tech .pdf-bar-mark { color: #111110; }
     .pdf-item { padding: 12px 14px; border: 1px solid #E3E3DF; border-top: 0; }
     .pdf-item-head { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; font-weight: 800; }
     .pdf-num { flex: 0 0 22px; height: 22px; border-radius: 4px; background: #C8102E; color: #FFFFFF;
@@ -37,17 +37,17 @@
     .pdf-imgs figure { width: calc(50% - 4px); margin: 0; }
     .pdf-imgs img { display: block; width: 100%; max-height: 210px; object-fit: contain;
       border: 1px solid #E3E3DF; border-radius: 5px; background: #F4F4F2; }
-    .pdf-imgs figcaption { margin-top: 3px; color: #585854; font-size: 10.5px; line-height: 1.4; }
-    .pdf-foot { margin-top: 20px; padding-top: 10px; border-top: 1px solid #E3E3DF; color: #585854;
+    .pdf-imgs figcaption { margin-top: 3px; color: #111110; font-size: 10.5px; line-height: 1.4; }
+    .pdf-foot { margin-top: 20px; padding-top: 10px; border-top: 1px solid #E3E3DF; color: #111110;
       font-size: 10.5px; line-height: 1.6; word-break: break-all; }
     .pdf-avoid { page-break-inside: avoid; break-inside: avoid; }
     .pdf-script { margin-top: 8px; padding: 8px 10px; border: 1px dashed #D9C6CA; border-radius: 5px; }
-    .pdf-script-head { margin: 6px 0 2px; font-size: 11px; font-weight: 800; color: #3C3C38; }
+    .pdf-script-head { margin: 6px 0 2px; font-size: 11px; font-weight: 800; color: #111110; }
     .pdf-script-head.sa { color: #980C22; }
     .pdf-script p { margin: 2px 0; font-size: 12px; }
     .pdf-script .pdf-who { display: inline-block; min-width: 42px; font-weight: 800; }
     .pdf-script .script-blank { display: inline-block; min-width: 56px; border-bottom: 1px dashed #999994; color: transparent; }
-    .pdf-script .script-act { color: #777772; }
+    .pdf-script .script-act { color: #111110; }
   `;
 
   function esc(v) {

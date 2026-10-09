@@ -95,7 +95,7 @@
     font-weight: 700;
   }
   .header-company {
-    color: #666660;
+    color: var(--text);
     font-size: 13px;
     font-weight: 600;
     line-height: 1.35;
@@ -108,8 +108,8 @@
     line-height: 1.2;
     margin: 12px 0 8px;
   }
-  .header h1 span { color: var(--text3); }
-  .header p { color: var(--text3); font-size: 15px; }
+  .header h1 span { color: var(--text); }
+  .header p { color: var(--text); font-size: 15px; }
 
   /* Screens */
   .screen { display: none; animation: fadeIn 0.3s ease; }
@@ -224,9 +224,9 @@
     font-size: 12px;
     font-weight: 800;
   }
-  .script-line p { margin: 0; color: #2A2A28; font-size: 14.5px; line-height: 1.7; }
+  .script-line p { margin: 0; color: var(--text); font-size: 14.5px; line-height: 1.7; }
   .script-blank { display: inline-block; min-width: 56px; border-bottom: 1px dashed #A8A8A2; color: transparent; }
-  .script-act { color: var(--text3); font-size: 13px; }
+  .script-act { color: var(--text); font-size: 13px; }
   .script-reply { margin: 8px 0; border: 1px solid var(--border); border-radius: 8px; background: #FFFFFF; }
   .script-reply summary {
     display: flex;
@@ -235,11 +235,11 @@
     padding: 10px 12px;
     cursor: pointer;
     list-style: none;
-    color: #5C5C57;
+    color: var(--text);
     font-size: 14px;
   }
   .script-reply summary::-webkit-details-marker { display: none; }
-  .script-reply summary .script-who { padding-top: 0; color: var(--text3); }
+  .script-reply summary .script-who { padding-top: 0; color: var(--text); }
   .script-q { flex: 1; font-style: italic; }
   .script-reply summary::after { content: "›"; color: var(--accent-red); font-size: 18px; transition: transform 0.2s ease; }
   .script-reply[open] summary::after { transform: rotate(90deg); }
@@ -252,7 +252,7 @@
     padding: 10px 14px;
     border-top: 1px solid #F0E4E6;
     background: #FAFAF8;
-    color: var(--text3);
+    color: var(--text);
     font-size: 12px;
   }
   .source-note {
@@ -262,11 +262,11 @@
     padding: 12px 18px 14px;
     border-top: 1px solid #E7E7E3;
     background: #FAFAF8;
-    color: var(--text3);
+    color: var(--text);
     font-size: 12px;
     line-height: 1.5;
   }
-  .source-note strong { color: #5C5C57; font-size: 12px; }
+  .source-note strong { color: var(--text); font-size: 12px; }
   .source-note span::before { content: "• "; }
   .topic-sa-only {
     flex-shrink: 0;
@@ -274,7 +274,7 @@
     padding: 1px 8px;
     border: 1px solid var(--border2);
     border-radius: 999px;
-    color: var(--text3);
+    color: var(--text);
     font-size: 11px;
     font-weight: 600;
     white-space: nowrap;
@@ -298,12 +298,12 @@
     flex: 0 0 46px;
     border-radius: 6px;
     background: #E7E7E3;
-    color: #6A6A64;
+    color: var(--text);
     font-size: 14px;
     font-weight: 800;
   }
-  .pending-tech-note strong { display: block; color: #3C3C38; font-size: 15px; }
-  .pending-tech-note p { margin-top: 2px; color: var(--text3); font-size: 13px; }
+  .pending-tech-note strong { display: block; color: var(--text); font-size: 15px; }
+  .pending-tech-note p { margin-top: 2px; color: var(--text); font-size: 13px; }
   .topic-pager {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -340,7 +340,7 @@
   /* Section Header */
   .section-header { margin-bottom: 18px; }
   .section-header h2 { font-size: 21px; font-weight: 700; margin-bottom: 4px; }
-  .section-header p { color: var(--text3); font-size: 14px; }
+  .section-header p { color: var(--text); font-size: 14px; }
 
   .topic-tools {
     display: grid;
@@ -374,7 +374,7 @@
     font-size: 15px;
     background: transparent;
   }
-  .topic-search input::placeholder { color: #A4A49E; }
+  .topic-search input::placeholder { color: var(--text); }
   .category-filter {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
@@ -412,7 +412,7 @@
     padding: 6px 10px;
   }
   .topic-summary {
-    color: var(--text3);
+    color: var(--text);
     font-size: 13px;
     margin: -4px 0 12px;
   }
@@ -420,7 +420,7 @@
     background: #FFFFFF;
     border: 1px solid var(--border);
     border-radius: 8px;
-    color: var(--text3);
+    color: var(--text);
     font-size: 15px;
     padding: 24px 18px;
     text-align: center;
@@ -472,7 +472,7 @@
   }
   .topic-card h3 { font-size: 15px; font-weight: 500; color: var(--text); flex: 1; min-width: 0; }
   .topic-title-line { display: flex; align-items: baseline; line-height: 1.45; }
-  .topic-title { color: #2F2F2C; }
+  .topic-title { color: var(--text); }
   .topic-card .pill-badge { flex-shrink: 0; }
   .topic-card-arrow { color: var(--accent-red); font-size: 16px; flex-shrink: 0; }
 
@@ -483,12 +483,12 @@
   }
   .topic-card.is-locked:hover { background: #F2F2F0; }
   .topic-group-header.is-pending-group {
-    color: var(--text3);
+    color: var(--text);
     background: #F2F2F0;
     border-top-color: var(--border2);
     border-left-color: var(--border2);
   }
-  .topic-card.is-locked .topic-title { color: #9A9A94; }
+  .topic-card.is-locked .topic-title { color: var(--text); }
   .topic-card.is-locked .topic-bullet { background: #C2C2BC; }
   .topic-pending {
     flex-shrink: 0;
@@ -496,7 +496,7 @@
     border: 1px solid var(--border2);
     border-radius: 999px;
     background: #FFFFFF;
-    color: #8C8C86;
+    color: var(--text);
     font-size: 12px;
     font-weight: 600;
     white-space: nowrap;
@@ -519,7 +519,7 @@
   .topic-group-header:first-child { margin-top: 0; }
   .topic-group-header { display: flex; align-items: center; gap: 12px; }
   .topic-group-name { flex: 1; min-width: 0; }
-  .topic-group-count { flex-shrink: 0; color: var(--text3); font-size: 13px; font-weight: 600; white-space: nowrap; }
+  .topic-group-count { flex-shrink: 0; color: var(--text); font-size: 13px; font-weight: 600; white-space: nowrap; }
 
   /* Home shows the categories as picture cards; a card opens that category's topics. */
   .topic-grid.is-categories {
@@ -576,7 +576,7 @@
   }
   .category-info { display: block; padding: 10px 12px 12px; border-top: 3px solid var(--accent-red); }
   .category-name { display: block; color: var(--text); font-size: 14.5px; font-weight: 800; line-height: 1.4; }
-  .category-count { display: block; margin-top: 2px; color: var(--text3); font-size: 12.5px; font-weight: 600; }
+  .category-count { display: block; margin-top: 2px; color: var(--text); font-size: 12.5px; font-weight: 600; }
   .category-nav:empty { display: none; }
   .category-nav .btn-back { margin-bottom: 12px; }
   @media (min-width: 640px) {
@@ -699,7 +699,7 @@
   }
 
   .issue-detail-text {
-    color: #2F2F2C;
+    color: var(--text);
     font-size: 15px;
     line-height: 1.75;
     margin: 0 0 16px;
@@ -737,9 +737,9 @@
   }
   .vdo-upload-box:hover { border-color: var(--accent-red); background: #F2F2F0; }
   .vdo-upload-box span.upload-icon { font-size: 28px; }
-  .vdo-upload-box span.upload-label { font-size: 13px; color: #AAA; }
+  .vdo-upload-box span.upload-label { font-size: 13px; color: var(--text); }
   .vdo-upload-box input[type=file] { display: none; }
-  .vdo-note { font-size: 11px; color: #CCC; margin-top: 2px; }
+  .vdo-note { font-size: 11px; color: var(--text); margin-top: 2px; }
 
   .yt-wrap {
     position: relative;
@@ -816,7 +816,7 @@
     justify-content: center;
     padding-top: 1px;
   }
-  .step-text { font-size: 15px; line-height: 1.55; color: #2A2A28; font-weight: 500; }
+  .step-text { font-size: 15px; line-height: 1.55; color: var(--text); font-weight: 500; }
   /* Each point is a collapsible row, matching the SA panel's row pattern. */
   .observation-list {
     display: flex;
@@ -854,7 +854,7 @@
     min-width: 0;
     flex: 1;
     margin: 0;
-    color: #2A2A28;
+    color: var(--text);
     font-size: 15px;
     font-weight: 700;
     line-height: 1.5;
@@ -874,7 +874,7 @@
   }
   .observation-text {
     margin: 0;
-    color: #4A4A46;
+    color: var(--text);
     font-size: 14.5px;
     line-height: 1.7;
   }
@@ -920,7 +920,7 @@
   }
   .observation-media figcaption {
     margin-top: 7px;
-    color: #585854;
+    color: var(--text);
     font-size: 12.5px;
     font-weight: 700;
     line-height: 1.45;
@@ -992,7 +992,7 @@
     background: linear-gradient(180deg, #4E4E4A 0%, #2F2F2B 100%);
   }
   .tech-support-box .sales-support-mark {
-    color: #2F2F2B;
+    color: var(--text);
     font-size: 15px;
   }
   .sales-issue-row + .sales-issue-row { border-top: 1px solid #E7E7E3; }
@@ -1027,7 +1027,7 @@
   .sales-issue-title {
     min-width: 0;
     flex: 1;
-    color: #2A2A28;
+    color: var(--text);
     font-size: 15px;
     font-weight: 700;
     line-height: 1.5;
@@ -1074,7 +1074,7 @@
     gap: 10px;
     padding: 10px 0;
     border-bottom: 1px solid #E0E0DB;
-    color: #2A2A28;
+    color: var(--text);
     font-size: 14px;
     font-weight: 600;
     line-height: 1.6;
@@ -1108,10 +1108,10 @@
     font-weight: 800;
     line-height: 1.4;
   }
-  .sales-resolution-block.impact .sales-resolution-label { color: #444440; }
+  .sales-resolution-block.impact .sales-resolution-label { color: var(--text); }
   /* Narration steps 1-2 come from the company's standard clip script. */
   .sales-resolution-block.narration { border-left-color: #6B6B64; }
-  .sales-resolution-block.narration .sales-resolution-label { color: #444440; }
+  .sales-resolution-block.narration .sales-resolution-label { color: var(--text); }
   .sales-resolution-label { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
   .narration-num {
     display: inline-flex;
@@ -1126,12 +1126,12 @@
     font-size: 11px;
     font-weight: 700;
   }
-  .narration-cam { color: var(--text3); font-size: 12px; font-weight: 600; }
+  .narration-cam { color: var(--text); font-size: 12px; font-weight: 600; }
   .narration-cam::before { content: "("; }
   .narration-cam::after { content: ")"; }
   .sales-resolution-text {
     margin: 0;
-    color: #3D3D39;
+    color: var(--text);
     font-size: 14px;
     font-weight: 500;
     line-height: 1.7;
@@ -1166,7 +1166,7 @@
     border: 1px dashed var(--border2);
     border-radius: 10px;
     background: #FFFFFF;
-    color: #8C8C86;
+    color: var(--text);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1176,7 +1176,7 @@
     padding: 12px;
   }
   .media-placeholder span { font-family: var(--mono); font-size: 18px; color: var(--accent-red-dark); }
-  .media-placeholder small { font-size: 12px; line-height: 1.4; color: #8C8C86; }
+  .media-placeholder small { font-size: 12px; line-height: 1.4; color: var(--text); }
   .media-caption { font-size: 14px; font-weight: 600; color: #374151; line-height: 1.35; }
   .media-source {
     display: block;
@@ -1323,8 +1323,8 @@
     flex-wrap: wrap;
     gap: 10px;
   }
-  .footer span:first-child { color: #777771; font-size: 13px; }
-  .footer span:last-child { font-family: var(--mono); color: #AAAAA4; font-size: 11px; }
+  .footer span:first-child { color: var(--text); font-size: 13px; }
+  .footer span:last-child { font-family: var(--mono); color: var(--text); font-size: 11px; }
 </style>
 <link rel="stylesheet" href="video-player.css?v=20260911-8">
 <script src="video-player.js?v=20260911-8" defer></script>
@@ -1350,7 +1350,7 @@
   <div id="screen-home" class="screen active">
   <div class="info-box home-intro">
     <div class="info-box-label">คู่มือการใช้งาน</div>
-    <p style="font-size:15px;line-height:1.8;color:#555">
+    <p style="font-size:15px;line-height:1.8;color:var(--text)">
       ระบบนี้จัดทำขึ้นเพื่อช่วยให้ช่างและที่ปรึกษาด้านบริการสามารถอธิบายอาการเสีย วิเคราะห์ปัญหา และแนะนำลูกค้าได้อย่างมืออาชีพ
       โดยเน้นการสื่อสารที่เข้าใจง่าย เห็นภาพ และช่วยให้ลูกค้าตัดสินใจซ่อมได้อย่างมั่นใจมากขึ้น
     </p>
@@ -1394,7 +1394,7 @@
   <div id="screen-detail" class="screen">
     <!-- Sticky so an SA mid-conversation can jump to another topic without scrolling up. -->
     <form class="detail-toolbar" role="search" onsubmit="searchFromDetail(event)">
-      <button class="btn-back" type="button" onclick="showHome()">← รายการ</button>
+      <button class="btn-back" type="button" onclick="showHome()">← หน้าแรก</button>
       <input class="detail-search" id="detail-search" type="search" enterkeyhint="search"
         placeholder="ค้นหาหัวข้ออื่น..." aria-label="ค้นหาหัวข้ออื่น" autocomplete="off">
     </form>
@@ -1409,7 +1409,7 @@
 
   <script src="data.js?v=20261008-1"></script>
   <script src="dialogue.js?v=20261007-2"></script>
-  <script src="topic-pdf.js?v=20261009-1" defer></script>
+  <script src="topic-pdf.js?v=20261009-2" defer></script>
 <script>
 // ข้อมูลหลักอยู่ใน data.js เพื่อให้เพิ่มหัวข้อจำนวนมากได้ง่ายขึ้น
 const trainingData = window.trainingData || {};
@@ -1726,6 +1726,7 @@ function showHome() {
   renderTopics();
   updateTopicUrl(null);
   showScreen('screen-home');
+  window.scrollTo(0, 0);
 }
 
 function updateTopicUrl(topicId) {
@@ -2202,7 +2203,7 @@ function showDetail(id) {
 
     ${renderTopicPager(t)}
 
-    ${t.detailMode === 'quick-sales-preview' ? '' : '<button class="floating-home" type="button" onclick="showHome()">รายการ</button>'}
+    <button class="floating-home" type="button" onclick="showHome()">หน้าแรก</button>
 
   `;
 
