@@ -2182,7 +2182,7 @@ function showDetail(id) {
   // SA-facing advice leads the page, the technician points sit right under it, then the video.
   // SA-only topics (text from the master Excel) have no technician footage yet.
   const hasTechPoints = [t.quickObservations, t.observationPoints].some(a => Array.isArray(a) && a.length > 0);
-  const detailSections = `${renderIssuesSection(t)}${hasTechPoints ? renderInspectionSection(t) : renderPendingTechNote()}${t.saOnly ? '' : videoSection}`;
+  const detailSections = `${hasTechPoints ? renderInspectionSection(t) : renderPendingTechNote()}${renderIssuesSection(t)}${t.saOnly ? '' : videoSection}`;
 
   document.getElementById('detail-content').innerHTML = `
     <div class="detail-hero">
