@@ -60,7 +60,7 @@
   function scriptHtml(s) {
     if (!s || !window.Dialogue) return '';
     const d = Dialogue.parts(s);
-    const v = Dialogue.getVoice();
+    const v = 'm';
     const line = function(who, text) {
       return '<p><span class="pdf-who">' + who + '</span> ' + Dialogue.toHtml(text, v) + '</p>';
     };

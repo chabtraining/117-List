@@ -216,16 +216,6 @@
     font-weight: 700;
   }
   .script-step-name { color: var(--text); font-size: 14px; font-weight: 700; }
-  .script-voice { display: inline-flex; margin-left: auto; border: 1px solid var(--border2); border-radius: 8px; overflow: hidden; }
-  .script-voice button {
-    border: 0;
-    padding: 5px 12px;
-    background: #FFFFFF;
-    color: var(--text2);
-    cursor: pointer;
-    font: 600 13px var(--font);
-  }
-  .script-voice button.on { background: var(--accent-red); color: #FFFFFF; }
   .script-line { display: flex; gap: 10px; align-items: flex-start; margin: 7px 0; }
   .script-who {
     flex: 0 0 44px;
@@ -1419,7 +1409,7 @@
 
   <script src="data.js?v=20261008-1"></script>
   <script src="dialogue.js?v=20261007-2"></script>
-  <script src="topic-pdf.js?v=20261007-2" defer></script>
+  <script src="topic-pdf.js?v=20261009-1" defer></script>
 <script>
 // ข้อมูลหลักอยู่ใน data.js เพื่อให้เพิ่มหัวข้อจำนวนมากได้ง่ายขึ้น
 const trainingData = window.trainingData || {};
@@ -2070,7 +2060,7 @@ function renderTalkingPoints(iss) {
 function renderDialogueScript(s) {
   if (!s || !window.Dialogue) return '';
   const d = Dialogue.parts(s);
-  const v = Dialogue.getVoice();
+  const v = 'm';
   const line = text =>
     `<div class="script-line"><span class="script-who">SA</span><p data-say="${escapeHtml(text)}">${Dialogue.toHtml(text, v)}</p></div>`;
   return `
@@ -2079,10 +2069,6 @@ function renderDialogueScript(s) {
       <section class="script-step">
         <div class="script-step-head">
           <span class="script-step-no">1</span><span class="script-step-name">SA คุยกับลูกค้า (ใช้คลิปของช่าง)</span>
-          <span class="script-voice" role="group" aria-label="ผู้พูด">
-            <button type="button" data-voice="m" class="${v === 'm' ? 'on' : ''}" onclick="setScriptVoice('m')">ผู้ชาย</button>
-            <button type="button" data-voice="f" class="${v === 'f' ? 'on' : ''}" onclick="setScriptVoice('f')">ผู้หญิง</button>
-          </span>
         </div>
         ${d.main.map(line).join('')}
       </section>
@@ -2097,12 +2083,6 @@ function renderDialogueScript(s) {
       </section>` : ''}
     </details>
   `;
-}
-
-function setScriptVoice(v) {
-  Dialogue.setVoice(v);
-  document.querySelectorAll('[data-say]').forEach(el => { el.innerHTML = Dialogue.toHtml(el.dataset.say, v); });
-  document.querySelectorAll('.script-voice button').forEach(b => b.classList.toggle('on', b.dataset.voice === v));
 }
 
 function renderIssueDetail(t, iss, idx) {
