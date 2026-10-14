@@ -1137,14 +1137,22 @@
     font-weight: 500;
     line-height: 1.7;
   }
-  .narration-list { margin: 0; padding-left: 20px; color: #000000; font-size: 14px; font-weight: 500; line-height: 1.6; }
-  .narration-list li + li { margin-top: 6px; }
-  .narration-points { margin: 0; padding-left: 20px; color: #000000; font-size: 14px; font-weight: 500; line-height: 1.6; }
-  .narration-points li + li { margin-top: 6px; }
-  .np-head { color: var(--accent-red); font-weight: 700; }
-  .narration-say { margin-top: 20px; padding: 10px 12px; border-radius: 8px; background: #F7F7F5; }
+  .nsteps { margin: 0; padding: 0; list-style: none; }
+  .nstep { position: relative; padding: 0 0 26px 46px; }
+  .nstep:last-child { padding-bottom: 0; }
+  .nstep::before { content: ""; position: absolute; left: 15px; top: 38px; bottom: 6px; width: 2px; background: #E3E3DF; }
+  .nstep:last-child::before { display: none; }
+  .nstep-num { position: absolute; left: 0; top: 0; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: var(--accent-red); color: #FFFFFF; font-size: 15px; font-weight: 800; }
+  .nstep-title { color: #000000; font-size: 16.5px; font-weight: 800; line-height: 32px; }
+  .nstep-cam { display: inline-block; margin-top: 2px; padding: 3px 10px; border-radius: 999px; background: var(--accent-red-soft); color: var(--accent-red-dark); font-size: 12.5px; font-weight: 700; line-height: 1.5; }
+  .nstep-body { margin-top: 12px; }
+  .narration-list, .narration-points { margin: 0; padding-left: 20px; color: #000000; font-size: 15px; font-weight: 500; line-height: 1.7; }
+  .narration-list li + li, .narration-points li + li { margin-top: 8px; }
+  .np-head { color: var(--accent-red); font-weight: 800; }
+  .narration-say { padding: 12px 14px; border-left: 4px solid var(--accent-red); border-radius: 8px; background: var(--accent-red-pale); }
+  .narration-points + .narration-say, .narration-list + .narration-say { margin-top: 18px; }
   .narration-say-label { margin-bottom: 4px; color: var(--accent-red-dark); font-size: 12.5px; font-weight: 800; }
-  .narration-say p { margin: 0; color: #000000; font-size: 14px; font-weight: 500; line-height: 1.7; }
+  .narration-say p { margin: 0; color: #000000; font-size: 15px; font-weight: 500; line-height: 1.75; }
   .step-media { display: flex; flex-direction: column; gap: 8px; }
   .media-title {
     font-size: 11px;
@@ -1559,12 +1567,25 @@ function impactPoints(iss) {
   const pts = Array.isArray(iss.talkingPoints) ? iss.talkingPoints : [];
   return pts.length ? pts.map(x => x.replace(/^ปิดท้าย:\s*/, '')) : [iss.fix || ''];
 }
+// One narration step: number, title and camera cue, then its content.
+function renderStep(num, title, cam, body) {
+  return `
+    <li class="nstep">
+      <span class="nstep-num">${num}</span>
+      <div class="nstep-title">${title}</div>
+      <div class="nstep-cam">มุมกล้อง: ${cam}</div>
+      <div class="nstep-body">${body}</div>
+    </li>`;
+}
+function sayBox(label, text) {
+  return `<div class="narration-say"><div class="narration-say-label">${label}</div><p>${text}</p></div>`;
+}
 // Red key words with a short explanation, then the full sentence in everyday words.
 function renderTechExplain(part, fallback) {
   if (!part) return renderNarrationList(fallback);
   return `
     <ul class="narration-points">${part.points.map(p => `<li><span class="np-head">${p[0]}</span> - ${p[1]}</li>`).join('')}</ul>
-    <div class="narration-say"><div class="narration-say-label">ประโยคเต็มที่ต้องพูด</div><p>${part.say}</p></div>`;
+    ${sayBox('ประโยคเต็มที่ต้องพูด', part.say)}`;
 }
 function renderNarrationList(items) {
   return `<ul class="narration-list">${items.map(x => `<li>${x}</li>`).join('')}</ul>`;
@@ -1576,24 +1597,12 @@ function renderNarrationGrid(iss, plain) {
   return `
     <${plain ? 'div' : 'details'} class="narration-sub">
       ${plain ? '<div class="sales-content-heading">บทสนทนามาตรฐาน</div>' : '<summary class="narration-toggle"><span>บทสนทนามาตรฐาน</span><span class="narration-chevron" aria-hidden="true">›</span></summary>'}
-      <div class="sales-resolution-grid">
-        <section class="sales-resolution-block narration">
-          <div class="sales-resolution-label"><span class="narration-num">1</span>แนะนำตัว<span class="narration-cam">ถ่ายทะเบียนรถ</span></div>
-          <p class="sales-resolution-text">สวัสดีครับ ผมช่างจาก HINO ชัยรัชการ ได้ตรวจเช็กรถ หมายเลขทะเบียน <span class="script-blank">______</span> ครับ โดยเช็ก 117 รายการ</p>
-        </section>
-        <section class="sales-resolution-block narration">
-          <div class="sales-resolution-label"><span class="narration-num">2</span>ปัญหาที่พบ<span class="narration-cam">ค่อยๆ ถ่ายไปยังบริเวณที่พบปัญหา</span></div>
-          <p class="sales-resolution-text">ปัญหาที่พบนะครับ ได้แก่ ${iss.issue} ครับ</p>
-        </section>
-        <section class="sales-resolution-block">
-          <div class="sales-resolution-label"><span class="narration-num">3</span>วิธีการแก้ไข<span class="narration-cam">ถ่ายบริเวณที่พบปัญหา</span></div>
-          ${renderTechExplain(iss.tech && iss.tech.solution, solutionPoints(iss))}
-        </section>
-        <section class="sales-resolution-block impact">
-          <div class="sales-resolution-label"><span class="narration-num">4</span>ผลกระทบหากไม่แก้ไข<span class="narration-cam">ถ่ายบริเวณที่พบปัญหา</span></div>
-          ${renderTechExplain(iss.tech && iss.tech.impact, impactPoints(iss))}
-        </section>
-      </div>
+      <ol class="nsteps">
+        ${renderStep(1, 'แนะนำตัว', 'ถ่ายทะเบียนรถ', sayBox('พูดว่า', 'สวัสดีครับ ผมช่างจาก HINO ชัยรัชการ ได้ตรวจเช็กรถ หมายเลขทะเบียน <span class="script-blank">______</span> ครับ โดยเช็ก 117 รายการ'))}
+        ${renderStep(2, 'ปัญหาที่พบ', 'ค่อยๆ ถ่ายไปยังบริเวณที่พบปัญหา', sayBox('พูดว่า', `ปัญหาที่พบนะครับ ได้แก่ ${iss.issue} ครับ`))}
+        ${renderStep(3, 'วิธีการแก้ไข', 'ถ่ายบริเวณที่พบปัญหา', renderTechExplain(iss.tech && iss.tech.solution, solutionPoints(iss)))}
+        ${renderStep(4, 'ผลกระทบหากไม่แก้ไข', 'ถ่ายบริเวณที่พบปัญหา', renderTechExplain(iss.tech && iss.tech.impact, impactPoints(iss)))}
+      </ol>
     </${plain ? 'div' : 'details'}>
   `;
 }
