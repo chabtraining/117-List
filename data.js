@@ -1075,7 +1075,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 11, techDraft: true, icon: "", title: "ตรวจเช็กซุ้มล้อ และบังโคลนหลัง", severity: "medium",
+    id: 11, icon: "", title: "ตรวจเช็กซุ้มล้อ และบังโคลนหลัง", severity: "medium",
     category: "ระบบหัวเก๋งและ BODY PART",
     detailMode: "quick-sales-preview",
     sources: ["DLT"],
@@ -1860,7 +1860,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 21, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "แผงรังผึ้งหม้อน้ำ (สกปรกให้เป่าทำความสะอาด)", severity: "medium",
+    id: 21, detailMode: "quick-sales-preview", icon: "", title: "แผงรังผึ้งหม้อน้ำ (สกปรกให้เป่าทำความสะอาด)", severity: "medium",
     category: "ตรวจการรั่วซึมของเครื่องยนต์และระบบหล่อเย็น",
     sources: ["EXCEL"],
     quickObservations: [
@@ -2241,7 +2241,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 27, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กสภาพอินเตอร์คูลเลอร์ และท่อยาง", severity: "medium",
+    id: 27, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กสภาพอินเตอร์คูลเลอร์ และท่อยาง", severity: "medium",
     category: "ตรวจการรั่วซึมของเครื่องยนต์และระบบหล่อเย็น",
     sources: ["EXCEL"],
     quickObservations: [
@@ -2747,7 +2747,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 34, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ระบบโซล่า", severity: "medium",
+    id: 34, detailMode: "quick-sales-preview", icon: "", title: "ระบบโซล่า", severity: "medium",
     category: "ตรวจการรั่วซึมของเครื่องยนต์และระบบหล่อเย็น",
     sources: ["DLT", "FMCSA", "EXCEL"],
     quickObservations: [
@@ -3039,7 +3039,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 38, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ระดับน้ำมันเบรก (ต่ำ-สูง)", severity: "critical",
+    id: 38, detailMode: "quick-sales-preview", icon: "", title: "ระดับน้ำมันเบรก (ต่ำ-สูง)", severity: "critical",
     category: "ระบบเบรกและระบบคลัทช์",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
@@ -3454,7 +3454,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 44, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กน้ำในระบบหม้อลมเบรก (ดึงตัวระบายที่หม้อลมเบรก)", severity: "critical",
+    id: 44, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กน้ำในระบบหม้อลมเบรก (ดึงตัวระบายที่หม้อลมเบรก)", severity: "critical",
     pointIssues: [[0], [3], [1, 2]],
     category: "ระบบเบรกและระบบคลัทช์",
     sources: ["DLT", "FMCSA", "EXCEL"],
@@ -3969,7 +3969,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 52, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ยางรองหัวเก๋ง", severity: "medium",
+    id: 52, detailMode: "quick-sales-preview", icon: "", title: "ยางรองหัวเก๋ง", severity: "medium",
     category: "ระบบหัวเก๋งและ BODY PART",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
@@ -4026,7 +4026,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 53, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ชุดกลไกล็อกหัวเก๋ง", severity: "medium",
+    id: 53, detailMode: "quick-sales-preview", icon: "", title: "ชุดกลไกล็อกหัวเก๋ง", severity: "medium",
     category: "ระบบหัวเก๋งและ BODY PART",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
@@ -4225,7 +4225,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 56, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ใบยางปัดน้ำฝน", severity: "medium",
+    id: 56, detailMode: "quick-sales-preview", icon: "", title: "ใบยางปัดน้ำฝน", severity: "medium",
     category: "ระบบหัวเก๋งและ BODY PART",
     sources: ["DLT", "FMCSA", "EXCEL"],
     quickObservations: [
@@ -4422,7 +4422,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 59, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กการรั่วซึมของกระจกบังลมหน้า", severity: "high",
+    id: 59, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กการรั่วซึมของกระจกบังลมหน้า", severity: "high",
     category: "ระบบหัวเก๋งและ BODY PART",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
@@ -4500,7 +4500,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 60, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "กระจกมองข้าง", severity: "medium",
+    id: 60, detailMode: "quick-sales-preview", icon: "", title: "กระจกมองข้าง", severity: "medium",
     category: "ระบบหัวเก๋งและ BODY PART",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
@@ -4557,7 +4557,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 61, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "กระจกมองกันชน", severity: "medium",
+    id: 61, saOnly: true, detailMode: "quick-sales-preview", icon: "", title: "กระจกมองกันชน", severity: "medium",
     category: "ระบบหัวเก๋งและ BODY PART",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
@@ -4852,7 +4852,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 66, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจสอบลูกยางกันกระแทกแหนบ", severity: "critical",
+    id: 66, detailMode: "quick-sales-preview", icon: "", title: "ตรวจสอบลูกยางกันกระแทกแหนบ", severity: "critical",
     category: "ระบบรองรับน้ำหนัก",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
@@ -4907,7 +4907,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 67, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กน็อตล้อ และการคลายตัวของน็อตล้อ", severity: "medium",
+    id: 67, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กน็อตล้อ และการคลายตัวของน็อตล้อ", severity: "medium",
     category: "ระบบรองรับน้ำหนัก",
     sources: ["DLT", "FMCSA", "EXCEL"],
     quickObservations: [
@@ -7007,7 +7007,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 103, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กสภาพของจานลาก", severity: "critical",
+    id: 103, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กสภาพของจานลาก", severity: "critical",
     category: "จานลากหางพ่วง",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
@@ -7730,7 +7730,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 115, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ชุดกลไกล็อกหัวเก๋ง", severity: "medium",
+    id: 115, detailMode: "quick-sales-preview", icon: "", title: "ชุดกลไกล็อกหัวเก๋ง", severity: "medium",
     category: "อื่นๆ",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
