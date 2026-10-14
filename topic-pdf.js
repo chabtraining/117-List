@@ -35,12 +35,15 @@
       border: 1px solid #E3E3DF; border-radius: 5px; background: #F4F4F2; }
     .pdf-imgs figcaption { margin-top: 3px; color: #111110; font-size: 10.5px; line-height: 1.4; }
     .pdf-narr-title { margin: 12px 0 2px; color: #980C22; font-size: 12px; font-weight: 800; }
-    .pdf-step { position: relative; margin-top: 6px; padding: 8px 10px 8px 38px; border-radius: 6px; background: #F4F4F1; }
-    .pdf-step-num { position: absolute; left: 10px; top: 8px; width: 20px; height: 20px; border-radius: 50%;
-      background: #C8102E; color: #FFFFFF; font-size: 11px; font-weight: 800; text-align: center; line-height: 20px; }
-    .pdf-step-title { font-size: 12.5px; font-weight: 800; color: #000000; }
-    .pdf-step-cam { display: inline-block; margin-left: 6px; padding: 0 8px; border-radius: 999px; background: #FFFFFF;
-      color: #980C22; font-size: 10.5px; font-weight: 700; }
+    .pdf-grid { display: flex; gap: 10px; margin-top: 8px; }
+    .pdf-box { flex: 1; padding: 8px 10px; border-left: 3px solid #6B6B64; border-radius: 5px; background: #F7F7F5; }
+    .pdf-box.fix { border-left-color: #C8102E; }
+    .pdf-box.impact { border-left-color: #C8102E; background: #FFF4F5; }
+    .pdf-box-label { color: #000000; font-size: 11.5px; font-weight: 800; }
+    .pdf-box-num { display: inline-block; width: 18px; height: 18px; margin-right: 5px; border-radius: 50%; background: #C8102E;
+      color: #FFFFFF; font-size: 10.5px; text-align: center; line-height: 18px; }
+    .pdf-box-cam { margin-left: 4px; color: #111110; font-size: 10.5px; font-weight: 600; }
+    .pdf-box p { margin: 3px 0 0; font-size: 12px; color: #000000; }
     .pdf-np { margin: 4px 0 0; padding-left: 18px; font-size: 12px; color: #000000; }
     .pdf-np li { margin: 2px 0; }
     .pdf-np-head { color: #C8102E; font-weight: 800; }
@@ -115,22 +118,25 @@
     }).join('') + '</ul>' + sayBox('ประโยคเต็มที่ต้องพูด', part.say);
   }
 
-  function step(num, title, cam, body) {
-    return '<div class="pdf-step pdf-avoid"><span class="pdf-step-num">' + num + '</span>' +
-      '<span class="pdf-step-title">' + title + '</span><span class="pdf-step-cam">มุมกล้อง: ' + cam + '</span>' +
-      body + '</div>';
+  function box(cls, num, title, cam, body) {
+    return '<div class="pdf-box' + (cls ? ' ' + cls : '') + '"><div class="pdf-box-label"><span class="pdf-box-num">' + num + '</span>' +
+      title + '<span class="pdf-box-cam">(' + cam + ')</span></div>' + body + '</div>';
   }
 
-  // The technician's four narration steps for one finding, as on the topic page.
+  // The technician's four narration steps for one finding: two rows of two boxes, as on the topic page.
   function narrationHtml(iss, named) {
     if (!iss) return '';
     const tech = iss.tech || {};
     return '<div class="pdf-narr-title">บทสนทนามาตรฐาน' + (named ? ': ' + iss.issue : '') + '</div>' +
-      step(1, 'แนะนำตัว', 'ถ่ายทะเบียนรถ', sayBox('พูดว่า',
-        'สวัสดีครับ ผมช่างจาก HINO ชัยรัชการ ได้ตรวจเช็กรถ หมายเลขทะเบียน <span class="script-blank">______</span> ครับ โดยเช็ก 117 รายการ')) +
-      step(2, 'ปัญหาที่พบ', 'ค่อยๆ ถ่ายไปยังบริเวณที่พบปัญหา', sayBox('พูดว่า', 'ปัญหาที่พบนะครับ ได้แก่ ' + esc(iss.issue) + ' ครับ')) +
-      step(3, 'วิธีการแก้ไข', 'ถ่ายบริเวณที่พบปัญหา', explainHtml(tech.solution, iss.solution)) +
-      step(4, 'ผลกระทบหากไม่แก้ไข', 'ถ่ายบริเวณที่พบปัญหา', explainHtml(tech.impact, iss.fix));
+      '<div class="pdf-grid pdf-avoid">' +
+        box('', 1, 'แนะนำตัว', 'ถ่ายทะเบียนรถ',
+          '<p>สวัสดีครับ ผมช่างจาก HINO ชัยรัชการ ได้ตรวจเช็กรถ หมายเลขทะเบียน <span class="script-blank">______</span> ครับ โดยเช็ก 117 รายการ</p>') +
+        box('', 2, 'ปัญหาที่พบ', 'ค่อยๆ ถ่ายไปยังบริเวณที่พบปัญหา', '<p>ปัญหาที่พบนะครับ ได้แก่ ' + esc(iss.issue) + ' ครับ</p>') +
+      '</div>' +
+      '<div class="pdf-grid pdf-avoid">' +
+        box('fix', 3, 'วิธีการแก้ไข', 'ถ่ายบริเวณที่พบปัญหา', explainHtml(tech.solution, iss.solution)) +
+        box('impact', 4, 'ผลกระทบหากไม่แก้ไข', 'ถ่ายบริเวณที่พบปัญหา', explainHtml(tech.impact, iss.fix)) +
+      '</div>';
   }
 
   function buildDoc(t) {
