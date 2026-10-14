@@ -1139,6 +1139,12 @@
   }
   .narration-list { margin: 0; padding-left: 20px; color: #000000; font-size: 14px; font-weight: 500; line-height: 1.6; }
   .narration-list li + li { margin-top: 6px; }
+  .narration-points { margin: 0; padding-left: 20px; color: #000000; font-size: 14px; font-weight: 500; line-height: 1.6; }
+  .narration-points li + li { margin-top: 6px; }
+  .np-head { color: var(--accent-red); font-weight: 700; }
+  .narration-say { margin-top: 12px; padding: 10px 12px; border-radius: 8px; background: #F7F7F5; }
+  .narration-say-label { margin-bottom: 4px; color: var(--accent-red-dark); font-size: 12.5px; font-weight: 800; }
+  .narration-say p { margin: 0; color: #000000; font-size: 14px; font-weight: 500; line-height: 1.7; }
   .step-media { display: flex; flex-direction: column; gap: 8px; }
   .media-title {
     font-size: 11px;
@@ -1410,7 +1416,7 @@
   </div>
 </div>
 
-  <script src="data.js?v=20261014-1"></script>
+  <script src="data.js?v=20261014-2"></script>
   <script src="dialogue.js?v=20261007-2"></script>
   <script src="topic-pdf.js?v=20261009-2" defer></script>
 <script>
@@ -1553,6 +1559,13 @@ function impactPoints(iss) {
   const pts = Array.isArray(iss.talkingPoints) ? iss.talkingPoints : [];
   return pts.length ? pts.map(x => x.replace(/^ปิดท้าย:\s*/, '')) : [iss.fix || ''];
 }
+// Red key words with a short explanation, then the full sentence in everyday words.
+function renderTechExplain(part, fallback) {
+  if (!part) return renderNarrationList(fallback);
+  return `
+    <ul class="narration-points">${part.points.map(p => `<li><span class="np-head">${p[0]}</span> - ${p[1]}</li>`).join('')}</ul>
+    <div class="narration-say"><div class="narration-say-label">ประโยคเต็มที่ต้องพูด</div><p>${part.say}</p></div>`;
+}
 function renderNarrationList(items) {
   return `<ul class="narration-list">${items.map(x => `<li>${x}</li>`).join('')}</ul>`;
 }
@@ -1574,11 +1587,11 @@ function renderNarrationGrid(iss, plain) {
         </section>
         <section class="sales-resolution-block">
           <div class="sales-resolution-label"><span class="narration-num">3</span>วิธีการแก้ไข<span class="narration-cam">ถ่ายบริเวณที่พบปัญหา</span></div>
-          ${renderNarrationList(solutionPoints(iss))}
+          ${renderTechExplain(iss.tech && iss.tech.solution, solutionPoints(iss))}
         </section>
         <section class="sales-resolution-block impact">
           <div class="sales-resolution-label"><span class="narration-num">4</span>ผลกระทบหากไม่แก้ไข<span class="narration-cam">ถ่ายบริเวณที่พบปัญหา</span></div>
-          ${renderNarrationList(impactPoints(iss))}
+          ${renderTechExplain(iss.tech && iss.tech.impact, impactPoints(iss))}
         </section>
       </div>
     </${plain ? 'div' : 'details'}>
