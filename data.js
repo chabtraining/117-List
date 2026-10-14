@@ -1075,7 +1075,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 11, icon: "", title: "ตรวจเช็กซุ้มล้อ และบังโคลนหลัง", severity: "medium",
+    id: 11, techDraft: true, icon: "", title: "ตรวจเช็กซุ้มล้อ และบังโคลนหลัง", severity: "medium",
     category: "ระบบหัวเก๋งและ BODY PART",
     detailMode: "quick-sales-preview",
     sources: ["DLT"],
