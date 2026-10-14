@@ -1137,6 +1137,8 @@
     font-weight: 500;
     line-height: 1.7;
   }
+  .narration-list { margin: 0; padding-left: 20px; color: #000000; font-size: 14px; font-weight: 500; line-height: 1.6; }
+  .narration-list li + li { margin-top: 6px; }
   .step-media { display: flex; flex-direction: column; gap: 8px; }
   .media-title {
     font-size: 11px;
@@ -1408,7 +1410,7 @@
   </div>
 </div>
 
-  <script src="data.js?v=20261009-1"></script>
+  <script src="data.js?v=20261014-1"></script>
   <script src="dialogue.js?v=20261007-2"></script>
   <script src="topic-pdf.js?v=20261009-2" defer></script>
 <script>
@@ -1542,6 +1544,19 @@ function renderStepMedia(t, stepIndex) {
   `;
 }
 
+// Steps 3 and 4 read as bullets so the technician can explain point by point.
+function solutionPoints(iss) {
+  const parts = String(iss.solution || '').split('ครับ ');
+  return parts.map((x, i) => i < parts.length - 1 ? x + 'ครับ' : x).filter(x => x.trim());
+}
+function impactPoints(iss) {
+  const pts = Array.isArray(iss.talkingPoints) ? iss.talkingPoints : [];
+  return pts.length ? pts.map(x => x.replace(/^ปิดท้าย:\s*/, '')) : [iss.fix || ''];
+}
+function renderNarrationList(items) {
+  return `<ul class="narration-list">${items.map(x => `<li>${x}</li>`).join('')}</ul>`;
+}
+
 // The company's four narration steps for one finding, shown under the matching point's photos.
 function renderNarrationGrid(iss, plain) {
   if (!iss) return '';
@@ -1559,11 +1574,11 @@ function renderNarrationGrid(iss, plain) {
         </section>
         <section class="sales-resolution-block">
           <div class="sales-resolution-label"><span class="narration-num">3</span>วิธีการแก้ไข<span class="narration-cam">ถ่ายบริเวณที่พบปัญหา</span></div>
-          <p class="sales-resolution-text">${iss.solution}</p>
+          ${renderNarrationList(solutionPoints(iss))}
         </section>
         <section class="sales-resolution-block impact">
           <div class="sales-resolution-label"><span class="narration-num">4</span>ผลกระทบหากไม่แก้ไข<span class="narration-cam">ถ่ายบริเวณที่พบปัญหา</span></div>
-          <p class="sales-resolution-text">${iss.fix}</p>
+          ${renderNarrationList(impactPoints(iss))}
         </section>
       </div>
     </${plain ? 'div' : 'details'}>
