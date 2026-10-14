@@ -15,7 +15,8 @@ window.trainingData = {
   ],
   categoryImages: {
     "ตรวจการรั่วซึมของเครื่องยนต์และระบบหล่อเย็น": "category-engine-cooling.webp",
-    "ระบบเบรคและระบบคลัทช์": "category-brake-clutch.webp"
+    "ระบบเบรคและระบบคลัทช์": "category-brake-clutch.webp",
+    "ระบบบังคับเลี้ยว": "category-steering.webp"
   },
   videoUrls: {
   1: 'https://www.canva.com/design/DAHUMqQBFYc/OSB6IqRffXtZUaCQDC3T-w/watch?utm_content=DAHUMqQBFYc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7c1d62d976', // ตรวจเช็กการรั่วซึมของจารบีล้อ
