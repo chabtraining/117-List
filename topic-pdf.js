@@ -28,16 +28,25 @@
     .pdf-label { margin: 8px 0 3px; color: #980C22; font-size: 11.5px; font-weight: 800; }
     .pdf-points { margin: 0; padding-left: 18px; }
     .pdf-points li { margin: 2px 0; }
-    .pdf-grid { display: flex; gap: 10px; margin-top: 8px; }
-    .pdf-box { flex: 1; padding: 8px 10px; border-radius: 5px; background: #F7F7F5; }
-    .pdf-box.impact { background: #FFF4F5; }
-    .pdf-box .pdf-label { margin-top: 0; }
-    .pdf-box p, .pdf-text { margin: 0; }
+    .pdf-text { margin: 4px 0 0; color: #000000; font-weight: 500; }
     .pdf-imgs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
     .pdf-imgs figure { width: calc(50% - 4px); margin: 0; }
     .pdf-imgs img { display: block; width: 100%; max-height: 210px; object-fit: contain;
       border: 1px solid #E3E3DF; border-radius: 5px; background: #F4F4F2; }
     .pdf-imgs figcaption { margin-top: 3px; color: #111110; font-size: 10.5px; line-height: 1.4; }
+    .pdf-narr-title { margin: 12px 0 2px; color: #980C22; font-size: 12px; font-weight: 800; }
+    .pdf-step { position: relative; margin-top: 6px; padding: 8px 10px 8px 38px; border-radius: 6px; background: #F4F4F1; }
+    .pdf-step-num { position: absolute; left: 10px; top: 8px; width: 20px; height: 20px; border-radius: 50%;
+      background: #C8102E; color: #FFFFFF; font-size: 11px; font-weight: 800; text-align: center; line-height: 20px; }
+    .pdf-step-title { font-size: 12.5px; font-weight: 800; color: #000000; }
+    .pdf-step-cam { display: inline-block; margin-left: 6px; padding: 0 8px; border-radius: 999px; background: #FFFFFF;
+      color: #980C22; font-size: 10.5px; font-weight: 700; }
+    .pdf-np { margin: 4px 0 0; padding-left: 18px; font-size: 12px; color: #000000; }
+    .pdf-np li { margin: 2px 0; }
+    .pdf-np-head { color: #C8102E; font-weight: 800; }
+    .pdf-say { margin-top: 6px; padding: 6px 8px; border-radius: 5px; background: #FFFFFF; font-size: 12px; color: #000000; }
+    .pdf-say-label { color: #980C22; font-size: 10.5px; font-weight: 800; }
+    .pdf-say .script-blank { display: inline-block; min-width: 56px; border-bottom: 1px dashed #999994; color: transparent; }
     .pdf-foot { margin-top: 20px; padding-top: 10px; border-top: 1px solid #E3E3DF; color: #111110;
       font-size: 10.5px; line-height: 1.6; word-break: break-all; }
     .pdf-avoid { page-break-inside: avoid; break-inside: avoid; }
@@ -49,6 +58,14 @@
     .pdf-script .script-blank { display: inline-block; min-width: 56px; border-bottom: 1px dashed #999994; color: transparent; }
     .pdf-script .script-act { color: #111110; }
   `;
+
+  // Same Thai labels as SOURCE_LABELS in index.html.
+  const SOURCE_LABELS = {
+    DLT: 'คู่มือการปฏิบัติงานการตรวจสภาพรถ กรมการขนส่งทางบก ฉบับมกราคม 2566',
+    FMCSA: 'เกณฑ์ตรวจสภาพรถบรรทุกของกรมขนส่งสหรัฐอเมริกา',
+    EXCEL: 'บทสนทนามาตรฐาน 117 รายการ ชัยรัชการ',
+    HINO_SB: 'เอกสารแจ้งช่างของฮีโน่ เรื่องวาล์วเบรกไอเสีย'
+  };
 
   function esc(v) {
     return String(v || '').replace(/[&<>"']/g, function(ch) {
@@ -65,9 +82,8 @@
       return '<p><span class="pdf-who">' + who + '</span> ' + Dialogue.toHtml(text, v) + '</p>';
     };
     return '<div class="pdf-script">' +
-      '<div class="pdf-label" style="margin-top:0">บทสนทนามาตรฐาน' +
-        '</div>' +
-      '<div class="pdf-script-head sa">SA คุยกับลูกค้า (ใช้คลิปของช่าง)</div>' +
+      '<div class="pdf-label" style="margin-top:0">บทสนทนามาตรฐาน</div>' +
+      '<div class="pdf-script-head sa">SA คุยกับลูกค้า โดยใช้คลิปของช่าง</div>' +
       d.main.map(function(t) { return line('SA', t); }).join('') +
       (d.replies.length
         ? '<div class="pdf-script-head sa">ถ้าลูกค้าตอบว่า…</div>' +
@@ -81,6 +97,42 @@
     return item.src ? [{ src: item.src, caption: item.caption || '' }] : [];
   }
 
+  // Same pairing as pointIssueIndexes() in index.html.
+  function pointIssueIndexes(t, i) {
+    if (Array.isArray(t.pointIssues)) return t.pointIssues[i] || [];
+    return i < (t.issuesList || []).length ? [i] : [];
+  }
+
+  function sayBox(label, text) {
+    return '<div class="pdf-say"><div class="pdf-say-label">' + label + '</div>' + text + '</div>';
+  }
+
+  // Steps 3 and 4: red key words with a short explanation, then the full sentence.
+  function explainHtml(part, fallbackText) {
+    if (!part) return '<p class="pdf-text">' + (fallbackText || '-') + '</p>';
+    return '<ul class="pdf-np">' + part.points.map(function(p) {
+      return '<li><span class="pdf-np-head">' + p[0] + '</span> - ' + p[1] + '</li>';
+    }).join('') + '</ul>' + sayBox('ประโยคเต็มที่ต้องพูด', part.say);
+  }
+
+  function step(num, title, cam, body) {
+    return '<div class="pdf-step pdf-avoid"><span class="pdf-step-num">' + num + '</span>' +
+      '<span class="pdf-step-title">' + title + '</span><span class="pdf-step-cam">มุมกล้อง: ' + cam + '</span>' +
+      body + '</div>';
+  }
+
+  // The technician's four narration steps for one finding, as on the topic page.
+  function narrationHtml(iss, named) {
+    if (!iss) return '';
+    const tech = iss.tech || {};
+    return '<div class="pdf-narr-title">บทสนทนามาตรฐาน' + (named ? ': ' + iss.issue : '') + '</div>' +
+      step(1, 'แนะนำตัว', 'ถ่ายทะเบียนรถ', sayBox('พูดว่า',
+        'สวัสดีครับ ผมช่างจาก HINO ชัยรัชการ ได้ตรวจเช็กรถ หมายเลขทะเบียน <span class="script-blank">______</span> ครับ โดยเช็ก 117 รายการ')) +
+      step(2, 'ปัญหาที่พบ', 'ค่อยๆ ถ่ายไปยังบริเวณที่พบปัญหา', sayBox('พูดว่า', 'ปัญหาที่พบนะครับ ได้แก่ ' + esc(iss.issue) + ' ครับ')) +
+      step(3, 'วิธีการแก้ไข', 'ถ่ายบริเวณที่พบปัญหา', explainHtml(tech.solution, iss.solution)) +
+      step(4, 'ผลกระทบหากไม่แก้ไข', 'ถ่ายบริเวณที่พบปัญหา', explainHtml(tech.impact, iss.fix));
+  }
+
   function buildDoc(t) {
     const issues = Array.isArray(t.issuesList) ? t.issuesList : [];
     const obs = Array.isArray(t.quickObservations) && t.quickObservations.length
@@ -89,6 +141,37 @@
     const videoLink = rawVideo.replace(/\?embed$/, '');
     const pageLink = new URL('./?topic=' + t.id, location.href).toString();
 
+    // Technician first, as on the page: each point, its photos, then its findings' narration.
+    const used = {};
+    let techHtml = obs.map(function(item, i) {
+      const imgs = observationImages(item);
+      const idx = pointIssueIndexes(t, i);
+      idx.forEach(function(k) { used[k] = true; });
+      return '<div class="pdf-item">' +
+        '<div class="pdf-item-head"><span class="pdf-num">' + (i + 1) + '</span><span>' + item.title + '</span></div>' +
+        '<div class="pdf-body">' +
+          '<p class="pdf-text">' + (item.text || '') + '</p>' +
+          (imgs.length ? '<div class="pdf-imgs pdf-avoid">' + imgs.map(function(img) {
+            return '<figure><img src="' + img.src + '" alt="">' +
+              (img.caption ? '<figcaption>' + img.caption + '</figcaption>' : '') + '</figure>';
+          }).join('') + '</div>' : '') +
+          idx.map(function(k) { return narrationHtml(issues[k], idx.length > 1); }).join('') +
+        '</div>' +
+      '</div>';
+    }).join('');
+    // Findings no point claims keep their own block at the end, like the page's extra drop-downs.
+    if (obs.length) {
+      let n = obs.length;
+      techHtml += issues.map(function(iss, k) {
+        if (used[k]) return '';
+        n += 1;
+        return '<div class="pdf-item">' +
+          '<div class="pdf-item-head"><span class="pdf-num">' + n + '</span><span>' + iss.issue + '</span></div>' +
+          '<div class="pdf-body">' + narrationHtml(iss, false) + '</div>' +
+        '</div>';
+      }).join('');
+    }
+
     const saHtml = issues.map(function(iss, i) {
       const pts = Array.isArray(iss.talkingPoints) && iss.talkingPoints.length
         ? '<div class="pdf-label">ประเด็นคุยกับลูกค้า</div><ul class="pdf-points">' +
@@ -96,37 +179,9 @@
         : '';
       return '<div class="pdf-item pdf-avoid">' +
         '<div class="pdf-item-head"><span class="pdf-num">' + (i + 1) + '</span><span>' + iss.issue + '</span></div>' +
-        '<div class="pdf-body">' + pts +
-          '<div class="pdf-label">บทสนทนามาตรฐาน</div>' +
-          '<div class="pdf-grid">' +
-            '<div class="pdf-box"><div class="pdf-label">1. แนะนำตัว (ถ่ายทะเบียนรถ)</div>' +
-              '<p>สวัสดีครับ ผมช่างจาก HINO ชัยรัชการ ได้ตรวจเช็กรถ หมายเลขทะเบียน ________ ครับ โดยเช็ก 117 รายการ</p></div>' +
-            '<div class="pdf-box"><div class="pdf-label">2. ปัญหาที่พบ (ค่อยๆ ถ่ายไปยังบริเวณที่พบปัญหา)</div>' +
-              '<p>ปัญหาที่พบนะครับ ได้แก่ ' + esc(iss.issue) + ' ครับ</p></div>' +
-          '</div>' +
-          '<div class="pdf-grid">' +
-            '<div class="pdf-box"><div class="pdf-label">3. วิธีการแก้ไข (ถ่ายบริเวณที่พบปัญหา)</div><p>' + (iss.solution || '-') + '</p></div>' +
-            '<div class="pdf-box impact"><div class="pdf-label">4. ผลกระทบหากไม่แก้ไข (ถ่ายบริเวณที่พบปัญหา)</div><p>' + (iss.fix || '-') + '</p></div>' +
-          '</div>' +
-          scriptHtml(iss.script) +
-        '</div>' +
+        '<div class="pdf-body">' + pts + scriptHtml(iss.script) + '</div>' +
       '</div>';
     }).join('');
-
-    // Like the page: no technician section until the topic has photographed points.
-    const techHtml = obs.map(function(item, i) {
-          const imgs = observationImages(item);
-          return '<div class="pdf-item pdf-avoid">' +
-            '<div class="pdf-item-head"><span class="pdf-num">' + (i + 1) + '</span><span>' + item.title + '</span></div>' +
-            '<div class="pdf-body">' +
-              '<p class="pdf-text" style="margin-top:4px">' + (item.text || '') + '</p>' +
-              (imgs.length ? '<div class="pdf-imgs">' + imgs.map(function(img) {
-                return '<figure><img src="' + img.src + '" alt="">' +
-                  (img.caption ? '<figcaption>' + img.caption + '</figcaption>' : '') + '</figure>';
-              }).join('') + '</div>' : '') +
-            '</div>' +
-          '</div>';
-        }).join('');
 
     const el = document.createElement('div');
     el.innerHTML = '<style>' + STYLE + '</style>' +
@@ -137,26 +192,13 @@
         '</div>' +
         '<div class="pdf-title">' + esc(t.title) + '</div>' +
         '<span class="pdf-cat">' + esc(t.category) + '</span>' +
-        (saHtml ? '<div class="pdf-section"><div class="pdf-bar"><span class="pdf-bar-mark">SA</span>ข้อมูลสำหรับแนะนำลูกค้า</div>' + saHtml + '</div>' : '') +
         (techHtml ? '<div class="pdf-section"><div class="pdf-bar tech"><span class="pdf-bar-mark">ช่าง</span>' +
           'จุดสังเกตในการตรวจ' +
-          (t.techDraft ? (t.sources ? ' (อ้างอิงเอกสาร รอคลิปยืนยัน)' : ' (ข้อมูลเบื้องต้น รอคลิปยืนยัน)') : '') + '</div>' + techHtml + '</div>' : '') +
+          (t.techDraft ? (t.sources ? ' · อ้างอิงเอกสาร รอคลิปยืนยัน' : ' · ข้อมูลเบื้องต้น รอคลิปยืนยัน') : '') + '</div>' + techHtml + '</div>' : '') +
+        (saHtml ? '<div class="pdf-section"><div class="pdf-bar"><span class="pdf-bar-mark">SA</span>ข้อมูลสำหรับแนะนำลูกค้า</div>' + saHtml + '</div>' : '') +
         (Array.isArray(t.sources) && t.sources.length
           ? '<div class="pdf-foot pdf-avoid"><b>แหล่งอ้างอิง:</b> ' + t.sources.map(function(k) {
-              return esc({ DLT: 'คู่มือการตรวจสภาพรถ กรมการขนส่งทางบก (ม.ค. 2566)', FMCSA: 'FMCSA 49 CFR 396 Appendix A',
-                EXCEL: 'บทสนทนามาตรฐาน 117 รายการ ชัยรัชการ',
-                CUMMINS: 'คู่มือ Operation & Maintenance เครื่องยนต์ Cummins',
-                USMW: 'Technical Bulletin การรั่วของปั๊มน้ำ US Motor Works',
-                GARRETT: 'คู่มือช่างเทอร์โบ Garrett Motion',
-                PETERBILT: 'คู่มือบำรุงรักษารถบรรทุก Peterbilt (Conventional Models)',
-                HINO_SB: 'Service Bulletin HINO SB-19-013 (เครื่องยนต์ J05E)',
-                SPICER: 'แนวทางการหล่อลื่นข้อต่อ Spicer (Dana)',
-                FREIGHTLINER: 'คู่มือบำรุงรักษารถบรรทุก Freightliner (Heavy-Duty Trucks)',
-                REDDOT: 'คู่มือบริการระบบปรับอากาศรถบรรทุก Red Dot',
-                MONROE: 'เกณฑ์ตรวจโช้คอัพ Monroe (Tenneco)',
-                HENDRICKSON: 'คู่มือช่วงล่างถุงลมและเพลายก Hendrickson',
-                DELCOREMY: 'คู่มือวิเคราะห์ระบบชาร์จไฟ Delco Remy',
-              }[k] || k);
+              return esc(SOURCE_LABELS[k] || k);
             }).join(' · ') + '</div>'
           : '') +
         '<div class="pdf-foot pdf-avoid">' +
