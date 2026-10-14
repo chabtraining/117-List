@@ -13,6 +13,9 @@ window.trainingData = {
     "จานลากหางพ่วง",
     "อื่นๆ"
   ],
+  categoryImages: {
+    "ตรวจการรั่วซึมของเครื่องยนต์และระบบหล่อเย็น": "category-engine-cooling.webp"
+  },
   videoUrls: {
   1: 'https://www.canva.com/design/DAHUMqQBFYc/OSB6IqRffXtZUaCQDC3T-w/watch?utm_content=DAHUMqQBFYc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7c1d62d976', // ตรวจเช็กการรั่วซึมของจารบีล้อ
   2: 'https://www.canva.com/design/DAHS6KSzgI8/zwi3Mxe43x_1Ybg2xfrNQw/watch?utm_content=DAHS6KSzgI8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h30d2a3c67d', // สภาพของลูกหมากช่วงล่างทั้งหมด
