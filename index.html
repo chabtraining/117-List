@@ -1051,6 +1051,7 @@
   .narration-sub { margin-top: 16px; padding-top: 14px; border-top: 1px dashed #D9D9D4; }
   .narration-sub:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
   .narration-sub .sales-resolution-grid { margin-bottom: 0; }
+  .narration-sub + .narration-sub { margin-top: 10px; padding-top: 0; border-top: 0; }
   .narration-toggle { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; border: 1px solid #E5E5E0; border-radius: 8px; background: #FAFAF8; color: var(--accent-red-dark); font-size: 13px; font-weight: 800; cursor: pointer; list-style: none; }
   .narration-toggle::-webkit-details-marker { display: none; }
   .narration-chevron { color: var(--accent-red); font-size: 18px; font-weight: 700; transition: transform 0.2s ease; }
@@ -1422,7 +1423,7 @@
   </div>
 </div>
 
-  <script src="data.js?v=20261014-2"></script>
+  <script src="data.js?v=20261014-3"></script>
   <script src="dialogue.js?v=20261007-2"></script>
   <script src="topic-pdf.js?v=20261009-2" defer></script>
 <script>
@@ -1590,11 +1591,22 @@ function renderNarrationList(items) {
 }
 
 // The company's four narration steps for one finding, shown under the matching point's photos.
-function renderNarrationGrid(iss, plain) {
+// Which findings belong under each inspection point: topic.pointIssues when the order differs, else point N = finding N.
+function pointIssueIndexes(t, pointIndex) {
+  if (Array.isArray(t.pointIssues)) return t.pointIssues[pointIndex] || [];
+  return pointIndex < (t.issuesList || []).length ? [pointIndex] : [];
+}
+function renderPointNarrations(t, pointIndex) {
+  const idx = pointIssueIndexes(t, pointIndex);
+  return idx.map(i => renderNarrationGrid((t.issuesList || [])[i], false, idx.length > 1)).join('');
+}
+
+function renderNarrationGrid(iss, plain, named) {
   if (!iss) return '';
+  const heading = named ? `บทสนทนามาตรฐาน: ${iss.issue}` : 'บทสนทนามาตรฐาน';
   return `
     <${plain ? 'div' : 'details'} class="narration-sub">
-      ${plain ? '<div class="sales-content-heading">บทสนทนามาตรฐาน</div>' : '<summary class="narration-toggle"><span>บทสนทนามาตรฐาน</span><span class="narration-chevron" aria-hidden="true">›</span></summary>'}
+      ${plain ? '<div class="sales-content-heading">บทสนทนามาตรฐาน</div>' : `<summary class="narration-toggle"><span>${heading}</span><span class="narration-chevron" aria-hidden="true">›</span></summary>`}
       <ol class="nsteps">
         ${renderStep(1, 'แนะนำตัว', 'ถ่ายทะเบียนรถ', sayBox('พูดว่า', 'สวัสดีครับ ผมช่างจาก HINO ชัยรัชการ ได้ตรวจเช็กรถ หมายเลขทะเบียน <span class="script-blank">______</span> ครับ โดยเช็ก 117 รายการ'))}
         ${renderStep(2, 'ปัญหาที่พบ', 'ค่อยๆ ถ่ายไปยังบริเวณที่พบปัญหา', sayBox('พูดว่า', `ปัญหาที่พบนะครับ ได้แก่ ${iss.issue} ครับ`))}
@@ -1607,7 +1619,9 @@ function renderNarrationGrid(iss, plain) {
 
 // Findings beyond the number of points have no photo to sit under, so they keep a drop-down each.
 function renderExtraNarration(t, pointCount) {
-  const list = Array.isArray(t.issuesList) ? t.issuesList.slice(pointCount) : [];
+  const used = new Set();
+  for (let i = 0; i < pointCount; i++) pointIssueIndexes(t, i).forEach(x => used.add(x));
+  const list = (t.issuesList || []).filter((iss, i) => !used.has(i));
   return list.map((iss, i) => `
     <details class="observation-item">
       <summary class="observation-summary">
@@ -1670,7 +1684,7 @@ function renderInspectionSection(t) {
                     `).join('')}
                   </div>
                 ` : ''}
-                ${renderNarrationGrid((t.issuesList || [])[observationIndex])}
+                ${renderPointNarrations(t, observationIndex)}
               </div>
             </details>
           `;}).join('')}
