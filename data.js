@@ -74,6 +74,7 @@ window.trainingData = {
   46: 'https://www.canva.com/design/DAHYC5OVEFY/13vzhAgMoRHMOWixaSMzFQ/watch?utm_content=DAHYC5OVEFY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h46645d0c96', // ระยะฟรีพวงมาลัย
   47: 'https://www.canva.com/design/DAHYCyEguxc/WekM_Ni6ry-tzeP5kBTHpw/watch?utm_content=DAHYCyEguxc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hec15d095f4', // ตรวจอัดจารบีแกนพวงมาลัย
   49: 'https://www.canva.com/design/DAHYCyEguxc/WekM_Ni6ry-tzeP5kBTHpw/watch?utm_content=DAHYCyEguxc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hec15d095f4', // ตรวจสอบความหลวมยอยพวงมาลัย
+  58: 'https://www.canva.com/design/DAHYCxGW28Q/vVRlsbZlaN4zpaocOp2EVQ/watch?utm_content=DAHYCxGW28Q&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha07298e661', // ตรวจเช็กการทำงานของเข็มขัดนิรภัย
 },
   topicMedia: {
   1: {
@@ -4422,19 +4423,25 @@ window.trainingData = {
     ]
   },
   {
-    id: 58, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กการทำงานของเข็มขัดนิรภัย", severity: "medium",
+    id: 58, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กการทำงานของเข็มขัดนิรภัย", severity: "medium",
     category: "ระบบหัวเก๋งและ BODY PART",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจสภาพสายเข็มขัด",
-        text: "ดึงสายเข็มขัดออกจนสุด ดูสายไม่ขาด ไม่ลุ่ย ไม่ไหม้ และม้วนกลับได้เองจนสุด ตามเกณฑ์กรมการขนส่งทางบก เข็มขัดนิรภัยต้องมีสภาพดี ไม่ชำรุดหรือเสื่อมสภาพ รถบรรทุกที่จดทะเบียนตั้งแต่ 1 เมษายน 2555 ต้องติดตั้ง"
+        text: "ดึงสายเข็มขัดออกจนสุด ดูสายไม่ขาด ไม่ลุ่ย ไม่ไหม้ และม้วนกลับได้เองจนสุด ตามเกณฑ์กรมการขนส่งทางบก เข็มขัดนิรภัยต้องมีสภาพดี ไม่ชำรุดหรือเสื่อมสภาพ รถบรรทุกที่จดทะเบียนตั้งแต่ 1 เมษายน 2555 ต้องติดตั้ง",
+        images: [
+          { src: "topic58-pull-belt.jpg", caption: "ดึงสายเข็มขัดออกมาดูสภาพสาย และดูว่าม้วนกลับได้เอง" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
         title: "ทดสอบการล็อกเมื่อกระตุก",
-        text: "กระตุกสายเข็มขัดแรงๆ สายต้องล็อกทันที ตามวิธีตรวจของกรมการขนส่งทางบกที่ตรวจการล็อกโดยการกระตุกหรือกระชาก"
+        text: "กระตุกสายเข็มขัดแรงๆ สายต้องล็อกทันที ตามวิธีตรวจของกรมการขนส่งทางบกที่ตรวจการล็อกโดยการกระตุกหรือกระชาก",
+        images: [
+          { src: "topic58-jerk-test.jpg", caption: "จับสายเข็มขัดแล้วกระตุกแรงๆ สายต้องล็อกทันที" }
+        ]
       },
       {
         label: "จุดตรวจที่ 3",
