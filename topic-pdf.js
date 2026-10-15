@@ -194,7 +194,7 @@
       '<div class="pdf-doc">' +
         '<div class="pdf-head">' +
           '<img src="chairatchakarn-group-logo.png" alt="">' +
-          '<div class="pdf-head-org"><b>ชัยรัชการ (กรุงเทพ) จำกัด</b>การฝึกอบรม · ตรวจเช็ก 117 รายการ</div>' +
+          '<div class="pdf-head-org"><b>บริษัท ชัยรัชการ (กรุงเทพ) จำกัด</b>การฝึกอบรม · ตรวจเช็ก 117 รายการ</div>' +
         '</div>' +
         '<div class="pdf-title">' + esc(t.title) + '</div>' +
         '<span class="pdf-cat">' + esc(t.category) + '</span>' +
