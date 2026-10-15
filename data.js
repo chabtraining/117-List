@@ -14,9 +14,16 @@ window.trainingData = {
     "อื่นๆ"
   ],
   categoryImages: {
-    "ตรวจการรั่วซึมของเครื่องยนต์และระบบหล่อเย็น": "category-engine-cooling.webp",
-    "ระบบเบรกและระบบคลัทช์": "category-brake-clutch.webp",
-    "ระบบบังคับเลี้ยว": "category-steering.webp"
+    "ตรวจการรั่วซึมของเครื่องยนต์และระบบหล่อเย็น": "category-icon-engine-cooling.webp",
+    "ระบบเบรกและระบบคลัทช์": "category-icon-brake-clutch.webp",
+    "ระบบบังคับเลี้ยว": "category-icon-steering.webp",
+    "ระบบหัวเก๋งและ BODY PART": "category-icon-cab-body.webp",
+    "ระบบรองรับน้ำหนัก": "category-icon-leaf-spring.webp",
+    "ระบบรองรับน้ำหนักแบบถุงลมสำหรับรุ่น": "category-icon-air-suspension.webp",
+    "ระบบไฟฟ้า": "category-icon-electrical.webp",
+    "ระบบส่งกำลัง": "category-icon-driveline.webp",
+    "จานลากหางพ่วง": "category-icon-fifth-wheel.webp",
+    "อื่นๆ": "category-icon-other.webp"
   },
   videoUrls: {
   1: 'https://www.canva.com/design/DAHUMqQBFYc/OSB6IqRffXtZUaCQDC3T-w/watch?utm_content=DAHUMqQBFYc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7c1d62d976', // ตรวจเช็กการรั่วซึมของจารบีล้อ
