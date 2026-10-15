@@ -75,6 +75,7 @@ window.trainingData = {
   47: 'https://www.canva.com/design/DAHYCyEguxc/WekM_Ni6ry-tzeP5kBTHpw/watch?utm_content=DAHYCyEguxc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hec15d095f4', // ตรวจอัดจารบีแกนพวงมาลัย
   49: 'https://www.canva.com/design/DAHYCyEguxc/WekM_Ni6ry-tzeP5kBTHpw/watch?utm_content=DAHYCyEguxc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hec15d095f4', // ตรวจสอบความหลวมยอยพวงมาลัย
   58: 'https://www.canva.com/design/DAHYCxGW28Q/vVRlsbZlaN4zpaocOp2EVQ/watch?utm_content=DAHYCxGW28Q&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha07298e661', // ตรวจเช็กการทำงานของเข็มขัดนิรภัย
+  81: 'https://www.canva.com/design/DAHYDEAlOxU/M9uge6Yupz81zCQgRrKpgA/watch?utm_content=DAHYDEAlOxU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf683e6478b', // ตรวจวัดแบตเตอรี่ด้วยเครื่องตรวจวัด
 },
   topicMedia: {
   1: {
@@ -5803,14 +5804,19 @@ window.trainingData = {
     ]
   },
   {
-    id: 81, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจวัดแบตเตอรี่ด้วยเครื่องตรวจวัด", severity: "high",
+    id: 81, detailMode: "quick-sales-preview", icon: "", title: "ตรวจวัดแบตเตอรี่ด้วยเครื่องตรวจวัด", severity: "high",
     category: "ระบบไฟฟ้า",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "วัดค่าแบตเตอรี่ด้วยเครื่องตรวจวัด",
-        text: "ใช้เครื่องวัดแบตเตอรี่วัดแรงดันและค่ากระแสสตาร์ททีละลูก เทียบกับค่าที่ระบุบนฉลากแบตเตอรี่ แล้วเก็บผลการวัดไว้ให้ลูกค้าดูเป็นหลักฐาน"
+        text: "ใช้เครื่องวัดแบตเตอรี่วัดแรงดันและค่ากระแสสตาร์ททีละลูก เทียบกับค่าที่ระบุบนฉลากแบตเตอรี่ แล้วเก็บผลการวัดไว้ให้ลูกค้าดูเป็นหลักฐาน",
+        images: [
+          { src: "topic81-tester.jpg", caption: "ต่อเครื่องวัดเข้ากับขั้วแบตเตอรี่" },
+          { src: "topic81-reading.jpg", caption: "อ่านค่าบนหน้าจอเครื่องวัด เทียบกับค่าบนฉลากแบตเตอรี่" },
+          { src: "topic81-printout.jpg", caption: "ผลการวัดที่พิมพ์ออกมา เก็บไว้ให้ลูกค้าดูเป็นหลักฐาน" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
