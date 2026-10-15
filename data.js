@@ -72,6 +72,8 @@ window.trainingData = {
   26: 'https://www.canva.com/design/DAHYCzuNOD8/tSJ0qXfejjG88CIrLpKttw/watch?utm_content=DAHYCzuNOD8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h309c3cd7d4', // ตรวจเช็กการทำงานและรอยรั่วซึมเทอร์โบ
   29: 'https://www.canva.com/design/DAHYCxbhjCU/yRei_N9rE9b8bzd0sJXUTg/watch?utm_content=DAHYCxbhjCU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha0cf1839bb', // ตรวจเช็กยางแท่นเครื่อง
   46: 'https://www.canva.com/design/DAHYC5OVEFY/13vzhAgMoRHMOWixaSMzFQ/watch?utm_content=DAHYC5OVEFY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h46645d0c96', // ระยะฟรีพวงมาลัย
+  47: 'https://www.canva.com/design/DAHYCyEguxc/WekM_Ni6ry-tzeP5kBTHpw/watch?utm_content=DAHYCyEguxc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hec15d095f4', // ตรวจอัดจารบีแกนพวงมาลัย
+  49: 'https://www.canva.com/design/DAHYCyEguxc/WekM_Ni6ry-tzeP5kBTHpw/watch?utm_content=DAHYCyEguxc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hec15d095f4', // ตรวจสอบความหลวมยอยพวงมาลัย
 },
   topicMedia: {
   1: {
@@ -3716,7 +3718,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 47, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจอัดจารบีแกนพวงมาลัย", severity: "critical",
+    id: 47, detailMode: "quick-sales-preview", icon: "", title: "ตรวจอัดจารบีแกนพวงมาลัย", severity: "critical",
     category: "ระบบบังคับเลี้ยว",
     sources: ["EXCEL"],
     quickObservations: [
@@ -3728,7 +3730,11 @@ window.trainingData = {
       {
         label: "จุดตรวจที่ 2",
         title: "อัดจารบีจนเห็นจารบีใหม่ออก",
-        text: "อัดจารบีชนิดที่กำหนดจนจารบีใหม่ดันจารบีเก่าที่สกปรกออกมา แล้วเช็ดส่วนเกินออก ทำตามระยะที่กำหนด หรือถี่ขึ้นเมื่อใช้งานทางขรุขระ"
+        text: "อัดจารบีชนิดที่กำหนดจนจารบีใหม่ดันจารบีเก่าที่สกปรกออกมา แล้วเช็ดส่วนเกินออก ทำตามระยะที่กำหนด หรือถี่ขึ้นเมื่อใช้งานทางขรุขระ",
+        images: [
+          { src: "topic47-shaft-grease.jpg", caption: "ดูจารบีรอบแกนพวงมาลัยและยอย" },
+          { src: "topic47-shaft-grease-2.jpg", caption: "ชี้ดูจารบีที่ข้อต่อแกนพวงมาลัย" }
+        ]
       },
       {
         label: "จุดตรวจที่ 3",
@@ -3858,7 +3864,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 49, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจสอบความหลวมยอยพวงมาลัย", severity: "critical",
+    id: 49, detailMode: "quick-sales-preview", icon: "", title: "ตรวจสอบความหลวมยอยพวงมาลัย", severity: "critical",
     category: "ระบบบังคับเลี้ยว",
     sources: ["DLT", "FMCSA", "EXCEL"],
     quickObservations: [
@@ -3870,7 +3876,10 @@ window.trainingData = {
       {
         label: "จุดตรวจที่ 2",
         title: "ตรวจการหล่อลื่นยอย",
-        text: "ถ้ายอยเป็นแบบอัดจารบีได้ ให้ตรวจหัวอัดจารบีที่ยอยและอัดจารบีตามระยะ รถที่วิ่งทางขรุขระควรอัดถี่ขึ้น"
+        text: "ถ้ายอยเป็นแบบอัดจารบีได้ ให้ตรวจหัวอัดจารบีที่ยอยและอัดจารบีตามระยะ รถที่วิ่งทางขรุขระควรอัดถี่ขึ้น",
+        images: [
+          { src: "topic49-joint-grease.jpg", caption: "ชี้ดูจารบีที่ยอยพวงมาลัย" }
+        ]
       },
       {
         label: "จุดตรวจที่ 3",
