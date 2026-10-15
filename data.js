@@ -71,6 +71,7 @@ window.trainingData = {
   25: 'https://www.canva.com/design/DAHYC1ERyB0/xZimKMYZsRiU6qIje0vQ_w/watch?utm_content=DAHYC1ERyB0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc55ac84072', // รอยรั่วปะเก็นอ่างน้ำมันเครื่อง
   26: 'https://www.canva.com/design/DAHYCzuNOD8/tSJ0qXfejjG88CIrLpKttw/watch?utm_content=DAHYCzuNOD8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h309c3cd7d4', // ตรวจเช็กการทำงานและรอยรั่วซึมเทอร์โบ
   29: 'https://www.canva.com/design/DAHYCxbhjCU/yRei_N9rE9b8bzd0sJXUTg/watch?utm_content=DAHYCxbhjCU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha0cf1839bb', // ตรวจเช็กยางแท่นเครื่อง
+  46: 'https://www.canva.com/design/DAHYC5OVEFY/13vzhAgMoRHMOWixaSMzFQ/watch?utm_content=DAHYC5OVEFY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h46645d0c96', // ระยะฟรีพวงมาลัย
 },
   topicMedia: {
   1: {
@@ -3640,14 +3641,18 @@ window.trainingData = {
     ]
   },
   {
-    id: 46, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ระยะฟรีพวงมาลัย", severity: "critical",
+    id: 46, detailMode: "quick-sales-preview", icon: "", title: "ระยะฟรีพวงมาลัย", severity: "critical",
     category: "ระบบบังคับเลี้ยว",
     sources: ["DLT", "FMCSA", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "วัดระยะฟรีพวงมาลัย",
-        text: "ติดเครื่อง ตั้งล้อตรง หมุนพวงมาลัยซ้าย–ขวาเบาๆ จนล้อเริ่มขยับ เกณฑ์กรมการขนส่งทางบก: ระยะฟรีพวงมาลัยต้องไม่เกิน 22.5 องศา หรือ 1 ใน 5 ของเส้นผ่านศูนย์กลางพวงมาลัย"
+        text: "ติดเครื่อง ตั้งล้อตรง หมุนพวงมาลัยซ้าย–ขวาเบาๆ จนล้อเริ่มขยับ เกณฑ์กรมการขนส่งทางบก: ระยะฟรีพวงมาลัยต้องไม่เกิน 22.5 องศา หรือ 1 ใน 5 ของเส้นผ่านศูนย์กลางพวงมาลัย",
+        images: [
+          { src: "topic46-turn-wheel.jpg", caption: "จับขอบพวงมาลัยแล้วหมุนซ้ายและขวาเบาๆ" },
+          { src: "topic46-free-play.jpg", caption: "ดูระยะที่พวงมาลัยหมุนได้ก่อนล้อเริ่มขยับ" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
