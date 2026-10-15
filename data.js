@@ -85,6 +85,7 @@ window.trainingData = {
   90: 'https://www.canva.com/design/DAHYDFKn2sE/dBa7bcMJL6Ap-JQNwxmppQ/watch?utm_content=DAHYDFKn2sE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4058c4349f', // แผงควบคุมและมาตรวัดหน้าปัด
   91: 'https://www.canva.com/design/DAHYDJXIp8A/Fc796Raw_ZyKf77Yx8t36Q/watch?utm_content=DAHYDJXIp8A&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3f39fdeedd', // ตรวจเช็กแผงฟิวส์
   94: 'https://www.canva.com/design/DAHYDLRWrr4/XddEo2CnT4LrbMXaNyJpng/watch?utm_content=DAHYDLRWrr4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8952dd5e01', // การทำงานของแตร
+  95: 'https://www.canva.com/design/DAHYDMIi_f0/NA_PebErjUr_ShVzOg0iCA/watch?utm_content=DAHYDMIi_f0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7e6d621df6', // ไฟส่องสว่างในห้องโดยสาร
 },
   topicMedia: {
   1: {
@@ -6688,14 +6689,19 @@ window.trainingData = {
     ]
   },
   {
-    id: 95, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ไฟส่องสว่างในห้องโดยสาร", severity: "high",
+    id: 95, detailMode: "quick-sales-preview", icon: "", title: "ไฟส่องสว่างในห้องโดยสาร", severity: "high",
     category: "ระบบไฟฟ้า",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจการทำงานไฟห้องโดยสาร",
-        text: "เปิดสวิตช์และเปิดประตู ไฟในห้องโดยสารแสงขาวต้องติดตามตำแหน่งสวิตช์ อย่างน้อย 1 ดวง ตามเกณฑ์กรมการขนส่งทางบก"
+        text: "เปิดสวิตช์และเปิดประตู ไฟในห้องโดยสารแสงขาวต้องติดตามตำแหน่งสวิตช์ อย่างน้อย 1 ดวง ตามเกณฑ์กรมการขนส่งทางบก",
+        images: [
+          { src: "topic95-switch.jpg", caption: "กดสวิตช์ไฟห้องโดยสาร" },
+          { src: "topic95-cab-light.jpg", caption: "ไฟห้องโดยสารต้องติดสว่าง" },
+          { src: "topic95-small-light.jpg", caption: "เปิดไฟดวงเล็กบนเพดาน ต้องติดเช่นกัน" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
