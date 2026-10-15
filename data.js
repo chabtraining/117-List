@@ -68,6 +68,7 @@ window.trainingData = {
   21: 'https://www.canva.com/design/DAHXUTss8wM/A73-BCn-op2SeY_DKbO_CQ/watch?utm_content=DAHXUTss8wM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2d205b88ca', // แผงรังผึ้งหม้อน้ำ
   22: 'https://www.canva.com/design/DAHYC-C4ul4/l1m2tLEHJv5bnOTu-DtLew/watch?utm_content=DAHYC-C4ul4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=haaa1b031d6', // ตรวจเช็กปั๊มน้ำและรอยรั่วซึมระบบหล่อเย็น
   24: 'https://www.canva.com/design/DAHYC0XJF5A/WSV_vAlCE0fAYXTDfH5PmQ/watch?utm_content=DAHYC0XJF5A&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hd7284545ea', // รอยรั่วท่อร่วมไอดีและไอเสีย
+  25: 'https://www.canva.com/design/DAHYC1ERyB0/xZimKMYZsRiU6qIje0vQ_w/watch?utm_content=DAHYC1ERyB0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc55ac84072', // รอยรั่วปะเก็นอ่างน้ำมันเครื่อง
 },
   topicMedia: {
   1: {
@@ -2123,7 +2124,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 25, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "รอยรั่วปะเก็นอ่างน้ำมันเครื่อง", severity: "high",
+    id: 25, detailMode: "quick-sales-preview", icon: "", title: "รอยรั่วปะเก็นอ่างน้ำมันเครื่อง", severity: "high",
     category: "ตรวจการรั่วซึมของเครื่องยนต์และระบบหล่อเย็น",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
