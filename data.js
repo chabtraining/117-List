@@ -82,6 +82,7 @@ window.trainingData = {
   87: 'https://www.canva.com/design/DAHYDJVOgw0/LXkdmvfyrb7HnF9wY_QlGw/watch?utm_content=DAHYDJVOgw0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf68f1f8766', // ไฟท้าย
   88: 'https://www.canva.com/design/DAHYDJVOgw0/LXkdmvfyrb7HnF9wY_QlGw/watch?utm_content=DAHYDJVOgw0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf68f1f8766', // ไฟถอย
   89: 'https://www.canva.com/design/DAHYDJVOgw0/LXkdmvfyrb7HnF9wY_QlGw/watch?utm_content=DAHYDJVOgw0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf68f1f8766', // ไฟหัวเก๋ง
+  90: 'https://www.canva.com/design/DAHYDFKn2sE/dBa7bcMJL6Ap-JQNwxmppQ/watch?utm_content=DAHYDFKn2sE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4058c4349f', // แผงควบคุมและมาตรวัดหน้าปัด
 },
   topicMedia: {
   1: {
@@ -6396,19 +6397,25 @@ window.trainingData = {
     ]
   },
   {
-    id: 90, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "แผงควบคุมและมาตรวัดหน้าปัด", severity: "high",
+    id: 90, detailMode: "quick-sales-preview", icon: "", title: "แผงควบคุมและมาตรวัดหน้าปัด", severity: "high",
     category: "ระบบไฟฟ้า",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจไฟเตือนตอนบิดกุญแจ",
-        text: "บิดกุญแจไปตำแหน่งเปิดสวิตช์ ไฟเตือนบนหน้าปัดต้องติดขึ้นมาตรวจสอบ แล้วดับหลังติดเครื่อง ถ้ามีไฟเตือนค้างให้อ่านรหัสปัญหาด้วยเครื่องสแกน"
+        text: "บิดกุญแจไปตำแหน่งเปิดสวิตช์ ไฟเตือนบนหน้าปัดต้องติดขึ้นมาตรวจสอบ แล้วดับหลังติดเครื่อง ถ้ามีไฟเตือนค้างให้อ่านรหัสปัญหาด้วยเครื่องสแกน",
+        images: [
+          { src: "topic90-warning-lights.jpg", caption: "บิดกุญแจเปิดสวิตช์ ไฟเตือนบนหน้าปัดต้องติดขึ้นมาตรวจสอบ" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
         title: "ตรวจเกจและมาตรวัด",
-        text: "ดูเข็มไมล์ รอบเครื่อง ความร้อน ระดับน้ำมันเชื้อเพลิง และแรงดันลมถ้ามี ต้องทำงานและแสดงค่าสมเหตุสมผล ตามเกณฑ์กรมการขนส่งทางบก มาตรวัดความเร็วต้องไม่ชำรุด คลาดเคลื่อนไม่เกิน 10% และเครื่องวัดความดันลมหรือสัญญาณเตือนต้องทำงานปกติ"
+        text: "ดูเข็มไมล์ รอบเครื่อง ความร้อน ระดับน้ำมันเชื้อเพลิง และแรงดันลมถ้ามี ต้องทำงานและแสดงค่าสมเหตุสมผล ตามเกณฑ์กรมการขนส่งทางบก มาตรวัดความเร็วต้องไม่ชำรุด คลาดเคลื่อนไม่เกิน 10% และเครื่องวัดความดันลมหรือสัญญาณเตือนต้องทำงานปกติ",
+        images: [
+          { src: "topic90-gauges.jpg", caption: "ชี้ดูเกจและมาตรวัด ต้องทำงานและแสดงค่าปกติ" }
+        ]
       },
       {
         label: "จุดตรวจที่ 3",
