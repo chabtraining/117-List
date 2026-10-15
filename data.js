@@ -65,7 +65,7 @@ window.trainingData = {
   66: 'https://www.canva.com/design/DAHXUE4wr0k/0xQufi40G5umuza34yrOCA/watch?utm_content=DAHXUE4wr0k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf651cd7bb7',  // ลูกยางกันกระแทกแหนบ
   67: 'https://www.canva.com/design/DAHXUPTrTTw/oN3Sc9EcQERdWSVvaPsLGQ/watch?utm_content=DAHXUPTrTTw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6eb44067e0',  // น็อตล้อ
   103: 'https://www.canva.com/design/DAHXUQCmsSg/pO36s_Er4WGPRMwhY8HAlw/watch?utm_content=DAHXUQCmsSg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf6985f3fef',  // จานลาก
-  21: 'https://www.canva.com/design/DAHXUTss8wM/A73-BCn-op2SeY_DKbO_CQ/watch?utm_content=DAHXUTss8wM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2d205b88ca'  // แผงรังผึ้งหม้อน้ำ
+  21: 'https://www.canva.com/design/DAHXUTss8wM/A73-BCn-op2SeY_DKbO_CQ/watch?utm_content=DAHXUTss8wM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2d205b88ca', // แผงรังผึ้งหม้อน้ำ
   22: 'https://www.canva.com/design/DAHYC-C4ul4/l1m2tLEHJv5bnOTu-DtLew/watch?utm_content=DAHYC-C4ul4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=haaa1b031d6', // ตรวจเช็กปั๊มน้ำและรอยรั่วซึมระบบหล่อเย็น
 },
   topicMedia: {
