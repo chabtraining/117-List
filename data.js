@@ -70,6 +70,7 @@ window.trainingData = {
   24: 'https://www.canva.com/design/DAHYC0XJF5A/WSV_vAlCE0fAYXTDfH5PmQ/watch?utm_content=DAHYC0XJF5A&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hd7284545ea', // รอยรั่วท่อร่วมไอดีและไอเสีย
   25: 'https://www.canva.com/design/DAHYC1ERyB0/xZimKMYZsRiU6qIje0vQ_w/watch?utm_content=DAHYC1ERyB0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc55ac84072', // รอยรั่วปะเก็นอ่างน้ำมันเครื่อง
   26: 'https://www.canva.com/design/DAHYCzuNOD8/tSJ0qXfejjG88CIrLpKttw/watch?utm_content=DAHYCzuNOD8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h309c3cd7d4', // ตรวจเช็กการทำงานและรอยรั่วซึมเทอร์โบ
+  29: 'https://www.canva.com/design/DAHYCxbhjCU/yRei_N9rE9b8bzd0sJXUTg/watch?utm_content=DAHYCxbhjCU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha0cf1839bb', // ตรวจเช็กยางแท่นเครื่อง
 },
   topicMedia: {
   1: {
@@ -2444,14 +2445,18 @@ window.trainingData = {
     ]
   },
   {
-    id: 29, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กยางแท่นเครื่อง", severity: "medium",
+    id: 29, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กยางแท่นเครื่อง", severity: "medium",
     category: "ตรวจการรั่วซึมของเครื่องยนต์และระบบหล่อเย็น",
     sources: ["EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจสภาพยางแท่นเครื่อง",
-        text: "ส่องไฟดูยางแท่นเครื่องทุกตัว ต้องไม่ฉีก ไม่แตก ไม่แยกจากเหล็ก และไม่ยุบตัวผิดปกติ ถ้าผิดปกติให้เปลี่ยน"
+        text: "ส่องไฟดูยางแท่นเครื่องทุกตัว ต้องไม่ฉีก ไม่แตก ไม่แยกจากเหล็ก และไม่ยุบตัวผิดปกติ ถ้าผิดปกติให้เปลี่ยน",
+        images: [
+          { src: "topic29-mount.jpg", caption: "ส่องไฟดูยางแท่นเครื่อง ต้องไม่ฉีก ไม่แตก และไม่ยุบตัว" },
+          { src: "topic29-mount-close.jpg", caption: "ชี้ตรวจยางแท่นเครื่องใกล้ๆ ต้องไม่แยกจากเหล็ก" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
