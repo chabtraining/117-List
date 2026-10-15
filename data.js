@@ -86,6 +86,7 @@ window.trainingData = {
   91: 'https://www.canva.com/design/DAHYDJXIp8A/Fc796Raw_ZyKf77Yx8t36Q/watch?utm_content=DAHYDJXIp8A&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3f39fdeedd', // ตรวจเช็กแผงฟิวส์
   94: 'https://www.canva.com/design/DAHYDLRWrr4/XddEo2CnT4LrbMXaNyJpng/watch?utm_content=DAHYDLRWrr4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8952dd5e01', // การทำงานของแตร
   95: 'https://www.canva.com/design/DAHYDMIi_f0/NA_PebErjUr_ShVzOg0iCA/watch?utm_content=DAHYDMIi_f0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7e6d621df6', // ไฟส่องสว่างในห้องโดยสาร
+  97: 'https://www.canva.com/design/DAHYDCJJiVI/H6-PUi4Kn2Ir5s3FrrreFQ/watch?utm_content=DAHYDCJJiVI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h40a77686d9', // ตรวจรอยรั่วซึม พีทีโอ
 },
   topicMedia: {
   1: {
@@ -6796,14 +6797,18 @@ window.trainingData = {
     ]
   },
   {
-    id: 97, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจรอยรั่วซึม พีทีโอ", severity: "high",
+    id: 97, detailMode: "quick-sales-preview", icon: "", title: "ตรวจรอยรั่วซึม พีทีโอ", severity: "high",
     category: "ระบบส่งกำลัง",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจรอยรั่วที่ชุดพีทีโอ",
-        text: "ดูคราบน้ำมันเกียร์รอบหน้าแปลนที่ยึดชุดพีทีโอกับเกียร์ ซีลเพลาพีทีโอ และท่อที่ต่ออยู่ ตามเกณฑ์กรมการขนส่งทางบก ระบบส่งกำลังต้องไม่มีน้ำมันรั่วซึม"
+        text: "ดูคราบน้ำมันเกียร์รอบหน้าแปลนที่ยึดชุดพีทีโอกับเกียร์ ซีลเพลาพีทีโอ และท่อที่ต่ออยู่ ตามเกณฑ์กรมการขนส่งทางบก ระบบส่งกำลังต้องไม่มีน้ำมันรั่วซึม",
+        images: [
+          { src: "topic97-pto.jpg", caption: "ชุดพีทีโอที่ติดอยู่กับเกียร์" },
+          { src: "topic97-pto-flange.jpg", caption: "ชี้ดูคราบน้ำมันรอบหน้าแปลนที่ยึดชุดพีทีโอกับเกียร์" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
