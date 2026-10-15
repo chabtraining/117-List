@@ -84,6 +84,7 @@ window.trainingData = {
   89: 'https://www.canva.com/design/DAHYDJVOgw0/LXkdmvfyrb7HnF9wY_QlGw/watch?utm_content=DAHYDJVOgw0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf68f1f8766', // ไฟหัวเก๋ง
   90: 'https://www.canva.com/design/DAHYDFKn2sE/dBa7bcMJL6Ap-JQNwxmppQ/watch?utm_content=DAHYDFKn2sE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4058c4349f', // แผงควบคุมและมาตรวัดหน้าปัด
   91: 'https://www.canva.com/design/DAHYDJXIp8A/Fc796Raw_ZyKf77Yx8t36Q/watch?utm_content=DAHYDJXIp8A&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3f39fdeedd', // ตรวจเช็กแผงฟิวส์
+  94: 'https://www.canva.com/design/DAHYDLRWrr4/XddEo2CnT4LrbMXaNyJpng/watch?utm_content=DAHYDLRWrr4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8952dd5e01', // การทำงานของแตร
 },
   topicMedia: {
   1: {
@@ -6632,14 +6633,18 @@ window.trainingData = {
     ]
   },
   {
-    id: 94, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "การทำงานของแตร", severity: "high",
+    id: 94, detailMode: "quick-sales-preview", icon: "", title: "การทำงานของแตร", severity: "high",
     category: "ระบบไฟฟ้า",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจเสียงแตรไฟฟ้า",
-        text: "กดแตรหลายตำแหน่งขณะหมุนพวงมาลัย เสียงต้องดังชัดและสม่ำเสมอ เกณฑ์กรมการขนส่งทางบก: แตรไฟฟ้าเสียงเดียว ระดับเสียง 90–115 เดซิเบลเอ วัดที่ระยะ 2 เมตรหน้ารถ"
+        text: "กดแตรหลายตำแหน่งขณะหมุนพวงมาลัย เสียงต้องดังชัดและสม่ำเสมอ เกณฑ์กรมการขนส่งทางบก: แตรไฟฟ้าเสียงเดียว ระดับเสียง 90–115 เดซิเบลเอ วัดที่ระยะ 2 เมตรหน้ารถ",
+        images: [
+          { src: "topic94-horn.jpg", caption: "แตรไฟฟ้าหลังกันชนหน้า ดูสภาพตัวแตร" },
+          { src: "topic94-horn-wiring.jpg", caption: "ดูขั้วและสายไฟที่ต่อเข้าแตร" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
