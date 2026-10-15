@@ -87,6 +87,7 @@ window.trainingData = {
   94: 'https://www.canva.com/design/DAHYDLRWrr4/XddEo2CnT4LrbMXaNyJpng/watch?utm_content=DAHYDLRWrr4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8952dd5e01', // การทำงานของแตร
   95: 'https://www.canva.com/design/DAHYDMIi_f0/NA_PebErjUr_ShVzOg0iCA/watch?utm_content=DAHYDMIi_f0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7e6d621df6', // ไฟส่องสว่างในห้องโดยสาร
   97: 'https://www.canva.com/design/DAHYDCJJiVI/H6-PUi4Kn2Ir5s3FrrreFQ/watch?utm_content=DAHYDCJJiVI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h40a77686d9', // ตรวจรอยรั่วซึม พีทีโอ
+  113: 'https://www.canva.com/design/DAHYDDNTeZk/crIyfU8-7JT_y9jAsnA19g/watch?utm_content=DAHYDDNTeZk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he254f66b4e', // ตรวจเสียงดังเวลาเปิด-ปิดประตู
 },
   topicMedia: {
   1: {
@@ -7723,14 +7724,17 @@ window.trainingData = {
     ]
   },
   {
-    id: 113, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเสียงดังเวลาเปิด-ปิดประตู", severity: "medium",
+    id: 113, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเสียงดังเวลาเปิด-ปิดประตู", severity: "medium",
     category: "อื่นๆ",
     sources: ["EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจเสียงเวลาเปิด–ปิดประตู",
-        text: "เปิดปิดประตูทั้ง 2 ฝั่ง ฟังเสียงเอี๊ยด เสียงกระแทก และดูว่าประตูปิดได้สนิทในครั้งเดียว"
+        text: "เปิดปิดประตูทั้ง 2 ฝั่ง ฟังเสียงเอี๊ยด เสียงกระแทก และดูว่าประตูปิดได้สนิทในครั้งเดียว",
+        images: [
+          { src: "topic113-door-open.jpg", caption: "เปิดปิดประตู ฟังเสียงและดูว่าปิดสนิทในครั้งเดียว" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
@@ -7740,7 +7744,10 @@ window.trainingData = {
       {
         label: "จุดตรวจที่ 3",
         title: "ตรวจกลไกล็อกและบานพับ",
-        text: "ตรวจกลอนประตูล็อกและปลดได้ปกติทั้งจากด้านในและด้านนอก บานพับไม่หลวมจนประตูตก"
+        text: "ตรวจกลอนประตูล็อกและปลดได้ปกติทั้งจากด้านในและด้านนอก บานพับไม่หลวมจนประตูตก",
+        images: [
+          { src: "topic113-striker.jpg", caption: "ชี้ดูกลอนประตูที่ตัวรถ ต้องล็อกและปลดได้ปกติ" }
+        ]
       }
     ],
     issuesList: [
