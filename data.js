@@ -83,6 +83,7 @@ window.trainingData = {
   88: 'https://www.canva.com/design/DAHYDJVOgw0/LXkdmvfyrb7HnF9wY_QlGw/watch?utm_content=DAHYDJVOgw0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf68f1f8766', // ไฟถอย
   89: 'https://www.canva.com/design/DAHYDJVOgw0/LXkdmvfyrb7HnF9wY_QlGw/watch?utm_content=DAHYDJVOgw0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf68f1f8766', // ไฟหัวเก๋ง
   90: 'https://www.canva.com/design/DAHYDFKn2sE/dBa7bcMJL6Ap-JQNwxmppQ/watch?utm_content=DAHYDFKn2sE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4058c4349f', // แผงควบคุมและมาตรวัดหน้าปัด
+  91: 'https://www.canva.com/design/DAHYDJXIp8A/Fc796Raw_ZyKf77Yx8t36Q/watch?utm_content=DAHYDJXIp8A&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3f39fdeedd', // ตรวจเช็กแผงฟิวส์
 },
   topicMedia: {
   1: {
@@ -6474,14 +6475,18 @@ window.trainingData = {
     ]
   },
   {
-    id: 91, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กแผงฟิวส์", severity: "high",
+    id: 91, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กแผงฟิวส์", severity: "high",
     category: "ระบบไฟฟ้า",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจฟิวส์ทุกตัว",
-        text: "เปิดฝาแผงฟิวส์ ตรวจฟิวส์ขาด และขนาดแอมป์ของฟิวส์ต้องตรงกับที่ระบุบนฝาแผงทุกตัว"
+        text: "เปิดฝาแผงฟิวส์ ตรวจฟิวส์ขาด และขนาดแอมป์ของฟิวส์ต้องตรงกับที่ระบุบนฝาแผงทุกตัว",
+        images: [
+          { src: "topic91-fuse-box.jpg", caption: "เปิดฝาแผงฟิวส์ ดูฟิวส์และรีเลย์ทั้งหมด" },
+          { src: "topic91-fuse-check.jpg", caption: "ชี้ดูฟิวส์ทีละตัว ขนาดแอมป์ต้องตรงกับที่ระบุบนฝาแผง" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
