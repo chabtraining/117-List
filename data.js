@@ -76,6 +76,12 @@ window.trainingData = {
   49: 'https://www.canva.com/design/DAHYCyEguxc/WekM_Ni6ry-tzeP5kBTHpw/watch?utm_content=DAHYCyEguxc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hec15d095f4', // ตรวจสอบความหลวมยอยพวงมาลัย
   58: 'https://www.canva.com/design/DAHYCxGW28Q/vVRlsbZlaN4zpaocOp2EVQ/watch?utm_content=DAHYCxGW28Q&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha07298e661', // ตรวจเช็กการทำงานของเข็มขัดนิรภัย
   81: 'https://www.canva.com/design/DAHYDEAlOxU/M9uge6Yupz81zCQgRrKpgA/watch?utm_content=DAHYDEAlOxU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf683e6478b', // ตรวจวัดแบตเตอรี่ด้วยเครื่องตรวจวัด
+  84: 'https://www.canva.com/design/DAHYDJVOgw0/LXkdmvfyrb7HnF9wY_QlGw/watch?utm_content=DAHYDJVOgw0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf68f1f8766', // ไฟหน้า
+  85: 'https://www.canva.com/design/DAHYDJVOgw0/LXkdmvfyrb7HnF9wY_QlGw/watch?utm_content=DAHYDJVOgw0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf68f1f8766', // ไฟตัดหมอก
+  86: 'https://www.canva.com/design/DAHYDJVOgw0/LXkdmvfyrb7HnF9wY_QlGw/watch?utm_content=DAHYDJVOgw0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf68f1f8766', // ไฟเลี้ยว
+  87: 'https://www.canva.com/design/DAHYDJVOgw0/LXkdmvfyrb7HnF9wY_QlGw/watch?utm_content=DAHYDJVOgw0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf68f1f8766', // ไฟท้าย
+  88: 'https://www.canva.com/design/DAHYDJVOgw0/LXkdmvfyrb7HnF9wY_QlGw/watch?utm_content=DAHYDJVOgw0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf68f1f8766', // ไฟถอย
+  89: 'https://www.canva.com/design/DAHYDJVOgw0/LXkdmvfyrb7HnF9wY_QlGw/watch?utm_content=DAHYDJVOgw0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf68f1f8766', // ไฟหัวเก๋ง
 },
   topicMedia: {
   1: {
@@ -6002,19 +6008,26 @@ window.trainingData = {
     ]
   },
   {
-    id: 84, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ไฟหน้า", severity: "high",
+    id: 84, detailMode: "quick-sales-preview", icon: "", title: "ไฟหน้า", severity: "high",
     category: "ระบบไฟฟ้า",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจการทำงานไฟต่ำ–ไฟสูง",
-        text: "เปิดไฟหน้าทั้งไฟต่ำและไฟสูง ต้องติดครบทั้ง 2 ข้าง แสงสีขาวหรือเหลืองอ่อนเหมือนกันทุกดวง และไฟแสดงไฟสูงบนหน้าปัดต้องทำงาน ตามเกณฑ์กรมการขนส่งทางบก"
+        text: "เปิดไฟหน้าทั้งไฟต่ำและไฟสูง ต้องติดครบทั้ง 2 ข้าง แสงสีขาวหรือเหลืองอ่อนเหมือนกันทุกดวง และไฟแสดงไฟสูงบนหน้าปัดต้องทำงาน ตามเกณฑ์กรมการขนส่งทางบก",
+        images: [
+          { src: "topic84-headlight-on.jpg", caption: "เปิดไฟหน้า ต้องติดครบทั้ง 2 ข้าง" },
+          { src: "topic84-headlight-other.jpg", caption: "ดูไฟหน้าอีกข้าง แสงต้องสีเดียวกัน" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
         title: "ตรวจสภาพโคมและเลนส์",
-        text: "ดูเลนส์ไฟหน้าต้องไม่แตก ร้าว เหลืองขุ่น และไม่มีน้ำหรือฝ้าในโคม ตามเกณฑ์ที่โคมไฟต้องไม่แตกชำรุด"
+        text: "ดูเลนส์ไฟหน้าต้องไม่แตก ร้าว เหลืองขุ่น และไม่มีน้ำหรือฝ้าในโคม ตามเกณฑ์ที่โคมไฟต้องไม่แตกชำรุด",
+        images: [
+          { src: "topic84-lens.jpg", caption: "ดูเลนส์ไฟหน้า ต้องไม่แตก ไม่ร้าว ไม่ขุ่น" }
+        ]
       },
       {
         label: "จุดตรวจที่ 3",
@@ -6073,14 +6086,17 @@ window.trainingData = {
     ]
   },
   {
-    id: 85, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ไฟตัดหมอก", severity: "high",
+    id: 85, detailMode: "quick-sales-preview", icon: "", title: "ไฟตัดหมอก", severity: "high",
     category: "ระบบไฟฟ้า",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจการทำงานไฟตัดหมอก",
-        text: "เปิดสวิตช์ไฟตัดหมอก ต้องติดครบทุกดวง แสงสีขาวหรือเหลืองอ่อน จำนวนไม่เกิน 2 ดวง และไฟแสดงบนหน้าปัดทำงาน ตามเกณฑ์กรมการขนส่งทางบก"
+        text: "เปิดสวิตช์ไฟตัดหมอก ต้องติดครบทุกดวง แสงสีขาวหรือเหลืองอ่อน จำนวนไม่เกิน 2 ดวง และไฟแสดงบนหน้าปัดทำงาน ตามเกณฑ์กรมการขนส่งทางบก",
+        images: [
+          { src: "topic85-fog-on.jpg", caption: "เปิดไฟตัดหมอก ต้องติดครบทุกดวง" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
@@ -6124,14 +6140,17 @@ window.trainingData = {
     ]
   },
   {
-    id: 86, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ไฟเลี้ยว", severity: "high",
+    id: 86, detailMode: "quick-sales-preview", icon: "", title: "ไฟเลี้ยว", severity: "high",
     category: "ระบบไฟฟ้า",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจไฟเลี้ยวทุกดวง",
-        text: "เปิดไฟเลี้ยวซ้ายและขวา เดินดูรอบคัน ด้านหน้าต้องเป็นแสงเหลือง 2 ดวง ด้านท้ายแสงเหลืองหรือแดง 2 หรือ 4 ดวง และถ้ามีไฟเลี้ยวข้างรถก็ต้องติดครบ ตามเกณฑ์กรมการขนส่งทางบก"
+        text: "เปิดไฟเลี้ยวซ้ายและขวา เดินดูรอบคัน ด้านหน้าต้องเป็นแสงเหลือง 2 ดวง ด้านท้ายแสงเหลืองหรือแดง 2 หรือ 4 ดวง และถ้ามีไฟเลี้ยวข้างรถก็ต้องติดครบ ตามเกณฑ์กรมการขนส่งทางบก",
+        images: [
+          { src: "topic86-side-turn.jpg", caption: "เดินดูไฟเลี้ยวรอบคัน ไฟเลี้ยวด้านข้างต้องติด" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
@@ -6195,14 +6214,17 @@ window.trainingData = {
     ]
   },
   {
-    id: 87, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ไฟท้าย", severity: "high",
+    id: 87, detailMode: "quick-sales-preview", icon: "", title: "ไฟท้าย", severity: "high",
     category: "ระบบไฟฟ้า",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจไฟท้ายและไฟส่องป้าย",
-        text: "เปิดไฟหรี่ ไฟท้ายแสงแดงต้องติดครบ 2 หรือ 4 ดวง ถ้ารถกว้างเกิน 2.10 เมตร มีได้ 6 ดวง และไฟส่องป้ายทะเบียนแสงขาว 1–2 ดวงต้องติด ตามเกณฑ์กรมการขนส่งทางบก"
+        text: "เปิดไฟหรี่ ไฟท้ายแสงแดงต้องติดครบ 2 หรือ 4 ดวง ถ้ารถกว้างเกิน 2.10 เมตร มีได้ 6 ดวง และไฟส่องป้ายทะเบียนแสงขาว 1–2 ดวงต้องติด ตามเกณฑ์กรมการขนส่งทางบก",
+        images: [
+          { src: "topic87-tail.jpg", caption: "เดินไปดูไฟท้าย ต้องติดครบทุกดวง" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
@@ -6266,14 +6288,17 @@ window.trainingData = {
     ]
   },
   {
-    id: 88, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ไฟถอย", severity: "high",
+    id: 88, detailMode: "quick-sales-preview", icon: "", title: "ไฟถอย", severity: "high",
     category: "ระบบไฟฟ้า",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจไฟถอยหลัง",
-        text: "เข้าเกียร์ถอย ไฟถอยหลังแสงขาวต้องติด จำนวนไม่เกิน 2 ดวง และดับเมื่อออกจากเกียร์ถอย ตามเกณฑ์กรมการขนส่งทางบก"
+        text: "เข้าเกียร์ถอย ไฟถอยหลังแสงขาวต้องติด จำนวนไม่เกิน 2 ดวง และดับเมื่อออกจากเกียร์ถอย ตามเกณฑ์กรมการขนส่งทางบก",
+        images: [
+          { src: "topic88-reverse.jpg", caption: "เข้าเกียร์ถอย ไฟถอยหลังแสงขาวต้องติด" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
@@ -6317,14 +6342,17 @@ window.trainingData = {
     ]
   },
   {
-    id: 89, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ไฟหัวเก๋ง", severity: "high",
+    id: 89, detailMode: "quick-sales-preview", icon: "", title: "ไฟหัวเก๋ง", severity: "high",
     category: "ระบบไฟฟ้า",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจไฟหัวเก๋งทุกดวง",
-        text: "เปิดไฟหรี่ ไฟหัวเก๋งซึ่งเป็นไฟแสดงประเภทรถและส่วนสูงต้องติดครบทุกดวง รถที่สูงเกิน 2.5 เมตร เกณฑ์กรมการขนส่งทางบกกำหนดแสงเขียว 4 ดวง และไฟแสดงส่วนกว้างแสงขาวหรือเหลือง"
+        text: "เปิดไฟหรี่ ไฟหัวเก๋งซึ่งเป็นไฟแสดงประเภทรถและส่วนสูงต้องติดครบทุกดวง รถที่สูงเกิน 2.5 เมตร เกณฑ์กรมการขนส่งทางบกกำหนดแสงเขียว 4 ดวง และไฟแสดงส่วนกว้างแสงขาวหรือเหลือง",
+        images: [
+          { src: "topic89-cab-light.jpg", caption: "ไฟหัวเก๋งต้องติดครบทุกดวง" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
