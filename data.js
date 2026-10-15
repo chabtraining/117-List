@@ -66,6 +66,7 @@ window.trainingData = {
   67: 'https://www.canva.com/design/DAHXUPTrTTw/oN3Sc9EcQERdWSVvaPsLGQ/watch?utm_content=DAHXUPTrTTw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6eb44067e0',  // น็อตล้อ
   103: 'https://www.canva.com/design/DAHXUQCmsSg/pO36s_Er4WGPRMwhY8HAlw/watch?utm_content=DAHXUQCmsSg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf6985f3fef',  // จานลาก
   21: 'https://www.canva.com/design/DAHXUTss8wM/A73-BCn-op2SeY_DKbO_CQ/watch?utm_content=DAHXUTss8wM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2d205b88ca'  // แผงรังผึ้งหม้อน้ำ
+  22: 'https://www.canva.com/design/DAHYC-C4ul4/l1m2tLEHJv5bnOTu-DtLew/watch?utm_content=DAHYC-C4ul4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=haaa1b031d6', // ตรวจเช็กปั๊มน้ำและรอยรั่วซึมระบบหล่อเย็น
 },
   topicMedia: {
   1: {
@@ -1925,7 +1926,7 @@ window.trainingData = {
     ]
   },
   {
-    id: 22, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กปั๊มน้ำและรอยรั่วซึมระบบหล่อเย็น", severity: "high",
+    id: 22, detailMode: "quick-sales-preview", icon: "", title: "ตรวจเช็กปั๊มน้ำและรอยรั่วซึมระบบหล่อเย็น", severity: "high",
     category: "ตรวจการรั่วซึมของเครื่องยนต์และระบบหล่อเย็น",
     sources: ["EXCEL"],
     quickObservations: [
