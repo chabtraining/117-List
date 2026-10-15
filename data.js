@@ -88,6 +88,8 @@ window.trainingData = {
   95: 'https://www.canva.com/design/DAHYDMIi_f0/NA_PebErjUr_ShVzOg0iCA/watch?utm_content=DAHYDMIi_f0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7e6d621df6', // ไฟส่องสว่างในห้องโดยสาร
   97: 'https://www.canva.com/design/DAHYDCJJiVI/H6-PUi4Kn2Ir5s3FrrreFQ/watch?utm_content=DAHYDCJJiVI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h40a77686d9', // ตรวจรอยรั่วซึม พีทีโอ
   113: 'https://www.canva.com/design/DAHYDDNTeZk/crIyfU8-7JT_y9jAsnA19g/watch?utm_content=DAHYDDNTeZk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he254f66b4e', // ตรวจเสียงดังเวลาเปิด-ปิดประตู
+  80: 'https://www.canva.com/design/DAHYDEMyc34/-HWNnTvoqTo2LkyK4Q8dYg/watch?utm_content=DAHYDEMyc34&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he07f24b91f', // ระดับน้ำกลั่นแบตเตอรี่
+  82: 'https://www.canva.com/design/DAHYDEMyc34/-HWNnTvoqTo2LkyK4Q8dYg/watch?utm_content=DAHYDEMyc34&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he07f24b91f', // ความหลวมขั้วแบตเตอรี่
 },
   topicMedia: {
   1: {
@@ -5765,19 +5767,26 @@ window.trainingData = {
     ]
   },
   {
-    id: 80, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ระดับน้ำกลั่นแบตเตอรี่", severity: "high",
+    id: 80, detailMode: "quick-sales-preview", icon: "", title: "ระดับน้ำกลั่นแบตเตอรี่", severity: "high",
     category: "ระบบไฟฟ้า",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจระดับน้ำกลั่นทุกช่อง",
-        text: "เปิดฝาช่องเติมทุกช่อง ดูระดับน้ำกลั่นต้องอยู่ระหว่างขีดต่ำสุดและขีดสูงสุด และท่วมแผ่นธาตุ พร้อมดูว่าแบตเตอรี่ยึดแน่นกับตัวรถและมีฉนวนกั้นขั้ว ตามเกณฑ์ตรวจสภาพของกรมการขนส่งทางบก"
+        text: "เปิดฝาช่องเติมทุกช่อง ดูระดับน้ำกลั่นต้องอยู่ระหว่างขีดต่ำสุดและขีดสูงสุด และท่วมแผ่นธาตุ พร้อมดูว่าแบตเตอรี่ยึดแน่นกับตัวรถและมีฉนวนกั้นขั้ว ตามเกณฑ์ตรวจสภาพของกรมการขนส่งทางบก",
+        images: [
+          { src: "topic80-open-cap.jpg", caption: "เปิดฝาช่องเติมน้ำกลั่นทีละช่อง" },
+          { src: "topic80-water-level.jpg", caption: "ส่องดูระดับน้ำกลั่น ต้องท่วมแผ่นธาตุ" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
         title: "ตรวจสภาพเปลือกและฝาแบตเตอรี่",
-        text: "ดูเปลือกแบตเตอรี่ต้องไม่บวม ไม่ร้าว ไม่มีคราบน้ำกรดรอบฝาและตัวหม้อ และตรวจถาดวางแบตเตอรี่ไม่ผุกร่อน"
+        text: "ดูเปลือกแบตเตอรี่ต้องไม่บวม ไม่ร้าว ไม่มีคราบน้ำกรดรอบฝาและตัวหม้อ และตรวจถาดวางแบตเตอรี่ไม่ผุกร่อน",
+        images: [
+          { src: "topic80-battery.jpg", caption: "ดูสภาพเปลือกและฝาแบตเตอรี่ทั้งลูก" }
+        ]
       }
     ],
     issuesList: [
@@ -5872,14 +5881,18 @@ window.trainingData = {
     ]
   },
   {
-    id: 82, saOnly: true, techDraft: true, detailMode: "quick-sales-preview", icon: "", title: "ความหลวมขั้วแบตเตอรี่", severity: "high",
+    id: 82, detailMode: "quick-sales-preview", icon: "", title: "ความหลวมขั้วแบตเตอรี่", severity: "high",
     category: "ระบบไฟฟ้า",
     sources: ["DLT", "EXCEL"],
     quickObservations: [
       {
         label: "จุดตรวจที่ 1",
         title: "ตรวจความแน่นของขั้วแบตเตอรี่",
-        text: "ลองโยกขั้วสายด้วยมือต้องไม่ขยับ น็อตยึดขั้วต้องแน่นทุกขั้ว และแบตเตอรี่ต้องยึดแน่นกับตัวรถ ตามเกณฑ์ตรวจสภาพของกรมการขนส่งทางบก"
+        text: "ลองโยกขั้วสายด้วยมือต้องไม่ขยับ น็อตยึดขั้วต้องแน่นทุกขั้ว และแบตเตอรี่ต้องยึดแน่นกับตัวรถ ตามเกณฑ์ตรวจสภาพของกรมการขนส่งทางบก",
+        images: [
+          { src: "topic82-terminals.jpg", caption: "ชี้ดูขั้วแบตเตอรี่ทุกขั้ว" },
+          { src: "topic82-terminal-close.jpg", caption: "ขั้วแบตเตอรี่ใกล้ๆ น็อตยึดขั้วต้องแน่น ไม่ขยับ" }
+        ]
       },
       {
         label: "จุดตรวจที่ 2",
