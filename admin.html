@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'">
+<title>จัดการผู้ใช้ - ตรวจเช็ก 117 รายการ</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F6F6F4;
+    --surface: #FFFFFF;
+    --surface2: #F7F7F5;
+    --border: #E3E3DF;
+    --border2: #CBCBC6;
+    --text: #111110;
+    --accent-red: #C8102E;
+    --accent-red-dark: #980C22;
+    --accent-red-soft: #F3E6E9;
+    --accent-green: #16A34A;
+    --yellow: #D97706;
+    --danger: #DC2626;
+    --font: 'IBM Plex Sans Thai', system-ui, sans-serif;
+  }
+
+  body {
+    background: linear-gradient(180deg, #FFFFFF 0, var(--bg) 230px, #FFFFFF 100%);
+    color: var(--text);
+    font-family: var(--font);
+    min-height: 100vh;
+    padding: 28px 20px 64px;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: var(--accent-red);
+    z-index: 10000;
+  }
+  .container { max-width: 940px; margin: 0 auto; }
+
+  .card {
+    margin-bottom: 20px;
+    padding: 22px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 10px 26px rgba(17, 17, 16, 0.06);
+  }
+  .header { border-top: 4px solid var(--accent-red); }
+  .header-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .brand-logo { display: block; width: clamp(150px, 28vw, 220px); height: auto; }
+  .links { display: flex; gap: 16px; font-size: 14px; }
+  .links a, .links button {
+    color: var(--accent-red-dark); font: inherit; font-weight: 600; background: none; border: 0; padding: 0;
+    cursor: pointer; text-decoration: underline; text-underline-offset: 3px;
+  }
+  h1 { font-size: clamp(26px, 5vw, 34px); font-weight: 700; line-height: 1.25; margin: 16px 0 4px; }
+  .header p { font-size: 15px; }
+  h2 { font-size: 18px; font-weight: 700; margin-bottom: 14px; }
+  h2 span { font-weight: 500; font-size: 15px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+  label { display: block; font-size: 14px; font-weight: 600; }
+  input, select {
+    display: block; width: 100%; margin-top: 6px; padding: 10px 12px; font: inherit; font-size: 16px; font-weight: 400;
+    color: var(--text); background: var(--surface); border: 1px solid var(--border2); border-radius: 8px;
+  }
+  input:focus, select:focus { outline: none; border-color: var(--accent-red); box-shadow: 0 0 0 3px var(--accent-red-soft); }
+  .pw { display: flex; gap: 8px; margin-top: 6px; }
+  .pw input { margin-top: 0; font-family: ui-monospace, Consolas, monospace; }
+  .btn {
+    padding: 9px 14px; font: inherit; font-size: 14px; font-weight: 600; white-space: nowrap;
+    color: var(--accent-red-dark); background: var(--surface); border: 1px solid var(--border2); border-radius: 8px; cursor: pointer;
+  }
+  .btn:hover { border-color: var(--accent-red); background: #FFFBFB; }
+  .btn:disabled { opacity: 0.6; cursor: wait; }
+  .btn.primary { color: #FFFFFF; background: var(--accent-red); border-color: var(--accent-red); padding: 11px 22px; font-size: 15px; }
+  .btn.primary:hover { background: var(--accent-red-dark); }
+  .btn.danger { color: var(--danger); }
+  .form-foot { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 16px; }
+  .msg { font-size: 14px; line-height: 1.6; }
+  .msg.bad { color: var(--danger); }
+  .msg.good { color: var(--accent-green); font-weight: 600; }
+
+  .list-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+  .list-head input { max-width: 280px; margin: 0 0 14px; }
+  .user {
+    display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr) auto; gap: 8px 16px; align-items: center;
+    padding: 14px 0; border-top: 1px solid var(--border);
+  }
+  .who strong { display: block; font-size: 15px; }
+  .who span { display: block; font-size: 13px; overflow-wrap: anywhere; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 13px; }
+  .tag { padding: 2px 9px; border-radius: 999px; border: 1px solid var(--border2); background: var(--surface2); font-weight: 600; }
+  .tag.on { color: var(--accent-green); border-color: #BBE5C8; background: #F0FAF3; }
+  .tag.off { color: var(--danger); border-color: #F5C2C2; background: #FEF4F4; }
+  .tag.warn, .tag.wait { color: var(--yellow); border-color: #F3D9A4; background: #FFF9EC; }
+  .seen { width: 100%; }
+  .actions { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+  .self { font-size: 13px; font-weight: 600; }
+  .empty { padding: 16px 0; border-top: 1px solid var(--border); font-size: 14px; }
+
+  .toast {
+    position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 100;
+    width: min(560px, calc(100% - 32px)); padding: 12px 16px; border-radius: 8px;
+    background: var(--text); color: #FFFFFF; font-size: 14px; line-height: 1.6; cursor: pointer;
+    box-shadow: 0 10px 26px rgba(17, 17, 16, 0.25);
+  }
+  .toast[hidden] { display: none; }
+  .toast.bad { background: var(--danger); }
+
+  @media (max-width: 640px) {
+    body { padding: 18px 12px 52px; }
+    .card { padding: 18px 16px; }
+    .grid { grid-template-columns: 1fr; }
+    .user { grid-template-columns: 1fr; }
+    .actions { justify-content: flex-start; }
+    .list-head input { max-width: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="card header">
+    <div class="header-top">
+      <img class="brand-logo" src="chairatchakarn-group-logo.png" alt="กลุ่มบริษัทชัยรัชการ CHAIRATCHAKARN GROUP">
+      <nav class="links">
+        <a href="./">กลับหน้าหลัก</a>
+        <button type="button" id="logout">ออกจากระบบ</button>
+      </nav>
+    </div>
+    <h1>จัดการผู้ใช้</h1>
+    <p>เพิ่มบัญชีพนักงาน รีเซ็ตรหัสผ่าน และปิดบัญชีคนที่ไม่ได้ใช้แล้ว</p>
+  </div>
+
+  <section class="card">
+    <h2>เพิ่มผู้ใช้</h2>
+    <form id="add" method="post" novalidate>
+      <div class="grid">
+        <label>ชื่อ-นามสกุล<input name="name" maxlength="100" autocomplete="off" required></label>
+        <label>อีเมล<input name="email" type="email" autocomplete="off" required></label>
+        <label>รหัสผ่านเริ่มต้น 8 ตัวอักษรขึ้นไป
+          <span class="pw">
+            <input name="password" maxlength="128" autocomplete="off" spellcheck="false" required>
+            <button type="button" class="btn" id="gen">สุ่มรหัส</button>
+          </span>
+        </label>
+        <label>สิทธิ์
+          <select name="role">
+            <option value="user">พนักงาน</option>
+            <option value="admin">แอดมิน</option>
+          </select>
+        </label>
+      </div>
+      <div class="form-foot">
+        <button type="submit" class="btn primary">เพิ่มผู้ใช้</button>
+        <p class="msg" id="add-msg" role="status"></p>
+      </div>
+    </form>
+  </section>
+
+  <section class="card">
+    <div class="list-head">
+      <h2>รายชื่อผู้ใช้ <span id="count"></span></h2>
+      <input type="search" id="q" placeholder="ค้นหาชื่อหรืออีเมล" aria-label="ค้นหาชื่อหรืออีเมล">
+    </div>
+    <div id="list"><p class="empty">กำลังโหลดรายชื่อ</p></div>
+  </section>
+
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+var me = null, users = [], serverNow = 0;
+var list = document.getElementById('list');
+var search = document.getElementById('q');
+var toastBox = document.getElementById('toast');
+
+function api(data) {
+  var opts = { method: data ? 'POST' : 'GET', credentials: 'same-origin', cache: 'no-store' };
+  if (data) { opts.headers = { 'Content-Type': 'application/json' }; opts.body = JSON.stringify(data); }
+  return fetch('/api/admin/users', opts).then(function (r) {
+    return r.json().catch(function () { return {}; }).then(function (j) {
+      if (!r.ok) throw new Error(j.error || 'เกิดข้อผิดพลาด ลองใหม่อีกครั้ง');
+      return j;
+    });
+  });
+}
+
+function toast(message, bad) {
+  toastBox.textContent = message;
+  toastBox.className = bad ? 'toast bad' : 'toast';
+  toastBox.hidden = false;
+}
+toastBox.addEventListener('click', function () { toastBox.hidden = true; });
+
+// Easy-to-read starting password: no 0/O, 1/l/I look-alikes.
+function makePassword() {
+  var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789';
+  var bytes = crypto.getRandomValues(new Uint32Array(10));
+  return Array.from(bytes, function (b) { return chars[b % chars.length]; }).join('');
+}
+
+function el(tag, cls, kids) {
+  var n = document.createElement(tag);
+  if (cls) n.className = cls;
+  [].concat(kids == null ? [] : kids).forEach(function (k) { n.append(k); });
+  return n;
+}
+
+function button(label, onClick, cls) {
+  var b = el('button', 'btn' + (cls ? ' ' + cls : ''), label);
+  b.type = 'button';
+  b.addEventListener('click', function () { b.disabled = true; onClick().then(function () { b.disabled = false; }); });
+  return b;
+}
+
+function when(ts) {
+  return new Date(ts).toLocaleString('th-TH', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+}
+
+function status(u) {
+  if (!u.active) return ['ปิดใช้งาน', 'off'];
+  if (u.locked_until > serverNow) return ['ล็อกชั่วคราว', 'warn'];
+  if (u.must_change) return ['รอเปลี่ยนรหัส', 'wait'];
+  return ['ใช้งานอยู่', 'on'];
+}
+
+function act(data, done) {
+  return api(data).then(function () { toast(done); return load(); }).catch(function (e) { toast(e.message, true); });
+}
+
+function row(u) {
+  var st = status(u);
+  var actions = el('div', 'actions');
+  if (u.id === me) {
+    actions.append(el('span', 'self', 'บัญชีของคุณ'));
+  } else {
+    actions.append(button('รีเซ็ตรหัส', function () {
+      var pw = prompt('ตั้งรหัสผ่านเริ่มต้นใหม่ให้ ' + u.name + '\nพนักงานต้องเปลี่ยนรหัสเองตอนเข้าครั้งถัดไป', makePassword());
+      if (pw === null) return Promise.resolve();
+      return act({ action: 'reset', id: u.id, password: pw.trim() },
+        'รีเซ็ตรหัสของ ' + u.name + ' แล้ว รหัสเริ่มต้นใหม่: ' + pw.trim() + ' (แตะเพื่อปิด)');
+    }));
+    if (u.active && u.locked_until > serverNow) {
+      actions.append(button('ปลดล็อก', function () {
+        return act({ action: 'unlock', id: u.id }, 'ปลดล็อกบัญชี ' + u.name + ' แล้ว');
+      }));
+    }
+    actions.append(button(u.active ? 'ปิดใช้งาน' : 'เปิดใช้งาน', function () {
+      if (u.active && !confirm('ปิดใช้งานบัญชี ' + u.name + ' ?\nคนนี้จะถูกออกจากระบบทันทีและเข้าไม่ได้จนกว่าจะเปิดใหม่')) return Promise.resolve();
+      return act({ action: 'active', id: u.id, active: !u.active }, (u.active ? 'ปิดใช้งาน ' : 'เปิดใช้งาน ') + u.name + ' แล้ว');
+    }));
+    actions.append(button(u.role === 'admin' ? 'ตั้งเป็นพนักงาน' : 'ตั้งเป็นแอดมิน', function () {
+      var role = u.role === 'admin' ? 'user' : 'admin';
+      if (role === 'admin' && !confirm('ให้ ' + u.name + ' เป็นแอดมิน ?\nแอดมินเพิ่ม ลบ และรีเซ็ตรหัสผู้ใช้คนอื่นได้')) return Promise.resolve();
+      return act({ action: 'role', id: u.id, role: role }, u.name + (role === 'admin' ? ' เป็นแอดมินแล้ว' : ' เป็นพนักงานแล้ว'));
+    }));
+    actions.append(button('ลบ', function () {
+      if (!confirm('ลบบัญชี ' + u.name + ' (' + u.email + ') ?\nลบแล้วกู้คืนไม่ได้')) return Promise.resolve();
+      return act({ action: 'delete', id: u.id }, 'ลบบัญชี ' + u.name + ' แล้ว');
+    }, 'danger'));
+  }
+  return el('div', 'user', [
+    el('div', 'who', [el('strong', '', u.name), el('span', '', u.email)]),
+    el('div', 'tags', [
+      el('span', 'tag', u.role === 'admin' ? 'แอดมิน' : 'พนักงาน'),
+      el('span', 'tag ' + st[1], st[0]),
+      el('span', 'seen', u.last_login ? 'เข้าล่าสุด ' + when(u.last_login) : 'ยังไม่เคยเข้า')
+    ]),
+    actions
+  ]);
+}
+
+function render() {
+  var q = search.value.trim().toLowerCase();
+  var shown = users.filter(function (u) {
+    return !q || u.name.toLowerCase().indexOf(q) >= 0 || u.email.indexOf(q) >= 0;
+  });
+  document.getElementById('count').textContent = '(' + users.length + ' คน)';
+  list.replaceChildren.apply(list, shown.length ? shown.map(row) : [el('p', 'empty', q ? 'ไม่พบผู้ใช้ที่ค้นหา' : 'ยังไม่มีผู้ใช้')]);
+}
+
+function load() {
+  return api().then(function (j) {
+    me = j.me; users = j.users; serverNow = j.now;
+    render();
+  }).catch(function (e) {
+    list.replaceChildren(el('p', 'empty', e.message));
+  });
+}
+
+search.addEventListener('input', render);
+
+var form = document.getElementById('add');
+var addMsg = document.getElementById('add-msg');
+document.getElementById('gen').addEventListener('click', function () { form.elements.password.value = makePassword(); });
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = form.elements;
+  var data = { action: 'create', name: f.name.value.trim(), email: f.email.value.trim(), password: f.password.value.trim(), role: f.role.value };
+  var problem = !data.name ? 'กรอกชื่อ-นามสกุล'
+    : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email) ? 'อีเมลไม่ถูกต้อง'
+    : data.password.length < 8 ? 'รหัสผ่านเริ่มต้นต้องยาว 8 ตัวอักษรขึ้นไป' : '';
+  if (problem) { addMsg.className = 'msg bad'; addMsg.textContent = problem; return; }
+  var submit = form.querySelector('button[type=submit]');
+  submit.disabled = true;
+  api(data).then(function () {
+    addMsg.className = 'msg good';
+    addMsg.textContent = 'เพิ่ม ' + data.name + ' แล้ว ส่งให้พนักงาน: อีเมล ' + data.email + ' รหัสเริ่มต้น ' + data.password;
+    form.reset();
+    return load();
+  }).catch(function (err) {
+    addMsg.className = 'msg bad';
+    addMsg.textContent = err.message;
+  }).then(function () { submit.disabled = false; });
+});
+
+document.getElementById('logout').addEventListener('click', function () {
+  var clear = window.caches ? caches.keys().then(function (k) { return Promise.all(k.map(function (n) { return caches.delete(n); })); }) : Promise.resolve();
+  clear.catch(function () {}).then(function () {
+    return fetch('/api/logout', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: '{}' });
+  }).catch(function () {}).then(function () { location.href = '/'; });
+});
+
+load();
+</script>
+</body>
+</html>

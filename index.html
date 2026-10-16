@@ -109,6 +109,29 @@
     margin: 12px 0 8px;
   }
   .header h1 span { color: var(--text); }
+  .userbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px 16px;
+    margin: -8px 0 14px;
+    font-size: 13px;
+  }
+  .userbar[hidden] { display: none; }
+  .userbar-name { margin-right: auto; font-weight: 600; }
+  .userbar a, .userbar button {
+    color: var(--accent-red-dark);
+    font: inherit;
+    font-weight: 600;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .userbar a[hidden] { display: none; }
   .header p { color: var(--text); font-size: 15px; }
 
   /* Screens */
@@ -1344,6 +1367,12 @@
 
   <!-- Header -->
   <div class="header">
+    <div class="userbar" id="userbar" hidden>
+      <span class="userbar-name" id="userbar-name"></span>
+      <a href="admin.html" id="userbar-admin" hidden>จัดการผู้ใช้</a>
+      <a href="account">เปลี่ยนรหัสผ่าน</a>
+      <button type="button" id="userbar-logout">ออกจากระบบ</button>
+    </div>
     <div class="header-kicker">
       <img class="brand-logo" src="chairatchakarn-group-logo.png" alt="กลุ่มบริษัทชัยรัชการ CHAIRATCHAKARN GROUP">
       <div class="header-meta">
@@ -2423,6 +2452,30 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     showScreen('screen-home');
   }
+});
+
+// Staff sign-in (Cloudflare Pages): show who is signed in. On GitHub Pages api/me does not exist,
+// so the bar stays hidden.
+fetch('api/me', { credentials: 'same-origin', cache: 'no-store' })
+  .then(function(r) { return r.ok ? r.json() : null; })
+  .then(function(me) {
+    if (!me || !me.email) return;
+    document.getElementById('userbar-name').textContent = me.name;
+    document.getElementById('userbar-admin').hidden = me.role !== 'admin';
+    document.getElementById('userbar').hidden = false;
+  })
+  .catch(function() {});
+document.getElementById('userbar-logout').addEventListener('click', function() {
+  // Drop the offline copies too, so the next person on a shared device cannot read them.
+  var clear = window.caches
+    ? caches.keys().then(function(k) { return Promise.all(k.map(function(n) { return caches.delete(n); })); })
+    : Promise.resolve();
+  clear.catch(function() {})
+    .then(function() {
+      return fetch('api/logout', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: '{}' });
+    })
+    .catch(function() {})
+    .then(function() { location.href = './'; });
 });
 
 // Offline: register the service worker, then quietly cache every topic photo
